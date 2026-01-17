@@ -42,9 +42,9 @@ export const Header = () => {
 
       {/* Main Navigation */}
       <nav className="bg-navy py-4 px-4 sticky top-0 z-50 shadow-lg">
-        <div className="container mx-auto flex justify-between items-center">
+        <div className="container px-2 md:px-3 mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Ashvin K Yagnik & Co." className="h-12 md:h-14" />
+            <img src={logo} alt="Ashvin K Yagnik & Co." className="h-20 md:h-28" />
           </Link>
 
           {/* Desktop Navigation */}
