@@ -61,7 +61,7 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="text-white/80 text-lg leading-relaxed">
-              Have questions or need professional assistance? Reach out to our 
+              Have questions or need professional assistance? Reach out to our
               team of expert chartered accountants. We're here to help.
             </p>
           </div>
@@ -193,7 +193,7 @@ const Contact = () => {
                       </label>
                       <Input
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 98250 46598"
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}

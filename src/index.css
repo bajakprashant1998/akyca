@@ -113,6 +113,18 @@
     @apply text-white/90 hover:text-white transition-colors duration-200 font-medium text-sm tracking-wide;
   }
 
+  .brand-logo {
+    height: 60px;
+    width: auto;
+    transition: height 0.3s ease;
+  }
+
+  @media (min-width: 768px) {
+    .brand-logo {
+      height: 90px;
+    }
+  }
+
   .nav-link-active {
     @apply text-white border-b-2 border-cream;
   }

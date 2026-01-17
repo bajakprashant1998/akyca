@@ -12,7 +12,7 @@ export const Footer = () => {
           <div>
             <img src={logo} alt="Ashvin K Yagnik & Co." className="h-14 mb-6" />
             <p className="text-white/70 text-sm leading-relaxed mb-6">
-              Providing quality and sustainable professional services for over 45 years. 
+              Providing quality and sustainable professional services for over 45 years.
               RBI Category-I Chartered Accountants firm trusted by businesses across India.
             </p>
             <div className="flex gap-4">
@@ -108,7 +108,7 @@ export const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/60 text-sm">
-            © {new Date().getFullYear()} Ashvin K Yagnik & Co. All rights reserved.
+            © {new Date().getFullYear()} Maintained And Developed By <a href="https://dibull.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-cream transition-colors">Dibull</a>
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-white/60 hover:text-cream transition-colors">Privacy Policy</a>
