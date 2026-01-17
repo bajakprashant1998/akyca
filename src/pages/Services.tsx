@@ -6,152 +6,18 @@ import {
 import { Link } from "react-router-dom";
 
 const serviceCategories = [
-  {
-    icon: FileText,
-    title: "Taxation Services",
-    services: [
-      "Income Tax Return Filing (Individual & Corporate)",
-      "Tax Planning & Advisory",
-      "Corporate Taxation",
-      "International Taxation",
-      "NRI Taxation",
-      "TDS Compliance & Returns",
-      "Representation before Tax Authorities",
-    ],
-  },
-  {
-    icon: Calculator,
-    title: "GST Services",
-    services: [
-      "GST Registration",
-      "GST Return Filing",
-      "GST Audit",
-      "GST Advisory & Compliance",
-      "Litigation & Notice Handling",
-    ],
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Audit & Assurance",
-    services: [
-      "Statutory Audit",
-      "Internal Audit",
-      "Tax Audit",
-      "Concurrent Audit",
-      "Bank Audit",
-      "Stock Audit",
-      "Management Audit",
-      "Co-operative Society Audit",
-    ],
-  },
-  {
-    icon: Building2,
-    title: "Company & Corporate Services",
-    services: [
-      "Company Incorporation",
-      "LLP Formation",
-      "ROC Compliance",
-      "Secretarial Services",
-      "Due Diligence",
-      "Mergers & Acquisitions Support",
-    ],
-  },
-  {
-    icon: TrendingUp,
-    title: "Financial Advisory",
-    services: [
-      "Business Structuring",
-      "Project Finance",
-      "Fund Raising Support",
-      "Valuation Services",
-      "Virtual CFO Services",
-    ],
-  },
-  {
-    icon: Shield,
-    title: "Compliance & Regulatory",
-    services: [
-      "Annual Compliance Management (AMC)",
-      "Labour Law Compliance (PF, ESIC, PT, Shops Act)",
-      "Factory Act & Industrial Law Compliance",
-      "RBI, FEMA & SEBI Compliance",
-      "NBFC Compliance",
-      "Trust, Society & NGO Compliance",
-    ],
-  },
-  {
-    icon: Gavel,
-    title: "Litigation & Representation",
-    services: [
-      "Income Tax Appeals & Assessments",
-      "GST Litigation",
-      "Tribunal & Commissioner Proceedings",
-      "Notice Drafting & Reply",
-      "Search & Survey Case Handling",
-      "Black Money & Benami Act Advisory",
-    ],
-  },
-  {
-    icon: Rocket,
-    title: "Startup & New Business",
-    services: [
-      "Startup India & DPIIT Registration",
-      "Angel Tax Advisory",
-      "ESOP Structuring",
-      "Business Plan & Financial Modelling",
-      "Pitch Deck Support",
-      "Seed, Angel & VC Funding Support",
-    ],
-  },
-  {
-    icon: Factory,
-    title: "Industry-Specific Services",
-    services: [
-      "Real Estate & RERA Compliance",
-      "Healthcare & Hospital Accounting",
-      "Manufacturing Industry Audit",
-      "Export Import (EXIM) Advisory",
-      "E-commerce Compliance",
-      "Educational Institution Advisory",
-      "NGO & Trust Management",
-    ],
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Advanced Financial Services",
-    services: [
-      "Risk Assessment & Internal Controls",
-      "Forensic Audit & Fraud Investigation",
-      "Business Valuation",
-      "Insolvency & Bankruptcy Code (IBC) Support",
-      "Turnaround & Restructuring Advisory",
-      "Corporate Governance Advisory",
-    ],
-  },
-  {
-    icon: Laptop,
-    title: "Digital & Modern Accounting",
-    services: [
-      "Cloud Accounting (Tally, Zoho, QuickBooks)",
-      "Automation of Finance Systems",
-      "MIS Reports & Dashboards",
-      "Virtual Accounting Department",
-      "ERP Implementation Advisory",
-      "Data Migration & Cleanup",
-    ],
-  },
-  {
-    icon: UserCheck,
-    title: "Personal & Wealth Services",
-    services: [
-      "Personal Tax Planning",
-      "HUF & Family Office Structuring",
-      "Succession Planning",
-      "Estate & Will Advisory",
-      "HNI Advisory",
-      "NRI Wealth Structuring",
-    ],
-  },
+  { icon: FileText, title: "Taxation Services", link: "/services/taxation", services: ["Income Tax Return Filing", "Tax Planning & Advisory", "Corporate Taxation", "International Taxation", "NRI Taxation", "TDS Compliance"] },
+  { icon: Calculator, title: "GST Services", link: "/services/gst", services: ["GST Registration", "GST Return Filing", "GST Audit", "GST Advisory", "Litigation & Notice Handling"] },
+  { icon: ClipboardCheck, title: "Audit & Assurance", link: "/services/audit", services: ["Statutory Audit", "Internal Audit", "Tax Audit", "Bank Audit", "Stock Audit", "Management Audit"] },
+  { icon: Building2, title: "Company & Corporate", link: "/services/corporate", services: ["Company Incorporation", "LLP Formation", "ROC Compliance", "Secretarial Services", "Due Diligence", "M&A Support"] },
+  { icon: TrendingUp, title: "Financial Advisory", link: "/services/financial-advisory", services: ["Business Structuring", "Project Finance", "Fund Raising", "Valuation Services", "Virtual CFO"] },
+  { icon: Shield, title: "Compliance & Regulatory", link: "/services/compliance", services: ["Annual Compliance (AMC)", "Labour Law Compliance", "RBI/FEMA/SEBI", "NBFC Compliance", "NGO Compliance"] },
+  { icon: Gavel, title: "Litigation & Representation", link: "/services/litigation", services: ["Income Tax Appeals", "GST Litigation", "Tribunal Proceedings", "Notice Handling", "Search & Survey Cases"] },
+  { icon: Rocket, title: "Startup & New Business", link: "/services/startup", services: ["Startup India Registration", "Angel Tax Advisory", "ESOP Structuring", "Business Plan", "Funding Support"] },
+  { icon: Factory, title: "Industry-Specific", link: "/services/industry", services: ["Real Estate & RERA", "Healthcare Accounting", "Manufacturing Audit", "EXIM Advisory", "E-commerce Compliance"] },
+  { icon: ClipboardCheck, title: "Advanced Financial", link: "/services/advanced-financial", services: ["Risk Assessment", "Forensic Audit", "Business Valuation", "IBC Support", "Turnaround Advisory"] },
+  { icon: Laptop, title: "Digital Accounting", link: "/services/digital-accounting", services: ["Cloud Accounting", "Finance Automation", "MIS & Dashboards", "Virtual Accounting", "ERP Advisory"] },
+  { icon: UserCheck, title: "Personal & Wealth", link: "/services/personal-wealth", services: ["Personal Tax Planning", "HUF Structuring", "Succession Planning", "HNI Advisory", "NRI Services"] },
 ];
 
 const Services = () => {
@@ -180,17 +46,18 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {serviceCategories.map((category, index) => (
-              <div
+              <Link
                 key={index}
-                className="bg-white rounded-xl border border-border p-8 hover:shadow-xl hover:border-cream transition-all duration-300"
+                to={category.link}
+                className="bg-white rounded-xl border border-border p-8 hover:shadow-xl hover:border-cream transition-all duration-300 group"
               >
-                <div className="w-14 h-14 bg-cream rounded-xl flex items-center justify-center mb-6">
-                  <category.icon className="w-7 h-7 text-navy" />
+                <div className="w-14 h-14 bg-cream rounded-xl flex items-center justify-center mb-6 group-hover:bg-navy transition-colors">
+                  <category.icon className="w-7 h-7 text-navy group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-xl font-display font-semibold text-navy mb-4">
                   {category.title}
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-4">
                   {category.services.map((service, sIndex) => (
                     <li key={sIndex} className="flex items-start gap-2 text-grey text-sm">
                       <ChevronRight className="w-4 h-4 text-navy flex-shrink-0 mt-0.5" />
@@ -198,7 +65,10 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+                <span className="text-navy font-medium text-sm group-hover:text-gold transition-colors">
+                  Learn More →
+                </span>
+              </Link>
             ))}
           </div>
         </div>
