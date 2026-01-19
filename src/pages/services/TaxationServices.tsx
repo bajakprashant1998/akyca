@@ -8,49 +8,56 @@ const services = [
     description: "Expert preparation and timely filing of income tax returns for individuals, businesses, and corporations. We ensure maximum deductions and compliance with all regulations.",
     features: ["Accurate computation of taxable income", "Identification of eligible deductions", "E-filing with acknowledgment", "Assessment follow-up support"],
     process: ["Document collection & review", "Income computation & classification", "Deduction optimization", "E-filing & verification"],
-    benefits: ["Zero penalty filing", "Maximum tax savings", "Expert computation", "Audit support included"]
+    benefits: ["Zero penalty filing", "Maximum tax savings", "Expert computation", "Audit support included"],
+    link: "/services/taxation/income-tax-return"
   },
   {
     title: "Tax Planning & Advisory",
     description: "Strategic tax planning to minimize your tax liability legally while maximizing wealth creation. Customized solutions based on your financial goals.",
     features: ["Annual tax planning strategies", "Investment-linked tax savings", "Retirement planning optimization", "Business structure optimization"],
     process: ["Financial profile analysis", "Tax liability assessment", "Strategy formulation", "Implementation support"],
-    benefits: ["Up to 30% tax savings", "Legal tax optimization", "Proactive planning", "Year-round support"]
+    benefits: ["Up to 30% tax savings", "Legal tax optimization", "Proactive planning", "Year-round support"],
+    link: "/services/taxation/tax-planning"
   },
   {
     title: "Corporate Taxation",
     description: "Comprehensive corporate tax services including advance tax computation, MAT/AMT planning, and compliance with corporate tax regulations.",
     features: ["Advance tax calculations", "MAT credit optimization", "Transfer pricing compliance", "Corporate tax return filing"],
     process: ["Quarterly advance tax planning", "MAT/AMT computation", "Credit utilization planning", "Annual compliance"],
-    benefits: ["Optimized cash flow", "Penalty avoidance", "MAT credit recovery", "Compliant operations"]
+    benefits: ["Optimized cash flow", "Penalty avoidance", "MAT credit recovery", "Compliant operations"],
+    link: "/services/taxation/corporate-taxation"
   },
   {
     title: "International Taxation",
     description: "Expert guidance on cross-border transactions, DTAA benefits, and international tax compliance for businesses with global operations.",
     features: ["DTAA treaty benefits", "Cross-border transaction structuring", "Expatriate taxation", "Foreign income compliance"],
     process: ["Treaty analysis", "Structure optimization", "Withholding compliance", "Reporting & filing"],
-    benefits: ["Double tax relief", "Optimized structures", "Global compliance", "Expert representation"]
+    benefits: ["Double tax relief", "Optimized structures", "Global compliance", "Expert representation"],
+    link: "/services/taxation/international-taxation"
   },
   {
     title: "NRI Taxation",
     description: "Specialized tax services for Non-Resident Indians covering residential status determination, foreign income taxation, and DTAA benefits.",
     features: ["Residential status determination", "Repatriation planning", "FEMA compliance", "Double taxation relief"],
     process: ["Status determination", "Income classification", "Treaty benefit claims", "Return filing"],
-    benefits: ["Correct tax treatment", "DTAA benefits claimed", "Smooth repatriation", "Compliance assured"]
+    benefits: ["Correct tax treatment", "DTAA benefits claimed", "Smooth repatriation", "Compliance assured"],
+    link: "/services/taxation/nri-taxation"
   },
   {
     title: "TDS Compliance & Returns",
     description: "Complete TDS management including computation, deduction, deposit, and quarterly return filing with full compliance assurance.",
     features: ["TDS calculation & deduction", "Quarterly return filing", "Form 16/16A generation", "Lower deduction certificates"],
     process: ["Rate determination", "Timely deduction", "Challan deposit", "Return filing"],
-    benefits: ["Zero default notices", "Timely compliance", "Employee satisfaction", "Complete documentation"]
+    benefits: ["Zero default notices", "Timely compliance", "Employee satisfaction", "Complete documentation"],
+    link: "/services/taxation/tds-compliance"
   },
   {
     title: "Representation before Tax Authorities",
     description: "Professional representation before Income Tax authorities for assessments, appeals, and dispute resolution at all levels.",
     features: ["Scrutiny assessment handling", "Appeal preparation & filing", "Settlement commission matters", "Tribunal representation"],
     process: ["Case analysis", "Documentation preparation", "Representation", "Appeal/Resolution"],
-    benefits: ["Expert advocacy", "Higher success rate", "Reduced liability", "Peace of mind"]
+    benefits: ["Expert advocacy", "Higher success rate", "Reduced liability", "Peace of mind"],
+    link: "/services/taxation/tax-representation"
   }
 ];
 
@@ -139,21 +146,27 @@ const TaxationServices = () => {
           
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div
+              <Link
+                to={service.link}
                 key={index}
-                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300 block group"
               >
                 {/* Service Header */}
                 <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                      <FileCheck className="w-5 h-5 text-cream" />
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                          <FileCheck className="w-5 h-5 text-cream" />
+                        </div>
+                        <span className="text-cream/80 text-sm font-medium">Service {String(index + 1).padStart(2, '0')}</span>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
+                        {service.title}
+                      </h3>
                     </div>
-                    <span className="text-cream/80 text-sm font-medium">Service {String(index + 1).padStart(2, '0')}</span>
+                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
-                    {service.title}
-                  </h3>
                 </div>
                 
                 <div className="p-6 md:p-8">
@@ -212,8 +225,14 @@ const TaxationServices = () => {
                       </ul>
                     </div>
                   </div>
+                  
+                  <div className="mt-6 flex justify-end">
+                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
+                      View Full Details <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
