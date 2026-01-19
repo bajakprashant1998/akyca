@@ -24,6 +24,22 @@ import AdvancedFinancial from "./pages/services/AdvancedFinancial";
 import DigitalAccounting from "./pages/services/DigitalAccounting";
 import PersonalWealth from "./pages/services/PersonalWealth";
 
+// Taxation Sub-services
+import IncomeTaxReturn from "./pages/services/taxation/IncomeTaxReturn";
+import TaxPlanning from "./pages/services/taxation/TaxPlanning";
+import CorporateTaxation from "./pages/services/taxation/CorporateTaxation";
+import InternationalTaxation from "./pages/services/taxation/InternationalTaxation";
+import NRITaxation from "./pages/services/taxation/NRITaxation";
+import TDSCompliance from "./pages/services/taxation/TDSCompliance";
+import TaxRepresentation from "./pages/services/taxation/TaxRepresentation";
+
+// GST Sub-services
+import GSTRegistration from "./pages/services/gst/GSTRegistration";
+import GSTReturnFiling from "./pages/services/gst/GSTReturnFiling";
+import GSTAudit from "./pages/services/gst/GSTAudit";
+import GSTAdvisory from "./pages/services/gst/GSTAdvisory";
+import GSTLitigation from "./pages/services/gst/GSTLitigation";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -37,7 +53,19 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/taxation" element={<TaxationServices />} />
+          <Route path="/services/taxation/income-tax-return" element={<IncomeTaxReturn />} />
+          <Route path="/services/taxation/tax-planning" element={<TaxPlanning />} />
+          <Route path="/services/taxation/corporate-taxation" element={<CorporateTaxation />} />
+          <Route path="/services/taxation/international-taxation" element={<InternationalTaxation />} />
+          <Route path="/services/taxation/nri-taxation" element={<NRITaxation />} />
+          <Route path="/services/taxation/tds-compliance" element={<TDSCompliance />} />
+          <Route path="/services/taxation/tax-representation" element={<TaxRepresentation />} />
           <Route path="/services/gst" element={<GSTServices />} />
+          <Route path="/services/gst/registration" element={<GSTRegistration />} />
+          <Route path="/services/gst/return-filing" element={<GSTReturnFiling />} />
+          <Route path="/services/gst/audit" element={<GSTAudit />} />
+          <Route path="/services/gst/advisory" element={<GSTAdvisory />} />
+          <Route path="/services/gst/litigation" element={<GSTLitigation />} />
           <Route path="/services/audit" element={<AuditAssurance />} />
           <Route path="/services/corporate" element={<CompanyCorporate />} />
           <Route path="/services/financial-advisory" element={<FinancialAdvisory />} />
