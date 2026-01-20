@@ -1,5 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
-import { CheckCircle, Users, Target, Award, Briefcase, Shield } from "lucide-react";
+import { CheckCircle, Users, Target, Award, Briefcase, Shield, Linkedin, Mail } from "lucide-react";
+import ashwinYagnik from "@/assets/team/ashwin-yagnik.png";
+import japanYagnik from "@/assets/team/japan-yagnik.png";
+import arpanYagnik from "@/assets/team/arpan-yagnik.png";
 
 const values = [
   {
@@ -31,6 +34,30 @@ const values = [
     icon: CheckCircle,
     title: "Quality Assurance",
     description: "Rigorous quality controls ensure accuracy and excellence in every service we provide.",
+  },
+];
+
+const boardOfDirectors = [
+  {
+    name: "CA Ashwin Yagnik",
+    role: "Founding Partner",
+    image: ashwinYagnik,
+    description: "With over 45 years of experience, CA Ashwin Yagnik founded the firm in 1978 and has been instrumental in establishing AKYCO as a leading CA firm in Gujarat. His expertise in taxation and financial advisory has helped countless businesses thrive.",
+    qualifications: "B.Com, FCA",
+  },
+  {
+    name: "CA Japan Yagnik",
+    role: "Senior Partner",
+    image: japanYagnik,
+    description: "CA Japan Yagnik brings extensive expertise in corporate taxation, GST compliance, and audit services. His strategic vision and commitment to excellence have significantly contributed to the firm's growth and reputation.",
+    qualifications: "B.Com, FCA",
+  },
+  {
+    name: "CA Arpan Yagnik",
+    role: "Partner",
+    image: arpanYagnik,
+    description: "CA Arpan Yagnik specializes in financial advisory, startup services, and digital accounting solutions. His modern approach combined with traditional values helps bridge the gap between technology and professional services.",
+    qualifications: "B.Com, FCA",
   },
 ];
 
@@ -130,6 +157,68 @@ const About = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Board of Directors / Core Team Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">
+              Leadership
+            </span>
+            <h2 className="section-heading mb-4">Board of Directors</h2>
+            <p className="section-subheading mx-auto">
+              Meet the visionary leaders who guide our firm with their expertise, experience, and commitment to excellence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            {boardOfDirectors.map((member, index) => (
+              <div 
+                key={index} 
+                className="group bg-background rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+              >
+                {/* Image Container */}
+                <div className="relative overflow-hidden aspect-square">
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Social Icons on Hover */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <a 
+                      href="#" 
+                      className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-navy hover:bg-cream transition-colors"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                    <a 
+                      href="#" 
+                      className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-navy hover:bg-cream transition-colors"
+                    >
+                      <Mail className="w-5 h-5" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-display font-bold text-navy mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-gold font-medium text-sm mb-2">{member.role}</p>
+                  <p className="text-grey text-xs mb-4">{member.qualifications}</p>
+                  <p className="text-grey text-sm leading-relaxed">
+                    {member.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
