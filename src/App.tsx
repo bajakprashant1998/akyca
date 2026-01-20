@@ -40,6 +40,16 @@ import GSTAudit from "./pages/services/gst/GSTAudit";
 import GSTAdvisory from "./pages/services/gst/GSTAdvisory";
 import GSTLitigation from "./pages/services/gst/GSTLitigation";
 
+// Audit Sub-services
+import StatutoryAudit from "./pages/services/audit/StatutoryAudit";
+import InternalAudit from "./pages/services/audit/InternalAudit";
+import TaxAudit from "./pages/services/audit/TaxAudit";
+import ConcurrentAudit from "./pages/services/audit/ConcurrentAudit";
+import BankAudit from "./pages/services/audit/BankAudit";
+import StockAudit from "./pages/services/audit/StockAudit";
+import ManagementAudit from "./pages/services/audit/ManagementAudit";
+import CooperativeSocietyAudit from "./pages/services/audit/CooperativeSocietyAudit";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -67,6 +77,14 @@ const App = () => (
           <Route path="/services/gst/advisory" element={<GSTAdvisory />} />
           <Route path="/services/gst/litigation" element={<GSTLitigation />} />
           <Route path="/services/audit" element={<AuditAssurance />} />
+          <Route path="/services/audit/statutory-audit" element={<StatutoryAudit />} />
+          <Route path="/services/audit/internal-audit" element={<InternalAudit />} />
+          <Route path="/services/audit/tax-audit" element={<TaxAudit />} />
+          <Route path="/services/audit/concurrent-audit" element={<ConcurrentAudit />} />
+          <Route path="/services/audit/bank-audit" element={<BankAudit />} />
+          <Route path="/services/audit/stock-audit" element={<StockAudit />} />
+          <Route path="/services/audit/management-audit" element={<ManagementAudit />} />
+          <Route path="/services/audit/cooperative-society-audit" element={<CooperativeSocietyAudit />} />
           <Route path="/services/corporate" element={<CompanyCorporate />} />
           <Route path="/services/financial-advisory" element={<FinancialAdvisory />} />
           <Route path="/services/compliance" element={<ComplianceRegulatory />} />
