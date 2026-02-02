@@ -3,12 +3,12 @@ import { Laptop, CheckCircle, ChevronRight, ArrowRight, Target, Award, BadgeChec
 import { Link } from "react-router-dom";
 
 const services = [
-  { title: "Cloud Accounting (Tally, Zoho, QuickBooks)", description: "Setup and management of cloud-based accounting solutions.", features: ["Tally Prime setup", "Zoho Books implementation", "QuickBooks configuration", "Multi-location access"], process: ["Assessment", "Setup", "Migration", "Training"], benefits: ["Real-time access", "Cost savings", "Scalability", "Expert support"] },
-  { title: "Automation of Finance Systems", description: "Streamline financial processes through automation.", features: ["Invoice automation", "Expense digitization", "Bank reconciliation", "Payment processing"], process: ["Process mapping", "Solution design", "Implementation", "Optimization"], benefits: ["70% time savings", "Error reduction", "Faster processing", "Cost efficiency"] },
-  { title: "MIS Reports & Dashboards", description: "Custom MIS reports and interactive dashboards.", features: ["Custom reports", "Real-time dashboards", "KPI tracking", "Executive summaries"], process: ["Requirement gathering", "Design", "Development", "Deployment"], benefits: ["Data-driven decisions", "Real-time insights", "Clear visibility", "Better control"] },
-  { title: "Virtual Accounting Department", description: "Complete outsourced accounting function.", features: ["Daily bookkeeping", "AP/AR management", "Monthly closings", "Financial statements"], process: ["Onboarding", "Process setup", "Regular operations", "Reporting"], benefits: ["Cost savings", "Expert team", "Scalable", "Focus on core business"] },
-  { title: "ERP Implementation Advisory", description: "Advisory for ERP implementation projects.", features: ["Requirement assessment", "Vendor evaluation", "Implementation oversight", "Post-implementation"], process: ["Assessment", "Selection", "Implementation", "Support"], benefits: ["Right solution", "Smooth transition", "ROI optimization", "Expert guidance"] },
-  { title: "Data Migration & Cleanup", description: "Clean migration of financial data between systems.", features: ["Data mapping", "Legacy extraction", "Duplicate elimination", "Quality assurance"], process: ["Assessment", "Planning", "Migration", "Validation"], benefits: ["Accurate data", "Clean records", "Smooth transition", "Zero data loss"] }
+  { title: "Cloud Accounting (Tally, Zoho, QuickBooks)", description: "Setup and management of cloud-based accounting solutions.", features: ["Tally Prime setup", "Zoho Books implementation", "QuickBooks configuration", "Multi-location access"], process: ["Assessment", "Setup", "Migration", "Training"], benefits: ["Real-time access", "Cost savings", "Scalability", "Expert support"], link: "/contact" },
+  { title: "Automation of Finance Systems", description: "Streamline financial processes through automation.", features: ["Invoice automation", "Expense digitization", "Bank reconciliation", "Payment processing"], process: ["Process mapping", "Solution design", "Implementation", "Optimization"], benefits: ["70% time savings", "Error reduction", "Faster processing", "Cost efficiency"], link: "/contact" },
+  { title: "MIS Reports & Dashboards", description: "Custom MIS reports and interactive dashboards.", features: ["Custom reports", "Real-time dashboards", "KPI tracking", "Executive summaries"], process: ["Requirement gathering", "Design", "Development", "Deployment"], benefits: ["Data-driven decisions", "Real-time insights", "Clear visibility", "Better control"], link: "/contact" },
+  { title: "Virtual Accounting Department", description: "Complete outsourced accounting function.", features: ["Daily bookkeeping", "AP/AR management", "Monthly closings", "Financial statements"], process: ["Onboarding", "Process setup", "Regular operations", "Reporting"], benefits: ["Cost savings", "Expert team", "Scalable", "Focus on core business"], link: "/contact" },
+  { title: "ERP Implementation Advisory", description: "Advisory for ERP implementation projects.", features: ["Requirement assessment", "Vendor evaluation", "Implementation oversight", "Post-implementation"], process: ["Assessment", "Selection", "Implementation", "Support"], benefits: ["Right solution", "Smooth transition", "ROI optimization", "Expert guidance"], link: "/contact" },
+  { title: "Data Migration & Cleanup", description: "Clean migration of financial data between systems.", features: ["Data mapping", "Legacy extraction", "Duplicate elimination", "Quality assurance"], process: ["Assessment", "Planning", "Migration", "Validation"], benefits: ["Accurate data", "Clean records", "Smooth transition", "Zero data loss"], link: "/contact" }
 ];
 
 const technologies = ["Tally Prime", "Zoho Books", "QuickBooks", "SAP B1", "Microsoft Dynamics", "Odoo"];
@@ -63,8 +63,17 @@ const DigitalAccounting = () => {
           <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-display font-bold text-navy mb-4">Our Digital Services</h2></div>
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all">
-                <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8"><h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3></div>
+              <Link
+                to={service.link}
+                key={index}
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all block group"
+              >
+                <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3>
+                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
+                  </div>
+                </div>
                 <div className="p-6 md:p-8">
                   <p className="text-grey leading-relaxed mb-8 text-lg">{service.description}</p>
                   <div className="grid md:grid-cols-3 gap-8">
@@ -81,8 +90,13 @@ const DigitalAccounting = () => {
                       <ul className="space-y-3">{service.benefits.map((b, i) => <li key={i} className="flex items-start gap-3"><TrendingUp className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" /><span className="text-grey">{b}</span></li>)}</ul>
                     </div>
                   </div>
+                  <div className="mt-6 flex justify-end">
+                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
+                      Get Started <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

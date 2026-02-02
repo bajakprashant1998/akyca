@@ -3,12 +3,12 @@ import { UserCheck, CheckCircle, ChevronRight, ArrowRight, Target, Award, BadgeC
 import { Link } from "react-router-dom";
 
 const services = [
-  { title: "Personal Tax Planning", description: "Comprehensive personal tax planning to minimize liability.", features: ["Income optimization", "Investment tax savings", "Capital gains planning", "Retirement planning"], process: ["Profile analysis", "Strategy development", "Implementation", "Review"], benefits: ["Tax savings", "Legal optimization", "Wealth growth", "Expert guidance"] },
-  { title: "HUF & Family Office Structuring", description: "Setup and management of HUF and family offices.", features: ["HUF formation", "Family office setup", "Inter-family transactions", "Succession integration"], process: ["Assessment", "Structure design", "Implementation", "Ongoing management"], benefits: ["Tax efficiency", "Asset protection", "Family harmony", "Wealth preservation"] },
-  { title: "Succession Planning", description: "Strategic planning for smooth transition of wealth.", features: ["Business succession", "Family constitution", "Tax-efficient transfers", "Governance framework"], process: ["Family assessment", "Strategy", "Documentation", "Implementation"], benefits: ["Smooth transition", "Conflict prevention", "Tax efficiency", "Legacy protection"] },
-  { title: "Estate & Will Advisory", description: "Expert guidance on estate planning and will drafting.", features: ["Will drafting", "Trust creation", "Probate assistance", "Asset consolidation"], process: ["Asset mapping", "Planning", "Documentation", "Execution"], benefits: ["Seamless transfer", "Legal protection", "Family security", "Tax optimization"] },
-  { title: "HNI Advisory", description: "Specialized wealth advisory for High Net Worth Individuals.", features: ["Comprehensive tax planning", "Investment structuring", "Regulatory compliance", "Lifestyle planning"], process: ["Wealth assessment", "Strategy", "Implementation", "Monitoring"], benefits: ["Wealth optimization", "Expert guidance", "Privacy", "Holistic approach"] },
-  { title: "NRI Wealth Structuring", description: "Complete wealth management for Non-Resident Indians.", features: ["FEMA/RBI compliance", "Repatriation planning", "India investments", "Cross-border tax"], process: ["Status assessment", "Structure design", "Implementation", "Ongoing compliance"], benefits: ["Compliance assured", "Tax optimization", "Smooth repatriation", "Expert support"] }
+  { title: "Personal Tax Planning", description: "Comprehensive personal tax planning to minimize liability.", features: ["Income optimization", "Investment tax savings", "Capital gains planning", "Retirement planning"], process: ["Profile analysis", "Strategy development", "Implementation", "Review"], benefits: ["Tax savings", "Legal optimization", "Wealth growth", "Expert guidance"], link: "/contact" },
+  { title: "HUF & Family Office Structuring", description: "Setup and management of HUF and family offices.", features: ["HUF formation", "Family office setup", "Inter-family transactions", "Succession integration"], process: ["Assessment", "Structure design", "Implementation", "Ongoing management"], benefits: ["Tax efficiency", "Asset protection", "Family harmony", "Wealth preservation"], link: "/contact" },
+  { title: "Succession Planning", description: "Strategic planning for smooth transition of wealth.", features: ["Business succession", "Family constitution", "Tax-efficient transfers", "Governance framework"], process: ["Family assessment", "Strategy", "Documentation", "Implementation"], benefits: ["Smooth transition", "Conflict prevention", "Tax efficiency", "Legacy protection"], link: "/contact" },
+  { title: "Estate & Will Advisory", description: "Expert guidance on estate planning and will drafting.", features: ["Will drafting", "Trust creation", "Probate assistance", "Asset consolidation"], process: ["Asset mapping", "Planning", "Documentation", "Execution"], benefits: ["Seamless transfer", "Legal protection", "Family security", "Tax optimization"], link: "/contact" },
+  { title: "HNI Advisory", description: "Specialized wealth advisory for High Net Worth Individuals.", features: ["Comprehensive tax planning", "Investment structuring", "Regulatory compliance", "Lifestyle planning"], process: ["Wealth assessment", "Strategy", "Implementation", "Monitoring"], benefits: ["Wealth optimization", "Expert guidance", "Privacy", "Holistic approach"], link: "/contact" },
+  { title: "NRI Wealth Structuring", description: "Complete wealth management for Non-Resident Indians.", features: ["FEMA/RBI compliance", "Repatriation planning", "India investments", "Cross-border tax"], process: ["Status assessment", "Structure design", "Implementation", "Ongoing compliance"], benefits: ["Compliance assured", "Tax optimization", "Smooth repatriation", "Expert support"], link: "/contact" }
 ];
 
 const wealthJourney = [{ title: "Protect", desc: "Tax-efficient structuring" }, { title: "Grow", desc: "Strategic investment" }, { title: "Transfer", desc: "Succession planning" }, { title: "Preserve", desc: "Multi-generational wealth" }];
@@ -59,8 +59,17 @@ const PersonalWealth = () => {
           <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-display font-bold text-navy mb-4">Our Wealth Services</h2></div>
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all">
-                <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8"><h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3></div>
+              <Link
+                to={service.link}
+                key={index}
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all block group"
+              >
+                <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3>
+                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
+                  </div>
+                </div>
                 <div className="p-6 md:p-8">
                   <p className="text-grey leading-relaxed mb-8 text-lg">{service.description}</p>
                   <div className="grid md:grid-cols-3 gap-8">
@@ -77,8 +86,13 @@ const PersonalWealth = () => {
                       <ul className="space-y-3">{service.benefits.map((b, i) => <li key={i} className="flex items-start gap-3"><TrendingUp className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" /><span className="text-grey">{b}</span></li>)}</ul>
                     </div>
                   </div>
+                  <div className="mt-6 flex justify-end">
+                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
+                      Get Started <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

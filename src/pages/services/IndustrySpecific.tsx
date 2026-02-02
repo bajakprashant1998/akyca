@@ -3,13 +3,13 @@ import { Factory, CheckCircle, ChevronRight, ArrowRight, Target, Award, BadgeChe
 import { Link } from "react-router-dom";
 
 const services = [
-  { title: "Real Estate & RERA Compliance", description: "Comprehensive services for real estate developers.", features: ["RERA registration", "Project accounting", "Sales compliance", "GST advisory"], process: ["Registration", "Compliance setup", "Ongoing support", "Reporting"], benefits: ["RERA compliance", "Legal protection", "Buyer confidence", "Smooth operations"] },
-  { title: "Healthcare & Hospital Accounting", description: "Specialized services for hospitals and healthcare providers.", features: ["Revenue recognition", "Cost center accounting", "Clinical compliance", "Healthcare GST"], process: ["Assessment", "System setup", "Compliance", "Reporting"], benefits: ["Accurate financials", "Regulatory compliance", "Cost control", "Expert support"] },
-  { title: "Manufacturing Industry Audit", description: "Industry-specific audit for manufacturing units.", features: ["Cost audit", "Inventory valuation", "Production analysis", "Transfer pricing"], process: ["Planning", "Execution", "Reporting", "Follow-up"], benefits: ["Cost optimization", "Compliance", "Efficiency gains", "Expert insights"] },
-  { title: "Export Import (EXIM) Advisory", description: "Complete advisory for export-import businesses.", features: ["Export benefits", "Customs advisory", "DGFT schemes", "LC advisory"], process: ["Assessment", "Strategy", "Implementation", "Optimization"], benefits: ["Duty savings", "Faster clearances", "Compliance", "Expert guidance"] },
-  { title: "E-commerce Compliance", description: "Comprehensive compliance for e-commerce businesses.", features: ["E-commerce GST", "TCS provisions", "FDI compliance", "Marketplace review"], process: ["Compliance mapping", "Setup", "Monitoring", "Reporting"], benefits: ["Full compliance", "Penalty avoidance", "Growth support", "Expert handling"] },
-  { title: "Educational Institution Advisory", description: "Specialized services for schools and colleges.", features: ["Fee accounting", "Trust compliance", "UGC/AICTE requirements", "12A/80G benefits"], process: ["Assessment", "Compliance", "Reporting", "Advisory"], benefits: ["Regulatory compliance", "Tax benefits", "Transparency", "Expert support"] },
-  { title: "NGO & Trust Management", description: "Complete management for NGOs and charitable trusts.", features: ["FCRA compliance", "CSR management", "Impact reporting", "Governance"], process: ["Assessment", "Compliance setup", "Ongoing management", "Reporting"], benefits: ["Donor confidence", "Legal compliance", "Transparency", "Growth support"] }
+  { title: "Real Estate & RERA Compliance", description: "Comprehensive services for real estate developers.", features: ["RERA registration", "Project accounting", "Sales compliance", "GST advisory"], process: ["Registration", "Compliance setup", "Ongoing support", "Reporting"], benefits: ["RERA compliance", "Legal protection", "Buyer confidence", "Smooth operations"], link: "/contact" },
+  { title: "Healthcare & Hospital Accounting", description: "Specialized services for hospitals and healthcare providers.", features: ["Revenue recognition", "Cost center accounting", "Clinical compliance", "Healthcare GST"], process: ["Assessment", "System setup", "Compliance", "Reporting"], benefits: ["Accurate financials", "Regulatory compliance", "Cost control", "Expert support"], link: "/contact" },
+  { title: "Manufacturing Industry Audit", description: "Industry-specific audit for manufacturing units.", features: ["Cost audit", "Inventory valuation", "Production analysis", "Transfer pricing"], process: ["Planning", "Execution", "Reporting", "Follow-up"], benefits: ["Cost optimization", "Compliance", "Efficiency gains", "Expert insights"], link: "/contact" },
+  { title: "Export Import (EXIM) Advisory", description: "Complete advisory for export-import businesses.", features: ["Export benefits", "Customs advisory", "DGFT schemes", "LC advisory"], process: ["Assessment", "Strategy", "Implementation", "Optimization"], benefits: ["Duty savings", "Faster clearances", "Compliance", "Expert guidance"], link: "/contact" },
+  { title: "E-commerce Compliance", description: "Comprehensive compliance for e-commerce businesses.", features: ["E-commerce GST", "TCS provisions", "FDI compliance", "Marketplace review"], process: ["Compliance mapping", "Setup", "Monitoring", "Reporting"], benefits: ["Full compliance", "Penalty avoidance", "Growth support", "Expert handling"], link: "/contact" },
+  { title: "Educational Institution Advisory", description: "Specialized services for schools and colleges.", features: ["Fee accounting", "Trust compliance", "UGC/AICTE requirements", "12A/80G benefits"], process: ["Assessment", "Compliance", "Reporting", "Advisory"], benefits: ["Regulatory compliance", "Tax benefits", "Transparency", "Expert support"], link: "/contact" },
+  { title: "NGO & Trust Management", description: "Complete management for NGOs and charitable trusts.", features: ["FCRA compliance", "CSR management", "Impact reporting", "Governance"], process: ["Assessment", "Compliance setup", "Ongoing management", "Reporting"], benefits: ["Donor confidence", "Legal compliance", "Transparency", "Growth support"], link: "/contact" }
 ];
 
 const industries = ["Real Estate", "Healthcare", "Manufacturing", "IT & Software", "E-commerce", "Education", "NGO & Trusts", "Retail", "Hospitality", "Logistics", "Pharma", "Textiles"];
@@ -54,8 +54,17 @@ const IndustrySpecific = () => {
           <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-display font-bold text-navy mb-4">Our Industry Services</h2></div>
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all">
-                <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8"><h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3></div>
+              <Link
+                to={service.link}
+                key={index}
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all block group"
+              >
+                <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3>
+                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
+                  </div>
+                </div>
                 <div className="p-6 md:p-8">
                   <p className="text-grey leading-relaxed mb-8 text-lg">{service.description}</p>
                   <div className="grid md:grid-cols-3 gap-8">
@@ -72,8 +81,13 @@ const IndustrySpecific = () => {
                       <ul className="space-y-3">{service.benefits.map((b, i) => <li key={i} className="flex items-start gap-3"><TrendingUp className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" /><span className="text-grey">{b}</span></li>)}</ul>
                     </div>
                   </div>
+                  <div className="mt-6 flex justify-end">
+                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
+                      Get Started <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

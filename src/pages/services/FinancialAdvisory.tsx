@@ -8,35 +8,40 @@ const services = [
     description: "Strategic advisory on optimal business structure considering tax efficiency, liability protection, regulatory compliance, and growth objectives.",
     features: ["Entity selection advisory", "Holding structure design", "Tax-efficient structuring", "Family business structuring"],
     process: ["Business analysis", "Structure evaluation", "Implementation plan", "Execution support"],
-    benefits: ["Tax optimization", "Asset protection", "Growth enablement", "Succession readiness"]
+    benefits: ["Tax optimization", "Asset protection", "Growth enablement", "Succession readiness"],
+    link: "/contact"
   },
   {
     title: "Project Finance",
     description: "Comprehensive project finance support including feasibility studies, financial modeling, and assistance with bank/institutional financing.",
     features: ["Feasibility study preparation", "Financial projections", "Bank proposal preparation", "Term sheet negotiation"],
     process: ["Project assessment", "Financial modeling", "Lender identification", "Documentation & closure"],
-    benefits: ["Optimal financing", "Lower interest rates", "Quick approvals", "Expert negotiation"]
+    benefits: ["Optimal financing", "Lower interest rates", "Quick approvals", "Expert negotiation"],
+    link: "/contact"
   },
   {
     title: "Fund Raising Support",
     description: "End-to-end support for equity and debt fundraising including investor documentation, due diligence preparation, and negotiation support.",
     features: ["Investor presentation development", "Due diligence preparation", "Valuation support", "Transaction documentation"],
     process: ["Investor readiness", "Pitch preparation", "Investor meetings", "Deal closure"],
-    benefits: ["Higher valuations", "Faster closures", "Better terms", "Professional representation"]
+    benefits: ["Higher valuations", "Faster closures", "Better terms", "Professional representation"],
+    link: "/contact"
   },
   {
     title: "Valuation Services",
     description: "Independent business and asset valuations for various purposes including M&A, taxation, litigation, and regulatory compliance.",
     features: ["Business valuation (DCF, Market)", "Share/Equity valuation", "Intangible asset valuation", "Valuation for tax purposes"],
     process: ["Scope definition", "Data analysis", "Valuation computation", "Report certification"],
-    benefits: ["Independent opinion", "Multiple methodologies", "Regulatory acceptance", "Litigation support"]
+    benefits: ["Independent opinion", "Multiple methodologies", "Regulatory acceptance", "Litigation support"],
+    link: "/contact"
   },
   {
     title: "Virtual CFO Services",
     description: "Part-time CFO services providing strategic financial leadership, MIS reporting, and treasury management for growing businesses.",
     features: ["Financial strategy development", "MIS & dashboard reporting", "Cash flow management", "Board presentation support"],
     process: ["Business understanding", "Systems setup", "Ongoing support", "Strategic reviews"],
-    benefits: ["60-70% cost savings", "Expert guidance", "Scalable services", "Strategic focus"]
+    benefits: ["60-70% cost savings", "Expert guidance", "Scalable services", "Strategic focus"],
+    link: "/contact"
   }
 ];
 
@@ -102,9 +107,16 @@ const FinancialAdvisory = () => {
           </div>
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all">
+              <Link
+                to={service.link}
+                key={index}
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all block group"
+              >
                 <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3>
+                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
+                  </div>
                 </div>
                 <div className="p-6 md:p-8">
                   <p className="text-grey leading-relaxed mb-8 text-lg">{service.description}</p>
@@ -149,8 +161,13 @@ const FinancialAdvisory = () => {
                       </ul>
                     </div>
                   </div>
+                  <div className="mt-6 flex justify-end">
+                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
+                      Get Started <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
