@@ -3,12 +3,12 @@ import { Gavel, CheckCircle, ChevronRight, ArrowRight, Target, Award, BadgeCheck
 import { Link } from "react-router-dom";
 
 const services = [
-  { title: "Income Tax Appeals & Assessments", description: "Professional representation in income tax assessments and appeals at all levels.", features: ["Assessment proceedings", "CIT(A) appeals", "ITAT representation", "High Court matters"], process: ["Case analysis", "Strategy development", "Documentation", "Representation"], benefits: ["Expert advocacy", "Higher success rate", "Reduced liability", "Peace of mind"] },
-  { title: "GST Litigation", description: "Expert handling of GST disputes and litigation matters.", features: ["Notice response", "Assessment challenges", "Appellate proceedings", "Advance rulings"], process: ["Notice analysis", "Response drafting", "Filing", "Representation"], benefits: ["Timely resolution", "Expert handling", "Cost effective", "Professional support"] },
-  { title: "Tribunal & Commissioner Proceedings", description: "Skilled representation before tribunals and commissioners.", features: ["Case preparation", "Written submissions", "Oral arguments", "Cross-examination"], process: ["Research", "Submission drafting", "Hearing preparation", "Representation"], benefits: ["Strong advocacy", "Legal expertise", "Successful outcomes", "Full support"] },
-  { title: "Notice Drafting & Reply", description: "Expert drafting of responses to tax authority notices.", features: ["Notice analysis", "Reply preparation", "Document compilation", "Submission"], process: ["Notice review", "Strategy", "Drafting", "Filing"], benefits: ["Comprehensive response", "Legal compliance", "Timely submission", "Expert review"] },
-  { title: "Search & Survey Case Handling", description: "Specialized support during and after search operations.", features: ["On-ground support", "Post-search handling", "Settlement matters", "Block assessment"], process: ["Immediate support", "Documentation", "Assessment handling", "Resolution"], benefits: ["Expert guidance", "Rights protection", "Liability minimization", "Full support"] },
-  { title: "Black Money & Benami Act Advisory", description: "Expert advisory on Black Money and Benami Act matters.", features: ["Compliance advisory", "Disclosure assistance", "Notice handling", "Penalty mitigation"], process: ["Situation analysis", "Strategy", "Implementation", "Resolution"], benefits: ["Legal protection", "Penalty reduction", "Expert guidance", "Confidentiality"] }
+  { title: "Income Tax Appeals & Assessments", description: "Professional representation in income tax assessments and appeals at all levels.", features: ["Assessment proceedings", "CIT(A) appeals", "ITAT representation", "High Court matters"], process: ["Case analysis", "Strategy development", "Documentation", "Representation"], benefits: ["Expert advocacy", "Higher success rate", "Reduced liability", "Peace of mind"], link: "/contact" },
+  { title: "GST Litigation", description: "Expert handling of GST disputes and litigation matters.", features: ["Notice response", "Assessment challenges", "Appellate proceedings", "Advance rulings"], process: ["Notice analysis", "Response drafting", "Filing", "Representation"], benefits: ["Timely resolution", "Expert handling", "Cost effective", "Professional support"], link: "/contact" },
+  { title: "Tribunal & Commissioner Proceedings", description: "Skilled representation before tribunals and commissioners.", features: ["Case preparation", "Written submissions", "Oral arguments", "Cross-examination"], process: ["Research", "Submission drafting", "Hearing preparation", "Representation"], benefits: ["Strong advocacy", "Legal expertise", "Successful outcomes", "Full support"], link: "/contact" },
+  { title: "Notice Drafting & Reply", description: "Expert drafting of responses to tax authority notices.", features: ["Notice analysis", "Reply preparation", "Document compilation", "Submission"], process: ["Notice review", "Strategy", "Drafting", "Filing"], benefits: ["Comprehensive response", "Legal compliance", "Timely submission", "Expert review"], link: "/contact" },
+  { title: "Search & Survey Case Handling", description: "Specialized support during and after search operations.", features: ["On-ground support", "Post-search handling", "Settlement matters", "Block assessment"], process: ["Immediate support", "Documentation", "Assessment handling", "Resolution"], benefits: ["Expert guidance", "Rights protection", "Liability minimization", "Full support"], link: "/contact" },
+  { title: "Black Money & Benami Act Advisory", description: "Expert advisory on Black Money and Benami Act matters.", features: ["Compliance advisory", "Disclosure assistance", "Notice handling", "Penalty mitigation"], process: ["Situation analysis", "Strategy", "Implementation", "Resolution"], benefits: ["Legal protection", "Penalty reduction", "Expert guidance", "Confidentiality"], link: "/contact" }
 ];
 
 const stats = [{ number: "500+", label: "Cases Handled" }, { number: "85%", label: "Success Rate" }, { number: "45+", label: "Years Experience" }, { number: "All Levels", label: "AO to Supreme Court" }];
@@ -52,8 +52,17 @@ const LitigationRepresentation = () => {
           <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-display font-bold text-navy mb-4">Our Litigation Services</h2></div>
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all">
-                <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8"><h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3></div>
+              <Link
+                to={service.link}
+                key={index}
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all block group"
+              >
+                <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3>
+                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
+                  </div>
+                </div>
                 <div className="p-6 md:p-8">
                   <p className="text-grey leading-relaxed mb-8 text-lg">{service.description}</p>
                   <div className="grid md:grid-cols-3 gap-8">
@@ -70,8 +79,13 @@ const LitigationRepresentation = () => {
                       <ul className="space-y-3">{service.benefits.map((b, i) => <li key={i} className="flex items-start gap-3"><TrendingUp className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" /><span className="text-grey">{b}</span></li>)}</ul>
                     </div>
                   </div>
+                  <div className="mt-6 flex justify-end">
+                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
+                      Get Started <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

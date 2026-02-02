@@ -8,56 +8,64 @@ const services = [
     description: "Independent examination of financial statements as per Companies Act, 2013. We provide comprehensive audit services with detailed reports and management recommendations.",
     features: ["Financial statement verification", "Internal control evaluation", "Compliance with accounting standards", "Management letter with recommendations"],
     process: ["Audit planning & risk assessment", "Understanding internal controls", "Substantive testing", "Reporting & recommendations"],
-    benefits: ["Stakeholder confidence", "Regulatory compliance", "Fraud detection", "Improved controls"]
+    benefits: ["Stakeholder confidence", "Regulatory compliance", "Fraud detection", "Improved controls"],
+    link: "/services/audit/statutory-audit"
   },
   {
     title: "Internal Audit",
     description: "Systematic evaluation of internal controls, risk management, and governance processes to improve organizational efficiency and effectiveness.",
     features: ["Risk-based audit approach", "Process efficiency review", "Control gap identification", "Improvement recommendations"],
     process: ["Risk assessment", "Audit planning", "Fieldwork execution", "Reporting & follow-up"],
-    benefits: ["Enhanced controls", "Operational efficiency", "Risk mitigation", "Process improvement"]
+    benefits: ["Enhanced controls", "Operational efficiency", "Risk mitigation", "Process improvement"],
+    link: "/services/audit/internal-audit"
   },
   {
     title: "Tax Audit",
     description: "Mandatory audit under Section 44AB of Income Tax Act for businesses exceeding prescribed turnover limits, with Form 3CA/3CB and 3CD certification.",
     features: ["Turnover limit compliance", "Form 3CD preparation", "Tax liability verification", "Clause-wise detailed reporting"],
     process: ["Books verification", "Clause-wise examination", "Tax computation review", "Certification & filing"],
-    benefits: ["Compliance assured", "Penalty avoidance", "Expert certification", "Tax optimization"]
+    benefits: ["Compliance assured", "Penalty avoidance", "Expert certification", "Tax optimization"],
+    link: "/services/audit/tax-audit"
   },
   {
     title: "Concurrent Audit",
     description: "Real-time audit of transactions as they occur, particularly for banking and financial institutions to ensure immediate compliance.",
     features: ["Daily transaction review", "Immediate exception reporting", "Fraud prevention checks", "Real-time compliance assurance"],
     process: ["Daily verification", "Exception identification", "Immediate reporting", "Corrective action tracking"],
-    benefits: ["Real-time detection", "Immediate correction", "Fraud prevention", "Continuous monitoring"]
+    benefits: ["Real-time detection", "Immediate correction", "Fraud prevention", "Continuous monitoring"],
+    link: "/services/audit/concurrent-audit"
   },
   {
     title: "Bank Audit",
     description: "Specialized audit services for banking sector including branch audit, revenue audit, and concurrent audit as per RBI guidelines.",
     features: ["Branch financial audit", "NPA classification review", "LFAR preparation", "RBI compliance verification"],
     process: ["Branch assessment", "Asset classification", "Income recognition review", "LFAR submission"],
-    benefits: ["RBI compliance", "Accurate classification", "Revenue leakage detection", "Regulatory confidence"]
+    benefits: ["RBI compliance", "Accurate classification", "Revenue leakage detection", "Regulatory confidence"],
+    link: "/services/audit/bank-audit"
   },
   {
     title: "Stock Audit",
     description: "Physical verification and valuation of inventory for banks and businesses, ensuring accurate stock records and collateral security.",
     features: ["Physical stock verification", "Valuation as per standards", "Stock statement reconciliation", "Collateral adequacy assessment"],
     process: ["Physical verification", "Valuation review", "Record reconciliation", "Report preparation"],
-    benefits: ["Accurate valuation", "Collateral security", "Fraud detection", "Reliable statements"]
+    benefits: ["Accurate valuation", "Collateral security", "Fraud detection", "Reliable statements"],
+    link: "/services/audit/stock-audit"
   },
   {
     title: "Management Audit",
     description: "Comprehensive review of management practices, organizational effectiveness, and strategic alignment to enhance business performance.",
     features: ["Strategic objective evaluation", "Management efficiency review", "Organizational structure analysis", "Performance improvement suggestions"],
     process: ["Objective assessment", "Process evaluation", "Gap analysis", "Recommendations"],
-    benefits: ["Strategic alignment", "Efficiency gains", "Better governance", "Informed decisions"]
+    benefits: ["Strategic alignment", "Efficiency gains", "Better governance", "Informed decisions"],
+    link: "/services/audit/management-audit"
   },
   {
     title: "Co-operative Society Audit",
     description: "Audit of co-operative societies as per the Co-operative Societies Act and state-specific regulations with statutory compliance.",
     features: ["Financial statement audit", "Membership records verification", "Compliance with bye-laws", "Statutory returns assistance"],
     process: ["Member verification", "Financial review", "Bye-law compliance", "Return preparation"],
-    benefits: ["Regulatory compliance", "Member confidence", "Transparent operations", "Legal protection"]
+    benefits: ["Regulatory compliance", "Member confidence", "Transparent operations", "Legal protection"],
+    link: "/services/audit/cooperative-society-audit"
   }
 ];
 
@@ -187,20 +195,26 @@ const AuditAssurance = () => {
           
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div
+              <Link
+                to={service.link}
                 key={index}
-                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300 block group"
               >
                 <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                      <ClipboardCheck className="w-5 h-5 text-cream" />
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                          <ClipboardCheck className="w-5 h-5 text-cream" />
+                        </div>
+                        <span className="text-cream/80 text-sm font-medium">Audit Type {String(index + 1).padStart(2, '0')}</span>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
+                        {service.title}
+                      </h3>
                     </div>
-                    <span className="text-cream/80 text-sm font-medium">Audit Type {String(index + 1).padStart(2, '0')}</span>
+                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
-                    {service.title}
-                  </h3>
                 </div>
                 
                 <div className="p-6 md:p-8">
@@ -256,8 +270,14 @@ const AuditAssurance = () => {
                       </ul>
                     </div>
                   </div>
+                  
+                  <div className="mt-6 flex justify-end">
+                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
+                      View Full Details <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

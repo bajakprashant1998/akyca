@@ -3,12 +3,12 @@ import { ClipboardCheck, CheckCircle, ChevronRight, ArrowRight, Target, Award, B
 import { Link } from "react-router-dom";
 
 const services = [
-  { title: "Risk Assessment & Internal Controls", description: "Comprehensive assessment of business risks and internal control systems.", features: ["Risk mapping", "Control evaluation", "Gap analysis", "Remediation roadmap"], process: ["Assessment", "Evaluation", "Reporting", "Implementation"], benefits: ["Risk mitigation", "Fraud prevention", "Efficiency", "Compliance"] },
-  { title: "Forensic Audit & Fraud Investigation", description: "Specialized investigations into suspected fraud and financial irregularities.", features: ["Fraud detection", "Digital evidence", "Investigation reporting", "Litigation support"], process: ["Investigation planning", "Evidence gathering", "Analysis", "Reporting"], benefits: ["Fraud detection", "Legal evidence", "Recovery support", "Prevention"] },
-  { title: "Business Valuation", description: "Independent business valuations using multiple methodologies.", features: ["DCF valuation", "Comparable analysis", "Asset-based valuation", "Fairness opinions"], process: ["Scope definition", "Data analysis", "Valuation", "Certification"], benefits: ["Independent opinion", "Multi-method", "Regulatory accepted", "Expert support"] },
-  { title: "Insolvency & Bankruptcy (IBC) Support", description: "Comprehensive support under the Insolvency and Bankruptcy Code.", features: ["CIRP support", "Claims verification", "Resolution advisory", "Liquidation support"], process: ["Assessment", "Claims filing", "Resolution", "Closure"], benefits: ["Expert guidance", "Recovery maximization", "Compliance", "Timely resolution"] },
-  { title: "Turnaround & Restructuring Advisory", description: "Strategic advisory for distressed businesses.", features: ["Viability assessment", "Cash flow restructuring", "Debt restructuring", "Operational improvement"], process: ["Diagnosis", "Strategy", "Implementation", "Monitoring"], benefits: ["Business revival", "Stakeholder confidence", "Improved performance", "Expert support"] },
-  { title: "Corporate Governance Advisory", description: "Advisory to strengthen corporate governance practices.", features: ["Governance framework", "Board advisory", "Policy formulation", "ESG integration"], process: ["Assessment", "Framework design", "Implementation", "Monitoring"], benefits: ["Better governance", "Stakeholder trust", "Risk management", "Compliance"] }
+  { title: "Risk Assessment & Internal Controls", description: "Comprehensive assessment of business risks and internal control systems.", features: ["Risk mapping", "Control evaluation", "Gap analysis", "Remediation roadmap"], process: ["Assessment", "Evaluation", "Reporting", "Implementation"], benefits: ["Risk mitigation", "Fraud prevention", "Efficiency", "Compliance"], link: "/contact" },
+  { title: "Forensic Audit & Fraud Investigation", description: "Specialized investigations into suspected fraud and financial irregularities.", features: ["Fraud detection", "Digital evidence", "Investigation reporting", "Litigation support"], process: ["Investigation planning", "Evidence gathering", "Analysis", "Reporting"], benefits: ["Fraud detection", "Legal evidence", "Recovery support", "Prevention"], link: "/contact" },
+  { title: "Business Valuation", description: "Independent business valuations using multiple methodologies.", features: ["DCF valuation", "Comparable analysis", "Asset-based valuation", "Fairness opinions"], process: ["Scope definition", "Data analysis", "Valuation", "Certification"], benefits: ["Independent opinion", "Multi-method", "Regulatory accepted", "Expert support"], link: "/contact" },
+  { title: "Insolvency & Bankruptcy (IBC) Support", description: "Comprehensive support under the Insolvency and Bankruptcy Code.", features: ["CIRP support", "Claims verification", "Resolution advisory", "Liquidation support"], process: ["Assessment", "Claims filing", "Resolution", "Closure"], benefits: ["Expert guidance", "Recovery maximization", "Compliance", "Timely resolution"], link: "/contact" },
+  { title: "Turnaround & Restructuring Advisory", description: "Strategic advisory for distressed businesses.", features: ["Viability assessment", "Cash flow restructuring", "Debt restructuring", "Operational improvement"], process: ["Diagnosis", "Strategy", "Implementation", "Monitoring"], benefits: ["Business revival", "Stakeholder confidence", "Improved performance", "Expert support"], link: "/contact" },
+  { title: "Corporate Governance Advisory", description: "Advisory to strengthen corporate governance practices.", features: ["Governance framework", "Board advisory", "Policy formulation", "ESG integration"], process: ["Assessment", "Framework design", "Implementation", "Monitoring"], benefits: ["Better governance", "Stakeholder trust", "Risk management", "Compliance"], link: "/contact" }
 ];
 
 const AdvancedFinancial = () => {
@@ -58,8 +58,17 @@ const AdvancedFinancial = () => {
           <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-display font-bold text-navy mb-4">Our Advanced Services</h2></div>
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all">
-                <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8"><h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3></div>
+              <Link
+                to={service.link}
+                key={index}
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all block group"
+              >
+                <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3>
+                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
+                  </div>
+                </div>
                 <div className="p-6 md:p-8">
                   <p className="text-grey leading-relaxed mb-8 text-lg">{service.description}</p>
                   <div className="grid md:grid-cols-3 gap-8">
@@ -76,8 +85,13 @@ const AdvancedFinancial = () => {
                       <ul className="space-y-3">{service.benefits.map((b, i) => <li key={i} className="flex items-start gap-3"><TrendingUp className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" /><span className="text-grey">{b}</span></li>)}</ul>
                     </div>
                   </div>
+                  <div className="mt-6 flex justify-end">
+                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
+                      Get Started <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

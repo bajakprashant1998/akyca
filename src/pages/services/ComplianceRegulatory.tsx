@@ -3,12 +3,12 @@ import { Shield, CheckCircle, ChevronRight, ArrowRight, Target, Award, BadgeChec
 import { Link } from "react-router-dom";
 
 const services = [
-  { title: "Annual Compliance Management (AMC)", description: "Comprehensive annual compliance management covering all statutory requirements.", features: ["Compliance calendar management", "Deadline tracking & alerts", "Filing coordination", "Compliance health reporting"], process: ["Compliance mapping", "Calendar setup", "Regular monitoring", "Filing & reporting"], benefits: ["Zero penalties", "Peace of mind", "Complete coverage", "Expert handling"] },
-  { title: "Labour Law Compliance", description: "Complete labour law compliance services including PF, ESIC, PT, and Shops Act.", features: ["PF/ESIC registration & returns", "Professional Tax compliance", "Shops Act registration", "Labour welfare fund"], process: ["Registration", "Monthly compliance", "Annual returns", "Inspection support"], benefits: ["Employee satisfaction", "Legal protection", "Smooth operations", "Audit readiness"] },
-  { title: "Factory Act & Industrial Law", description: "Comprehensive compliance for manufacturing units under Factories Act.", features: ["Factory license renewal", "Safety compliance", "Pollution control", "Industrial licenses"], process: ["License management", "Safety audits", "Compliance tracking", "Renewal support"], benefits: ["Uninterrupted operations", "Safety assurance", "Legal compliance", "Risk mitigation"] },
-  { title: "RBI, FEMA & SEBI Compliance", description: "Expert guidance on foreign exchange and capital market regulations.", features: ["FEMA compliance", "ECB/FDI compliance", "SEBI regulations", "RBI reporting"], process: ["Transaction review", "Compliance check", "Filing", "Reporting"], benefits: ["Cross-border ease", "Regulatory approval", "Expert guidance", "Risk avoidance"] },
-  { title: "NBFC Compliance", description: "Specialized compliance for Non-Banking Financial Companies.", features: ["RBI return filings", "Capital adequacy", "Asset classification", "Fair practice code"], process: ["Compliance review", "Return preparation", "Filing", "Monitoring"], benefits: ["RBI compliance", "License protection", "Operational continuity", "Reputation"] },
-  { title: "Trust, Society & NGO Compliance", description: "Regulatory compliance for trusts, societies, and NGOs.", features: ["12A/80G registration", "FCRA compliance", "Annual returns", "Charitable status"], process: ["Registration", "Compliance setup", "Annual filings", "Renewals"], benefits: ["Tax benefits", "Donor confidence", "Legal status", "Smooth operations"] }
+  { title: "Annual Compliance Management (AMC)", description: "Comprehensive annual compliance management covering all statutory requirements.", features: ["Compliance calendar management", "Deadline tracking & alerts", "Filing coordination", "Compliance health reporting"], process: ["Compliance mapping", "Calendar setup", "Regular monitoring", "Filing & reporting"], benefits: ["Zero penalties", "Peace of mind", "Complete coverage", "Expert handling"], link: "/contact" },
+  { title: "Labour Law Compliance", description: "Complete labour law compliance services including PF, ESIC, PT, and Shops Act.", features: ["PF/ESIC registration & returns", "Professional Tax compliance", "Shops Act registration", "Labour welfare fund"], process: ["Registration", "Monthly compliance", "Annual returns", "Inspection support"], benefits: ["Employee satisfaction", "Legal protection", "Smooth operations", "Audit readiness"], link: "/contact" },
+  { title: "Factory Act & Industrial Law", description: "Comprehensive compliance for manufacturing units under Factories Act.", features: ["Factory license renewal", "Safety compliance", "Pollution control", "Industrial licenses"], process: ["License management", "Safety audits", "Compliance tracking", "Renewal support"], benefits: ["Uninterrupted operations", "Safety assurance", "Legal compliance", "Risk mitigation"], link: "/contact" },
+  { title: "RBI, FEMA & SEBI Compliance", description: "Expert guidance on foreign exchange and capital market regulations.", features: ["FEMA compliance", "ECB/FDI compliance", "SEBI regulations", "RBI reporting"], process: ["Transaction review", "Compliance check", "Filing", "Reporting"], benefits: ["Cross-border ease", "Regulatory approval", "Expert guidance", "Risk avoidance"], link: "/contact" },
+  { title: "NBFC Compliance", description: "Specialized compliance for Non-Banking Financial Companies.", features: ["RBI return filings", "Capital adequacy", "Asset classification", "Fair practice code"], process: ["Compliance review", "Return preparation", "Filing", "Monitoring"], benefits: ["RBI compliance", "License protection", "Operational continuity", "Reputation"], link: "/contact" },
+  { title: "Trust, Society & NGO Compliance", description: "Regulatory compliance for trusts, societies, and NGOs.", features: ["12A/80G registration", "FCRA compliance", "Annual returns", "Charitable status"], process: ["Registration", "Compliance setup", "Annual filings", "Renewals"], benefits: ["Tax benefits", "Donor confidence", "Legal status", "Smooth operations"], link: "/contact" }
 ];
 
 const keyHighlights = [
@@ -63,9 +63,16 @@ const ComplianceRegulatory = () => {
           <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-display font-bold text-navy mb-4">Our Compliance Services</h2></div>
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all">
+              <Link
+                to={service.link}
+                key={index}
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all block group"
+              >
                 <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3>
+                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
+                  </div>
                 </div>
                 <div className="p-6 md:p-8">
                   <p className="text-grey leading-relaxed mb-8 text-lg">{service.description}</p>
@@ -83,8 +90,13 @@ const ComplianceRegulatory = () => {
                       <ul className="space-y-3">{service.benefits.map((b, i) => <li key={i} className="flex items-start gap-3"><TrendingUp className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" /><span className="text-grey">{b}</span></li>)}</ul>
                     </div>
                   </div>
+                  <div className="mt-6 flex justify-end">
+                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
+                      Get Started <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

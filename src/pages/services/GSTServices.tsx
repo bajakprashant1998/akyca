@@ -8,35 +8,40 @@ const services = [
     description: "Complete assistance with GST registration process including application preparation, documentation, and obtaining GSTIN for new businesses.",
     features: ["New registration application", "Amendment in registration", "Cancellation processing", "Migration support"],
     process: ["Document collection", "Application preparation", "ARN generation", "GSTIN issuance"],
-    benefits: ["Quick registration", "Error-free application", "Expert guidance", "Post-registration support"]
+    benefits: ["Quick registration", "Error-free application", "Expert guidance", "Post-registration support"],
+    link: "/services/gst/gst-registration"
   },
   {
     title: "GST Return Filing",
     description: "Accurate and timely filing of all GST returns including GSTR-1, GSTR-3B, annual returns, and reconciliation with books of accounts.",
     features: ["Monthly/Quarterly GSTR-1 & 3B", "Annual return GSTR-9", "GSTR-9C reconciliation", "ITC reconciliation"],
     process: ["Data collection & verification", "Invoice matching", "Return preparation", "Filing & reconciliation"],
-    benefits: ["Zero late fees", "Maximum ITC claim", "Error-free returns", "Compliance tracking"]
+    benefits: ["Zero late fees", "Maximum ITC claim", "Error-free returns", "Compliance tracking"],
+    link: "/services/gst/gst-return-filing"
   },
   {
     title: "GST Audit",
     description: "Comprehensive GST audit services for businesses exceeding the threshold limit, including reconciliation and certification.",
     features: ["GSTR-9C preparation", "ITC verification audit", "Compliance gap analysis", "Audit report certification"],
     process: ["Books examination", "Return reconciliation", "Discrepancy resolution", "Certification"],
-    benefits: ["Compliant certification", "Gap identification", "Risk mitigation", "Expert sign-off"]
+    benefits: ["Compliant certification", "Gap identification", "Risk mitigation", "Expert sign-off"],
+    link: "/services/gst/gst-audit"
   },
   {
     title: "GST Advisory & Compliance",
     description: "Strategic GST advisory services covering tax planning, rate classification, and compliance optimization for business operations.",
     features: ["Rate classification advice", "Place of supply determination", "Input tax credit optimization", "Reverse charge compliance"],
     process: ["Business analysis", "Compliance review", "Strategy formulation", "Implementation"],
-    benefits: ["Optimized GST position", "Reduced litigation risk", "Clear compliance", "Cost savings"]
+    benefits: ["Optimized GST position", "Reduced litigation risk", "Clear compliance", "Cost savings"],
+    link: "/services/gst/gst-advisory"
   },
   {
     title: "Litigation & Notice Handling",
     description: "Expert representation and handling of GST notices, assessments, and litigation matters before GST authorities.",
     features: ["Notice response drafting", "Assessment proceedings", "Appeal preparation", "Advance ruling applications"],
     process: ["Notice analysis", "Strategy development", "Response preparation", "Representation"],
-    benefits: ["Expert handling", "Timely responses", "Reduced liability", "Professional representation"]
+    benefits: ["Expert handling", "Timely responses", "Reduced liability", "Professional representation"],
+    link: "/services/gst/gst-litigation"
   }
 ];
 
@@ -131,20 +136,26 @@ const GSTServices = () => {
           
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div
+              <Link
+                to={service.link}
                 key={index}
-                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300 block group"
               >
                 <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                      <FileCheck className="w-5 h-5 text-cream" />
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                          <FileCheck className="w-5 h-5 text-cream" />
+                        </div>
+                        <span className="text-cream/80 text-sm font-medium">Service {String(index + 1).padStart(2, '0')}</span>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
+                        {service.title}
+                      </h3>
                     </div>
-                    <span className="text-cream/80 text-sm font-medium">Service {String(index + 1).padStart(2, '0')}</span>
+                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
-                    {service.title}
-                  </h3>
                 </div>
                 
                 <div className="p-6 md:p-8">
@@ -200,8 +211,14 @@ const GSTServices = () => {
                       </ul>
                     </div>
                   </div>
+                  
+                  <div className="mt-6 flex justify-end">
+                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
+                      View Full Details <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

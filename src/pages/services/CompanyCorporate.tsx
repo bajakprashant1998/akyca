@@ -8,42 +8,48 @@ const services = [
     description: "End-to-end company incorporation services including Private Limited, Public Limited, One Person Company (OPC), and Section 8 Companies.",
     features: ["Name availability check", "DSC & DIN procurement", "MOA/AOA drafting", "Certificate of Incorporation"],
     process: ["Name reservation (RUN)", "DSC & DIN application", "SPICe+ form filing", "Incorporation certificate"],
-    benefits: ["Quick incorporation", "Expert documentation", "Compliance from day one", "Post-incorporation support"]
+    benefits: ["Quick incorporation", "Expert documentation", "Compliance from day one", "Post-incorporation support"],
+    link: "/contact"
   },
   {
     title: "LLP Formation",
     description: "Complete Limited Liability Partnership formation services with drafting of LLP Agreement and compliance with LLP Act, 2008.",
     features: ["DPIN & DSC acquisition", "LLP Agreement drafting", "Registration filing", "PAN & TAN application"],
     process: ["Name reservation", "Partner DSC/DPIN", "Agreement drafting", "Registration completion"],
-    benefits: ["Limited liability protection", "Tax efficiency", "Operational flexibility", "Lower compliance burden"]
+    benefits: ["Limited liability protection", "Tax efficiency", "Operational flexibility", "Lower compliance burden"],
+    link: "/contact"
   },
   {
     title: "ROC Compliance",
     description: "Annual and event-based ROC compliance including filing of annual returns, financial statements, and various e-forms.",
     features: ["Annual return filing (MGT-7)", "Financial statement filing (AOC-4)", "Event-based compliance", "Director KYC updation"],
     process: ["Compliance calendar", "Document preparation", "Board resolution drafting", "Form filing & tracking"],
-    benefits: ["Zero penalties", "Clean compliance record", "Timely reminders", "Complete peace of mind"]
+    benefits: ["Zero penalties", "Clean compliance record", "Timely reminders", "Complete peace of mind"],
+    link: "/contact"
   },
   {
     title: "Secretarial Services",
     description: "Comprehensive company secretarial services including board meeting management, minutes preparation, and statutory register maintenance.",
     features: ["Board meeting coordination", "Minutes & resolutions drafting", "Statutory registers maintenance", "Share transfer management"],
     process: ["Meeting scheduling", "Agenda preparation", "Minutes documentation", "Register updation"],
-    benefits: ["Professional documentation", "Legal compliance", "Smooth governance", "Audit-ready records"]
+    benefits: ["Professional documentation", "Legal compliance", "Smooth governance", "Audit-ready records"],
+    link: "/contact"
   },
   {
     title: "Due Diligence",
     description: "Thorough legal, financial, and tax due diligence for mergers, acquisitions, investments, and business transactions.",
     features: ["Financial due diligence", "Tax compliance review", "Legal documentation review", "Risk assessment reports"],
     process: ["Scope definition", "Data collection", "Detailed analysis", "Report presentation"],
-    benefits: ["Informed decisions", "Risk identification", "Valuation support", "Transaction confidence"]
+    benefits: ["Informed decisions", "Risk identification", "Valuation support", "Transaction confidence"],
+    link: "/contact"
   },
   {
     title: "Mergers & Acquisitions Support",
     description: "Advisory and execution support for mergers, demergers, acquisitions, and business restructuring transactions.",
     features: ["Valuation advisory", "Transaction structuring", "Regulatory approvals", "Post-merger integration support"],
     process: ["Structure planning", "Valuation", "Documentation", "Regulatory filing"],
-    benefits: ["Optimized structure", "Tax efficiency", "Smooth transition", "Value maximization"]
+    benefits: ["Optimized structure", "Tax efficiency", "Smooth transition", "Value maximization"],
+    link: "/contact"
   }
 ];
 
@@ -216,20 +222,26 @@ const CompanyCorporate = () => {
           
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div
+              <Link
+                to={service.link}
                 key={index}
-                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300 block group"
               >
                 <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                      <Briefcase className="w-5 h-5 text-cream" />
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                          <Briefcase className="w-5 h-5 text-cream" />
+                        </div>
+                        <span className="text-cream/80 text-sm font-medium">Service {String(index + 1).padStart(2, '0')}</span>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
+                        {service.title}
+                      </h3>
                     </div>
-                    <span className="text-cream/80 text-sm font-medium">Service {String(index + 1).padStart(2, '0')}</span>
+                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
-                    {service.title}
-                  </h3>
                 </div>
                 
                 <div className="p-6 md:p-8">
@@ -285,8 +297,14 @@ const CompanyCorporate = () => {
                       </ul>
                     </div>
                   </div>
+                  
+                  <div className="mt-6 flex justify-end">
+                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
+                      Get Started <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
