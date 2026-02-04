@@ -9,7 +9,7 @@ const services = [
     features: ["Entity selection advisory", "Holding structure design", "Tax-efficient structuring", "Family business structuring"],
     process: ["Business analysis", "Structure evaluation", "Implementation plan", "Execution support"],
     benefits: ["Tax optimization", "Asset protection", "Growth enablement", "Succession readiness"],
-    link: "/contact"
+    link: "/services/financial/business-structuring"
   },
   {
     title: "Project Finance",
@@ -17,7 +17,7 @@ const services = [
     features: ["Feasibility study preparation", "Financial projections", "Bank proposal preparation", "Term sheet negotiation"],
     process: ["Project assessment", "Financial modeling", "Lender identification", "Documentation & closure"],
     benefits: ["Optimal financing", "Lower interest rates", "Quick approvals", "Expert negotiation"],
-    link: "/contact"
+    link: "/services/financial/project-finance"
   },
   {
     title: "Fund Raising Support",
@@ -25,7 +25,7 @@ const services = [
     features: ["Investor presentation development", "Due diligence preparation", "Valuation support", "Transaction documentation"],
     process: ["Investor readiness", "Pitch preparation", "Investor meetings", "Deal closure"],
     benefits: ["Higher valuations", "Faster closures", "Better terms", "Professional representation"],
-    link: "/contact"
+    link: "/services/financial/fund-raising"
   },
   {
     title: "Valuation Services",
@@ -33,7 +33,7 @@ const services = [
     features: ["Business valuation (DCF, Market)", "Share/Equity valuation", "Intangible asset valuation", "Valuation for tax purposes"],
     process: ["Scope definition", "Data analysis", "Valuation computation", "Report certification"],
     benefits: ["Independent opinion", "Multiple methodologies", "Regulatory acceptance", "Litigation support"],
-    link: "/contact"
+    link: "/services/financial/valuation-services"
   },
   {
     title: "Virtual CFO Services",
@@ -41,7 +41,7 @@ const services = [
     features: ["Financial strategy development", "MIS & dashboard reporting", "Cash flow management", "Board presentation support"],
     process: ["Business understanding", "Systems setup", "Ongoing support", "Strategic reviews"],
     benefits: ["60-70% cost savings", "Expert guidance", "Scalable services", "Strategic focus"],
-    link: "/contact"
+    link: "/services/financial/virtual-cfo"
   }
 ];
 
