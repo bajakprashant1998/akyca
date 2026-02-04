@@ -9,7 +9,7 @@ const services = [
     features: ["Name availability check", "DSC & DIN procurement", "MOA/AOA drafting", "Certificate of Incorporation"],
     process: ["Name reservation (RUN)", "DSC & DIN application", "SPICe+ form filing", "Incorporation certificate"],
     benefits: ["Quick incorporation", "Expert documentation", "Compliance from day one", "Post-incorporation support"],
-    link: "/contact"
+    link: "/services/corporate/company-incorporation"
   },
   {
     title: "LLP Formation",
@@ -17,7 +17,7 @@ const services = [
     features: ["DPIN & DSC acquisition", "LLP Agreement drafting", "Registration filing", "PAN & TAN application"],
     process: ["Name reservation", "Partner DSC/DPIN", "Agreement drafting", "Registration completion"],
     benefits: ["Limited liability protection", "Tax efficiency", "Operational flexibility", "Lower compliance burden"],
-    link: "/contact"
+    link: "/services/corporate/llp-formation"
   },
   {
     title: "ROC Compliance",
@@ -25,7 +25,7 @@ const services = [
     features: ["Annual return filing (MGT-7)", "Financial statement filing (AOC-4)", "Event-based compliance", "Director KYC updation"],
     process: ["Compliance calendar", "Document preparation", "Board resolution drafting", "Form filing & tracking"],
     benefits: ["Zero penalties", "Clean compliance record", "Timely reminders", "Complete peace of mind"],
-    link: "/contact"
+    link: "/services/corporate/roc-compliance"
   },
   {
     title: "Secretarial Services",
@@ -33,7 +33,7 @@ const services = [
     features: ["Board meeting coordination", "Minutes & resolutions drafting", "Statutory registers maintenance", "Share transfer management"],
     process: ["Meeting scheduling", "Agenda preparation", "Minutes documentation", "Register updation"],
     benefits: ["Professional documentation", "Legal compliance", "Smooth governance", "Audit-ready records"],
-    link: "/contact"
+    link: "/services/corporate/secretarial-services"
   },
   {
     title: "Due Diligence",
@@ -41,7 +41,7 @@ const services = [
     features: ["Financial due diligence", "Tax compliance review", "Legal documentation review", "Risk assessment reports"],
     process: ["Scope definition", "Data collection", "Detailed analysis", "Report presentation"],
     benefits: ["Informed decisions", "Risk identification", "Valuation support", "Transaction confidence"],
-    link: "/contact"
+    link: "/services/corporate/due-diligence"
   },
   {
     title: "Mergers & Acquisitions Support",
@@ -49,7 +49,7 @@ const services = [
     features: ["Valuation advisory", "Transaction structuring", "Regulatory approvals", "Post-merger integration support"],
     process: ["Structure planning", "Valuation", "Documentation", "Regulatory filing"],
     benefits: ["Optimized structure", "Tax efficiency", "Smooth transition", "Value maximization"],
-    link: "/contact"
+    link: "/services/corporate/mergers-acquisitions"
   }
 ];
 
