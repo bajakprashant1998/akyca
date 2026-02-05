@@ -1,5 +1,5 @@
  import { useState, useEffect, useRef } from "react";
- import { Shield, Award, Users, TrendingUp } from "lucide-react";
+ import { TrendingUp, Info } from "lucide-react";
  
  const useCountUp = (end: number, duration: number = 2000, startCounting: boolean = false) => {
    const [count, setCount] = useState(0);
@@ -20,6 +20,10 @@
    }, [end, duration, startCounting]);
  
    return count;
+ };
+ 
+ const formatNumber = (num: number): string => {
+   return num.toLocaleString('en-IN');
  };
  
  export const TrustBar = () => {
@@ -43,57 +47,33 @@
      return () => observer.disconnect();
    }, []);
  
-   const yearsCount = useCountUp(45, 2000, isVisible);
-   const clientsCount = useCountUp(1000, 2500, isVisible);
-   const partnersCount = useCountUp(9, 1500, isVisible);
-   const revenueCount = useCountUp(500, 2000, isVisible);
- 
-   const stats = [
-     {
-       icon: Award,
-       value: `${yearsCount}+`,
-       label: "Years of Excellence",
-     },
-     {
-       icon: Users,
-       value: `${clientsCount}+`,
-       label: "Happy Clients",
-     },
-     {
-       icon: Shield,
-       value: `${partnersCount}+`,
-       label: "Expert Partners",
-     },
-     {
-       icon: TrendingUp,
-       value: `₹${revenueCount}Cr+`,
-       label: "Revenue Managed",
-     },
-   ];
+   const revenueCount = useCountUp(850, 2500, isVisible);
  
    return (
-     <div ref={ref} className="bg-navy-dark py-4 border-b border-white/10">
+     <div ref={ref} className="bg-white border-b border-border py-2.5">
        <div className="container mx-auto px-4">
-         <div className="flex flex-wrap items-center justify-center md:justify-between gap-6 md:gap-4">
-           {/* RBI Badge */}
-           <div className="flex items-center gap-2 px-4 py-2 bg-gold/10 rounded-full border border-gold/30">
-             <Shield className="w-5 h-5 text-gold" />
-             <span className="text-cream text-sm font-medium">RBI Category-I Authorized Firm</span>
+         <div className="flex items-center justify-between">
+           {/* Revenue Counter - WebFX Style */}
+           <div className="flex items-center gap-2">
+             <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+               Tax Savings Delivered to Clients
+             </span>
+             <div className="flex items-center gap-1.5">
+               <TrendingUp className="w-4 h-4 text-gold" />
+               <span className="text-lg font-display font-bold text-navy">
+                 ₹{formatNumber(revenueCount)} Cr+
+               </span>
+               <button className="text-muted-foreground hover:text-foreground">
+                 <Info className="w-3.5 h-3.5" />
+               </button>
+             </div>
            </div>
  
-           {/* Stats */}
-           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-             {stats.map((stat, index) => (
-               <div key={index} className="flex items-center gap-3">
-                 <stat.icon className="w-5 h-5 text-gold" />
-                 <div>
-                   <div className="text-cream font-display font-bold text-lg">
-                     {stat.value}
-                   </div>
-                   <div className="text-white/60 text-xs">{stat.label}</div>
-                 </div>
-               </div>
-             ))}
+           {/* Right side links */}
+           <div className="hidden md:flex items-center gap-6 text-sm">
+             <a href="tel:+919825046598" className="text-muted-foreground hover:text-navy transition-colors">
+               +91 98250 46598
+             </a>
            </div>
          </div>
        </div>
