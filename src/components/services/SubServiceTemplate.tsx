@@ -147,6 +147,10 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
   const IconComponent = data.icon;
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section with Enhanced Banner */}
@@ -347,9 +351,9 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {data.process.map((step, index) => (
-              <AnimatedSection key={index} delay={index * 100}>
-                <div className="relative group">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 h-full border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105">
+              <AnimatedSection key={index} delay={index * 100} className="h-full">
+                <div className="relative group h-full">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 h-full flex flex-col border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-14 h-14 bg-gradient-to-br from-gold to-gold/80 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                         <span className="text-navy font-bold text-xl">{index + 1}</span>
