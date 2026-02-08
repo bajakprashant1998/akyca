@@ -54,16 +54,16 @@ export const Footer = () => {
             <h4 className="font-display text-lg font-semibold mb-6">Our Services</h4>
             <ul className="space-y-3">
               {[
-                "Income Tax Services",
-                "GST Compliance",
-                "Audit & Assurance",
-                "Company Registration",
-                "Financial Advisory",
-                "Startup Services",
+                { name: "Income Tax Services", path: "/services/taxation" },
+                { name: "GST Compliance", path: "/services/gst" },
+                { name: "Audit & Assurance", path: "/services/audit" },
+                { name: "Company Registration", path: "/services/corporate" },
+                { name: "Financial Advisory", path: "/services/financial-advisory" },
+                { name: "Startup Services", path: "/services/startup" },
               ].map((service) => (
-                <li key={service}>
-                  <Link to="/services" className="text-white/70 hover:text-cream transition-colors text-sm">
-                    {service}
+                <li key={service.name}>
+                  <Link to={service.path} className="text-white/70 hover:text-cream transition-colors text-sm">
+                    {service.name}
                   </Link>
                 </li>
               ))}

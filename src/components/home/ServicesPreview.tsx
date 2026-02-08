@@ -46,7 +46,7 @@ const services = [
     icon: TrendingUp,
     title: "Financial Advisory",
     description: "Business structuring, project finance, fund raising, and virtual CFO services.",
-     link: "/services/financial",
+     link: "/services/financial-advisory",
      color: "from-rose-500/10 to-rose-600/5",
   },
   {
@@ -67,8 +67,8 @@ const services = [
      icon: Laptop,
      title: "Digital Accounting",
      description: "Cloud accounting, MIS dashboards, ERP advisory, and finance automation.",
-     link: "/services/digital",
-     color: "from-indigo-500/10 to-indigo-600/5",
+      link: "/services/digital-accounting",
+      color: "from-indigo-500/10 to-indigo-600/5",
   },
 ];
 

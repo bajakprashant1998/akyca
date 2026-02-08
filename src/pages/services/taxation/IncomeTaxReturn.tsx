@@ -56,6 +56,14 @@ We use the latest e-filing technology and maintain complete documentation for fu
     { number: "100%", label: "Compliance Rate" },
     { number: "₹50Cr+", label: "Refunds Processed" },
     { number: "45+", label: "Years Experience" }
+  ],
+  relatedServices: [
+    { title: "Tax Planning & Advisory", description: "Strategic tax planning to minimize liability and maximize wealth creation", link: "/services/taxation/tax-planning" },
+    { title: "TDS Compliance & Returns", description: "Complete TDS management including computation, deduction, and return filing", link: "/services/taxation/tds-compliance" },
+    { title: "NRI Taxation", description: "Specialized tax services for Non-Resident Indians including DTAA benefits", link: "/services/taxation/nri-taxation" },
+    { title: "Corporate Taxation", description: "Comprehensive corporate tax services including advance tax and MAT planning", link: "/services/taxation/corporate-taxation" },
+    { title: "GST Return Filing", description: "Accurate and timely GST return filing with reconciliation support", link: "/services/gst/return-filing" },
+    { title: "Tax Representation", description: "Professional representation before Income Tax authorities for assessments and appeals", link: "/services/taxation/tax-representation" }
   ]
 };
 
