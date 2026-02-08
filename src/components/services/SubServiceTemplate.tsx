@@ -15,6 +15,12 @@ interface UseCase {
   description: string;
 }
 
+interface RelatedService {
+  title: string;
+  description: string;
+  link: string;
+}
+
 interface SubServiceData {
   title: string;
   parentService: string;
@@ -29,6 +35,7 @@ interface SubServiceData {
   useCases: UseCase[];
   faqs: FAQ[];
   stats?: { number: string; label: string }[];
+  relatedServices?: RelatedService[];
 }
 
 interface SubServiceTemplateProps {
@@ -436,6 +443,46 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
                   </AnimatedSection>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Services */}
+      {data.relatedServices && data.relatedServices.length > 0 && (
+        <section className="py-20 bg-gradient-to-b from-cream/30 to-background">
+          <div className="container mx-auto px-4">
+            <AnimatedSection>
+              <div className="text-center mb-12">
+                <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">Explore More</span>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-navy mb-4">
+                  Related Services
+                </h2>
+                <p className="text-grey max-w-2xl mx-auto text-lg">
+                  Discover other services that complement your needs
+                </p>
+              </div>
+            </AnimatedSection>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {data.relatedServices.map((service, index) => (
+                <AnimatedSection key={index} delay={index * 50}>
+                  <Link
+                    to={service.link}
+                    className="bg-white rounded-2xl p-6 border border-border hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group block h-full"
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-br from-gold/20 to-gold/5 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <ArrowRight className="w-6 h-6 text-gold" />
+                    </div>
+                    <h3 className="font-display font-bold text-navy text-lg mb-2 group-hover:text-gold transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-grey text-sm leading-relaxed mb-4">{service.description}</p>
+                    <span className="text-navy font-semibold text-sm group-hover:text-gold transition-colors inline-flex items-center gap-2">
+                      Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Link>
+                </AnimatedSection>
+              ))}
             </div>
           </div>
         </section>
