@@ -57,6 +57,14 @@ Whether you're a startup founder, an entrepreneur expanding operations, or an NR
       { number: "10-15", label: "Days Average Time" },
       { number: "100%", label: "Success Rate" },
       { number: "24/7", label: "Support Available" }
+    ],
+    relatedServices: [
+      { title: "GST Registration", description: "Mandatory tax registration", link: "/services/gst/registration" },
+      { title: "LLP Formation", description: "Partnership registration services", link: "/services/corporate/llp-formation" },
+      { title: "ROC Compliance", description: "Annual filing and compliance", link: "/services/corporate/roc-compliance" },
+      { title: "Statutory Audit", description: "First auditor appointment and audit", link: "/services/audit/statutory-audit" },
+      { title: "Startup Registration", description: "DPIIT and MSME registration", link: "/services/startup/dpiit-registration" },
+      { title: "Trademark Registration", description: "Brand protection services", link: "/services/startup/trademark-registration" }
     ]
   };
 

@@ -54,6 +54,14 @@ This service is particularly valuable during organizational transitions, perform
     { number: "50+", label: "Industries Covered" },
     { number: "40%", label: "Avg. Efficiency Improvement" },
     { number: "Expert", label: "Multidisciplinary Team" }
+  ],
+  relatedServices: [
+    { title: "Internal Audit", description: "Process and control review", link: "/services/audit/internal-audit" },
+    { title: "Process Review", description: "Operational efficiency improvement", link: "/services/audit/internal/process-control" },
+    { title: "Corporate Governance", description: "Board effectiveness and compliance", link: "/services/advanced/corporate-governance" },
+    { title: "Risk Assessment", description: "Enterprise risk management services", link: "/services/advanced/risk-assessment" },
+    { title: "Due Diligence", description: "Business health check", link: "/services/corporate/due-diligence" },
+    { title: "Virtual CFO", description: "Strategic financial leadership", link: "/services/financial/virtual-cfo" }
   ]
 };
 

@@ -57,6 +57,14 @@ Whether you're receiving foreign investment, making overseas investments, or dea
       { number: "₹1000Cr+", label: "FDI Reported" },
       { number: "RBI Cat-I", label: "Authorized Firm" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "International Taxation", description: "Cross-border tax advisory", link: "/services/taxation/international-taxation" },
+      { title: "NBFC Compliance", description: "NBFC regulatory services", link: "/services/compliance/nbfc-compliance" },
+      { title: "Corporate Taxation", description: "Tax efficient structuring", link: "/services/taxation/corporate-taxation" },
+      { title: "Statutory Audit", description: "Compliance audit", link: "/services/audit/statutory-audit" },
+      { title: "Company Incorporation", description: "Foreign subsidiary", link: "/services/corporate/company-incorporation" },
+      { title: "Valuation Services", description: "FDI Valuation", link: "/services/financial/valuation-services" }
     ]
   };
 

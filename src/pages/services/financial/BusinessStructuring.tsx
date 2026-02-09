@@ -57,6 +57,14 @@ Whether you're starting a new venture, expanding operations, or reorganizing an 
       { number: "₹500Cr+", label: "Value Restructured" },
       { number: "30%", label: "Avg Tax Savings" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Corporate Taxation", description: "Tax efficient structuring", link: "/services/taxation/corporate-taxation" },
+      { title: "International Taxation", description: "Cross-border structuring", link: "/services/taxation/international-taxation" },
+      { title: "Valuation Services", description: "Business valuation", link: "/services/financial/valuation-services" },
+      { title: "Due Diligence", description: "Transaction support", link: "/services/corporate/due-diligence" },
+      { title: "Mergers & Acquisitions", description: "M&A Advisory", link: "/services/corporate/mergers-acquisitions" },
+      { title: "FEMA Compliance", description: "Regulatory compliance", link: "/services/compliance/rbi-fema-sebi-compliance" }
     ]
   };
 

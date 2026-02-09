@@ -56,6 +56,12 @@ We understand that every crisis is unique and requires customized solutions. Our
       { number: "₹1000Cr+", label: "Debt Restructured" },
       { number: "80%", label: "Success Rate" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "IBC Support", description: "Insolvency resolution", link: "/services/advanced/ibc-support" },
+      { title: "Business Valuation", description: "Distressed valuation", link: "/services/advanced/business-valuation" },
+      { title: "Forensic Audit", description: "Fund diversion check", link: "/services/advanced/forensic-audit" },
+      { title: "Due Diligence", description: "Viability study", link: "/services/financial/due-diligence" }
     ]
   };
 

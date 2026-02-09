@@ -57,6 +57,14 @@ With decades of experience in tribunal advocacy, our team prepares compelling wr
       { number: "75%", label: "Success Rate" },
       { number: "20+", label: "Years Tribunal Practice" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Income Tax Appeals", description: "CIT(A) appeals", link: "/services/litigation/income-tax-appeals" },
+      { title: "GST Litigation", description: "GST appeals", link: "/services/litigation/gst-litigation" },
+      { title: "Search & Survey", description: "Search cases", link: "/services/litigation/search-survey" },
+      { title: "Corporate Taxation", description: "Tax matters", link: "/services/taxation/corporate-taxation" },
+      { title: "Notice Drafting", description: "Appeal drafting", link: "/services/litigation/notice-drafting" },
+      { title: "International Taxation", description: "Cross-border disputes", link: "/services/taxation/international-taxation" }
     ]
   };
 

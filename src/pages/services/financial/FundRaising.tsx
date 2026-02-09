@@ -57,6 +57,14 @@ We work with a wide network of investors including angel investors, venture capi
       { number: "50+", label: "Funding Rounds" },
       { number: "100+", label: "Investor Network" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Valuation Services", description: "Business valuation", link: "/services/financial/valuation-services" },
+      { title: "Due Diligence", description: "Investor readiness", link: "/services/corporate/due-diligence" },
+      { title: "Virtual CFO", description: "Financial leadership", link: "/services/financial/virtual-cfo" },
+      { title: "Project Finance", description: "Debt syndication", link: "/services/financial/project-finance" },
+      { title: "Business Structuring", description: "Entity setup", link: "/services/financial/business-structuring" },
+      { title: "Startup Registration", description: "DPIIT Registration", link: "/services/startup/dpiit-registration" }
     ]
   };
 

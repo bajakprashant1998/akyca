@@ -68,7 +68,7 @@ const useScrollAnimation = () => {
 
 const AnimatedSection = ({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
   const { ref, isVisible } = useScrollAnimation();
-  
+
   return (
     <div
       ref={ref}
@@ -111,20 +111,20 @@ const FAQItem = ({ faq, isOpen, onClick, index }: { faq: FAQ; isOpen: boolean; o
 const StatCounter = ({ number, label, delay }: { number: string; label: string; delay: number }) => {
   const { ref, isVisible } = useScrollAnimation();
   const [displayNumber, setDisplayNumber] = useState("0");
-  
+
   useEffect(() => {
     if (!isVisible) return;
-    
+
     const numericPart = number.replace(/[^0-9]/g, "");
     const prefix = number.match(/^[^0-9]*/)?.[0] || "";
     const suffix = number.match(/[^0-9]*$/)?.[0] || "";
     const target = parseInt(numericPart) || 0;
-    
+
     if (target === 0) {
       setDisplayNumber(number);
       return;
     }
-    
+
     let current = 0;
     const increment = target / 30;
     const timer = setInterval(() => {
@@ -136,10 +136,10 @@ const StatCounter = ({ number, label, delay }: { number: string; label: string; 
         setDisplayNumber(`${prefix}${Math.floor(current)}${suffix}`);
       }
     }, 50);
-    
+
     return () => clearInterval(timer);
   }, [isVisible, number]);
-  
+
   return (
     <div ref={ref} className="text-center group" style={{ animationDelay: `${delay}ms` }}>
       <div className="text-4xl md:text-5xl font-display font-bold text-gold mb-2 group-hover:scale-110 transition-transform">
@@ -168,13 +168,13 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
           <div className="absolute bottom-10 left-10 w-96 h-96 bg-cream/5 rounded-full blur-3xl" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full" />
         </div>
-        
+
         {data.bannerImage && (
           <div className="absolute inset-0 opacity-10">
             <img src={data.bannerImage} alt="" className="w-full h-full object-cover" />
           </div>
         )}
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
             <AnimatedSection>
@@ -183,7 +183,7 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
                   <IconComponent className="w-10 h-10 text-navy" />
                 </div>
                 <div>
-                  <Link 
+                  <Link
                     to={data.parentServicePath}
                     className="text-gold font-medium text-sm tracking-wider uppercase hover:text-cream transition-colors flex items-center gap-2"
                   >
@@ -193,19 +193,19 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
                 </div>
               </div>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={100}>
               <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6 leading-tight">
                 {data.title}
               </h1>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={200}>
               <p className="text-white/80 text-xl leading-relaxed max-w-3xl mb-8">
                 {data.description}
               </p>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={300}>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -342,7 +342,7 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
           <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-cream/5 rounded-full blur-3xl" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -355,7 +355,7 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
               </p>
             </div>
           </AnimatedSection>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {data.process.map((step, index) => (
               <AnimatedSection key={index} delay={index * 100} className="h-full">
@@ -395,7 +395,7 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
               </p>
             </div>
           </AnimatedSection>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.useCases.map((useCase, index) => (
               <AnimatedSection key={index} delay={index * 50}>
@@ -430,7 +430,7 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
                   </p>
                 </div>
               </AnimatedSection>
-              
+
               <div className="space-y-4">
                 {data.faqs.map((faq, index) => (
                   <AnimatedSection key={index} delay={index * 50}>
@@ -494,7 +494,7 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
           <div className="absolute top-20 left-20 w-64 h-64 bg-gold/10 rounded-full blur-3xl" />
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-cream/5 rounded-full blur-3xl" />
         </div>
-        
+
         <div className="container mx-auto px-4 text-center relative z-10">
           <AnimatedSection>
             <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">Get Started Today</span>
@@ -505,7 +505,7 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
               Connect with our experts to discuss your requirements and get personalized solutions for your needs.
             </p>
           </AnimatedSection>
-          
+
           <AnimatedSection delay={100}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -77,7 +77,7 @@ const services = [
     features: ["New registration application", "Amendment in registration", "Cancellation processing", "Migration support"],
     process: ["Document collection", "Application preparation", "ARN generation", "GSTIN issuance"],
     benefits: ["Quick registration", "Error-free application", "Expert guidance", "Post-registration support"],
-    link: "/services/gst/gst-registration",
+    link: "/services/gst/registration",
     highlight: null
   },
   {
@@ -86,7 +86,7 @@ const services = [
     features: ["Monthly/Quarterly GSTR-1 & 3B", "Annual return GSTR-9", "GSTR-9C reconciliation", "ITC reconciliation"],
     process: ["Data collection & verification", "Invoice matching", "Return preparation", "Filing & reconciliation"],
     benefits: ["Zero late fees", "Maximum ITC claim", "Error-free returns", "Compliance tracking"],
-    link: "/services/gst/gst-return-filing",
+    link: "/services/gst/return-filing",
     highlight: "Most Popular"
   },
   {
@@ -95,7 +95,7 @@ const services = [
     features: ["GSTR-9C preparation", "ITC verification audit", "Compliance gap analysis", "Audit report certification"],
     process: ["Books examination", "Return reconciliation", "Discrepancy resolution", "Certification"],
     benefits: ["Compliant certification", "Gap identification", "Risk mitigation", "Expert sign-off"],
-    link: "/services/gst/gst-audit",
+    link: "/services/gst/audit",
     highlight: null
   },
   {
@@ -104,7 +104,7 @@ const services = [
     features: ["Rate classification advice", "Place of supply determination", "Input tax credit optimization", "Reverse charge compliance"],
     process: ["Business analysis", "Compliance review", "Strategy formulation", "Implementation"],
     benefits: ["Optimized GST position", "Reduced litigation risk", "Clear compliance", "Cost savings"],
-    link: "/services/gst/gst-advisory",
+    link: "/services/gst/advisory",
     highlight: null
   },
   {
@@ -113,7 +113,7 @@ const services = [
     features: ["Notice response drafting", "Assessment proceedings", "Appeal preparation", "Advance ruling applications"],
     process: ["Notice analysis", "Strategy development", "Response preparation", "Representation"],
     benefits: ["Expert handling", "Timely responses", "Reduced liability", "Professional representation"],
-    link: "/services/gst/gst-litigation",
+    link: "/services/gst/litigation",
     highlight: "Specialized"
   }
 ];

@@ -54,6 +54,14 @@ With timely completion well before the deadline, we give you peace of mind and a
     { number: "100%", label: "On-time Filing" },
     { number: "Zero", label: "Penalty Cases" },
     { number: "45+", label: "Years Experience" }
+  ],
+  relatedServices: [
+    { title: "Statutory Audit", description: "Companies Act compliance and audit", link: "/services/audit/statutory-audit" },
+    { title: "GST Audit", description: "GSTR-9C reconciliation and certification", link: "/services/gst/audit" },
+    { title: "Income Tax Return", description: "ITR filing and assessment support", link: "/services/taxation/income-tax-return" },
+    { title: "Corporate Taxation", description: "Corporate tax planning and compliance", link: "/services/taxation/corporate-taxation" },
+    { title: "TDS Compliance", description: "TDS return filing", link: "/services/taxation/tds-compliance" },
+    { title: "Tax Planning", description: "Strategic tax advisory", link: "/services/taxation/tax-planning" }
   ]
 };
 

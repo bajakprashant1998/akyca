@@ -57,6 +57,14 @@ Whether you're establishing a new charitable organization or need to streamline 
       { number: "99%", label: "Registration Success" },
       { number: "50+", label: "FCRA Filings" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Income Tax Return", description: "Trust return filing", link: "/services/taxation/income-tax-return" },
+      { title: "Statutory Audit", description: "Audit of trust accounts", link: "/services/audit/statutory-audit" },
+      { title: "Labour Law", description: "Employee compliance", link: "/services/compliance/labour-law" },
+      { title: "Annual Compliance", description: "Regulatory filings", link: "/services/compliance/annual-compliance" },
+      { title: "Virtual Accounting", description: "Bookkeeping", link: "/services/digital/virtual-accounting" },
+      { title: "Section 8 Company", description: "NGO Registration", link: "/services/corporate/company-incorporation" }
     ]
   };
 

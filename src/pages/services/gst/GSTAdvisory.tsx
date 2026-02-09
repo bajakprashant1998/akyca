@@ -56,6 +56,14 @@ We work with businesses to structure transactions optimally, implement robust co
     { number: "₹100Cr+", label: "Tax Impact Analyzed" },
     { number: "50+", label: "Industry Sectors" },
     { number: "100%", label: "Client Satisfaction" }
+  ],
+  relatedServices: [
+    { title: "GST Litigation", description: "Handling notices and appeals", link: "/services/gst/litigation" },
+    { title: "Tax Planning", description: "Strategic direct tax planning", link: "/services/taxation/tax-planning" },
+    { title: "Business Structuring", description: "Optimal entity structure advice", link: "/services/financial/business-structuring" },
+    { title: "Virtual CFO", description: "Strategic financial leadership", link: "/services/financial/virtual-cfo" },
+    { title: "GST Audit", description: "GSTR-9C certification", link: "/services/gst/audit" },
+    { title: "Export Import Services", description: "Cross-border trade advisory", link: "/services/industry/export-import" }
   ]
 };
 

@@ -56,6 +56,12 @@ We serve diverse manufacturing sectors including textiles, chemicals, engineerin
       { number: "15%", label: "Avg Cost Savings" },
       { number: "100%", label: "Compliance" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Statutory Audit", description: "Manufacturing audit", link: "/services/audit/statutory-audit" },
+      { title: "GST Audit", description: "Tax compliance", link: "/services/gst/audit" },
+      { title: "Factory Act", description: "Factory compliance", link: "/services/compliance/factory-act" },
+      { title: "Labour Law", description: "Worker compliance", link: "/services/compliance/labour-law" }
     ]
   };
 

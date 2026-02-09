@@ -56,6 +56,12 @@ We work with NRIs across the globe, understanding the specific requirements of d
       { number: "₹1000Cr+", label: "Repatriation Done" },
       { number: "20+", label: "Countries Covered" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Personal Tax Planning", description: "India tax filing", link: "/services/wealth/personal-tax-planning" },
+      { title: "International Taxation", description: "DTAA benefits", link: "/services/taxation/international-taxation" },
+      { title: "FEMA Compliance", description: "RBI regulations", link: "/services/compliance/rbi-fema-sebi-compliance" },
+      { title: "Estate & Will Advisory", description: "India assets", link: "/services/wealth/estate-will" }
     ]
   };
 

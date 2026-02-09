@@ -56,6 +56,14 @@ We help resolve differences between turnover reported in financial statements an
     { number: "100%", label: "Timely Filing" },
     { number: "Zero", label: "Audit Objections" },
     { number: "₹200Cr+", label: "Turnover Audited" }
+  ],
+  relatedServices: [
+    { title: "GST Return Filing", description: "Regular compliance and reconciliation", link: "/services/gst/return-filing" },
+    { title: "Statutory Audit", description: "Company audit as per Companies Act", link: "/services/audit/statutory-audit" },
+    { title: "Tax Audit", description: "Income tax audit u/s 44AB", link: "/services/audit/tax-audit" },
+    { title: "Internal Audit", description: "Process and control review", link: "/services/audit/internal-audit" },
+    { title: "GST Litigation", description: "Dispute resolution", link: "/services/gst/litigation" },
+    { title: "Corporate Taxation", description: "Corporate tax compliance", link: "/services/taxation/corporate-taxation" }
   ]
 };
 

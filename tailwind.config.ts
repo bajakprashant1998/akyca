@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Outfit", "system-ui", "sans-serif"],
-        display: ["Red Hat Display", "Helvetica", "Arial", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+        display: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

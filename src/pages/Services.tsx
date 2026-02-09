@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { 
+import {
   FileText, Calculator, ClipboardCheck, Building2, TrendingUp, Shield,
   Gavel, Rocket, Factory, Laptop, UserCheck, ChevronRight, ArrowRight, Sparkles, Phone
 } from "lucide-react";
@@ -33,7 +33,7 @@ const useScrollAnimation = () => {
 
 const AnimatedCard = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const { ref, isVisible } = useScrollAnimation();
-  
+
   return (
     <div
       ref={ref}
@@ -80,7 +80,7 @@ const Services = () => {
           <div className="absolute bottom-10 left-10 w-96 h-96 bg-cream/5 rounded-full blur-3xl" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-6">
@@ -94,7 +94,7 @@ const Services = () => {
               <span className="text-gold">CA Services</span>
             </h1>
             <p className="text-white/80 text-xl leading-relaxed mb-8 max-w-2xl">
-              Comprehensive chartered accountancy and financial consulting services 
+              Comprehensive chartered accountancy and financial consulting services
               tailored for businesses, startups, MSMEs, corporates, individuals, HNIs, and NRIs.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -143,7 +143,7 @@ const Services = () => {
               Choose from our comprehensive range of professional services
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {serviceCategories.map((category, index) => (
               <AnimatedCard key={index} delay={index * 50}>
@@ -186,7 +186,7 @@ const Services = () => {
           <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-cream/5 rounded-full blur-3xl" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">How We Work</span>
@@ -197,7 +197,7 @@ const Services = () => {
               A simple, transparent approach to delivering exceptional results
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { step: "01", title: "Consultation", desc: "Understand your needs and goals" },
@@ -237,7 +237,7 @@ const Services = () => {
               Need Help with Any of These Services?
             </h2>
             <p className="text-grey mb-8 max-w-2xl mx-auto text-lg">
-              Our team of expert chartered accountants is ready to assist you. 
+              Our team of expert chartered accountants is ready to assist you.
               Get in touch for a free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

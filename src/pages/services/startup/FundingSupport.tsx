@@ -57,6 +57,14 @@ Whether you're raising from angels, VCs, or strategic investors, our team suppor
       { number: "₹400Cr+", label: "Funding Facilitated" },
       { number: "50+", label: "Investor Network" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Pitch Deck Support", description: "Investor materials", link: "/services/startup/pitch-deck-support" },
+      { title: "Business Planning", description: "Financial modeing", link: "/services/startup/business-planning" },
+      { title: "Valuation Services", description: "Business valuation", link: "/services/financial/valuation-services" },
+      { title: "Due Diligence", description: "Financial DD", link: "/services/financial/due-diligence" },
+      { title: "Mergers & Acquisitions", description: "Deal support", link: "/services/corporate/mergers-acquisitions" },
+      { title: "Tax Planning", description: "Tax efficiency", link: "/services/taxation/tax-planning" }
     ]
   };
 

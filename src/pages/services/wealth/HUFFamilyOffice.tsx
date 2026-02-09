@@ -56,6 +56,12 @@ We understand the sensitive nature of family wealth and provide discrete, profes
       { number: "25+", label: "Family Offices" },
       { number: "₹500Cr+", label: "AUM Advised" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Succession Planning", description: "Transition planning", link: "/services/wealth/succession-planning" },
+      { title: "Personal Tax Planning", description: "Tax efficiency", link: "/services/wealth/personal-tax-planning" },
+      { title: "HNI Advisory", description: "Wealth management", link: "/services/wealth/hni-advisory" },
+      { title: "Estate & Will Advisory", description: "Wealth transfer", link: "/services/wealth/estate-will" }
     ]
   };
 

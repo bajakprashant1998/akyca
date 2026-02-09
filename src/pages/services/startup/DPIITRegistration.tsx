@@ -57,6 +57,14 @@ Whether you're a newly incorporated startup or an existing company seeking recog
       { number: "50+", label: "80-IAC Approvals" },
       { number: "3 Days", label: "Typical Recognition" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Angel Tax Advisory", description: "Tax exemption", link: "/services/startup/angel-tax-advisory" },
+      { title: "Company Incorporation", description: "Entity setup", link: "/services/corporate/company-incorporation" },
+      { title: "Funding Support", description: "Investment access", link: "/services/startup/funding-support" },
+      { title: "Virtual CFO", description: "Compliance management", link: "/services/financial/virtual-cfo" },
+      { title: "GST Registration", description: "Tax registration", link: "/services/gst/registration" },
+      { title: "Labour Law", description: "Labour compliance", link: "/services/compliance/labour-law" }
     ]
   };
 

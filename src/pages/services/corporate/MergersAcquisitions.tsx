@@ -57,6 +57,14 @@ Whether you're acquiring a competitor, merging with a partner, or restructuring 
       { number: "₹1000Cr+", label: "Deal Value Advised" },
       { number: "100%", label: "NCLT Approval Rate" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Due Diligence", description: "Pre-transaction investigation", link: "/services/corporate/due-diligence" },
+      { title: "Business Valuation", description: "Swap ratio determination", link: "/services/advanced/business-valuation" },
+      { title: "Corporate Taxation", description: "Tax efficient structuring", link: "/services/taxation/corporate-taxation" },
+      { title: "Company Incorporation", description: "New entity formation", link: "/services/corporate/company-incorporation" },
+      { title: "Business Structuring", description: "Deal structuring advice", link: "/services/financial/business-structuring" },
+      { title: "Tribunal Proceedings", description: "NCLT matters", link: "/services/litigation/tribunal-proceedings" }
     ]
   };
 

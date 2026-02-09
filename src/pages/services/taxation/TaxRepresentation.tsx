@@ -56,6 +56,14 @@ Our approach combines technical expertise with practical insights. We work to mi
     { number: "₹500Cr+", label: "Demands Defended" },
     { number: "1,000+", label: "Cases Handled" },
     { number: "45+", label: "Years Experience" }
+  ],
+  relatedServices: [
+    { title: "Income Tax Return", description: "Compliance and filing", link: "/services/taxation/income-tax-return" },
+    { title: "Tax Audit", description: "Audit assistance", link: "/services/audit/tax-audit" },
+    { title: "Corporate Taxation", description: "Corporate tax defense", link: "/services/taxation/corporate-taxation" },
+    { title: "International Taxation", description: "Cross-border disputes", link: "/services/taxation/international-taxation" },
+    { title: "GST Litigation", description: "GST dispute resolution", link: "/services/litigation/gst-litigation" },
+    { title: "Notice Drafting", description: "Legal notice replies", link: "/services/litigation/notice-drafting" }
   ]
 };
 

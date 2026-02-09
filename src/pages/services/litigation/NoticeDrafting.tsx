@@ -57,6 +57,14 @@ Whether it's a simple information request or a complex show cause notice, our ex
       { number: "95%", label: "On-Time Response" },
       { number: "80%", label: "Favorable Outcomes" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Income Tax Appeals", description: "Tax litigation", link: "/services/litigation/income-tax-appeals" },
+      { title: "GST Advisory", description: "GST opinions", link: "/services/gst/advisory" },
+      { title: "Corporate Taxation", description: "Tax compliance", link: "/services/taxation/corporate-taxation" },
+      { title: "Tax Representation", description: "Department liaison", link: "/services/taxation/tax-representation" },
+      { title: "TDS Compliance", description: "TDS notices", link: "/services/taxation/tds-compliance" },
+      { title: "Labour Law", description: "Labour notices", link: "/services/compliance/labour-law" }
     ]
   };
 

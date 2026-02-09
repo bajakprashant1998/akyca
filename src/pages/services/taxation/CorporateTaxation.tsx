@@ -56,6 +56,14 @@ Our strategic approach helps corporations minimize their effective tax rate whil
     { number: "₹200Cr+", label: "Tax Optimized" },
     { number: "100%", label: "Compliance Record" },
     { number: "15+", label: "Industry Sectors" }
+  ],
+  relatedServices: [
+    { title: "Statutory Audit", description: "Companies Act compliance and audit", link: "/services/audit/statutory-audit" },
+    { title: "Tax Audit", description: "Tax audit u/s 44AB", link: "/services/audit/tax-audit" },
+    { title: "TDS Compliance", description: "TDS return filing", link: "/services/taxation/tds-compliance" },
+    { title: "International Taxation", description: "Cross-border tax advisory", link: "/services/taxation/international-taxation" },
+    { title: "GST Registration", description: "GST registration for companies", link: "/services/gst/registration" },
+    { title: "Company Incorporation", description: "Company formation services", link: "/services/corporate/company-incorporation" }
   ]
 };
 

@@ -57,6 +57,14 @@ Whether you're an investor evaluating a startup, a company planning an acquisiti
       { number: "₹500Cr+", label: "Deal Value Covered" },
       { number: "50+", label: "Industries Served" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Mergers & Acquisitions", description: "Deal advisory services", link: "/services/corporate/mergers-acquisitions" },
+      { title: "Business Valuation", description: "Fair value determination", link: "/services/advanced/business-valuation" },
+      { title: "ROC Compliance", description: "Entity compliance check", link: "/services/corporate/roc-compliance" },
+      { title: "Tax Audit", description: "Tax compliance review", link: "/services/audit/tax-audit" },
+      { title: "Forensic Audit", description: "Fraud investigation", link: "/services/advanced/forensic-audit" },
+      { title: "Risk Assessment", description: "Business risk evaluation", link: "/services/advanced/risk-assessment" }
     ]
   };
 

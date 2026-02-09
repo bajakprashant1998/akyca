@@ -57,6 +57,14 @@ Whether you're starting a new NBFC or need to streamline compliance at an existi
       { number: "100%", label: "Filing Compliance" },
       { number: "Zero", label: "RBI Penalties" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Statutory Audit", description: "Audit of financial statements", link: "/services/audit/statutory-audit" },
+      { title: "RBI & FEMA Compliance", description: "Regulatory compliance", link: "/services/compliance/rbi-fema-sebi-compliance" },
+      { title: "Corporate Taxation", description: "Corporate tax filing", link: "/services/taxation/corporate-taxation" },
+      { title: "Annual Compliance", description: "Routine statutory filings", link: "/services/compliance/annual-compliance" },
+      { title: "Internal Audit", description: "Process Review", link: "/services/audit/internal-audit" },
+      { title: "Due Diligence", description: "Compliance Check", link: "/services/corporate/due-diligence" }
     ]
   };
 

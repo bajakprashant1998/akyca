@@ -56,6 +56,12 @@ We also handle the FEMA compliance aspects including foreign currency transactio
       { number: "₹50Cr+", label: "Benefits Claimed" },
       { number: "100+", label: "EXIM Clients" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "GST Return Filing", description: "Export refunds", link: "/services/gst/return-filing" },
+      { title: "International Taxation", description: "Cross-border tax", link: "/services/taxation/international-taxation" },
+      { title: "Business Structuring", description: "Global setup", link: "/services/financial/business-structuring" },
+      { title: "Corporate Taxation", description: "Business tax", link: "/services/taxation/corporate-taxation" }
     ]
   };
 

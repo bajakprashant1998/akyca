@@ -57,6 +57,14 @@ Whether you're facing a demand for alleged short payment, ITC reversal, or class
       { number: "70%", label: "Success Rate" },
       { number: "₹50Cr+", label: "Demand Defended" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "GST Audit", description: "Compliance review", link: "/services/gst/audit" },
+      { title: "GST Advisory", description: "Technical opinion", link: "/services/gst/advisory" },
+      { title: "Tribunal Proceedings", description: "Appellate support", link: "/services/litigation/tribunal-proceedings" },
+      { title: "GST Return Filing", description: "Regular compliance", link: "/services/gst/return-filing" },
+      { title: "GST Registration", description: "Registration services", link: "/services/gst/registration" },
+      { title: "Notice Drafting", description: "Reply drafting", link: "/services/litigation/notice-drafting" }
     ]
   };
 

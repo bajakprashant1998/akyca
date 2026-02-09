@@ -57,6 +57,14 @@ Whether you're a startup preparing for your next funding round, an SME seeking t
       { number: "₹500Cr+", label: "Revenue Managed" },
       { number: "100+", label: "Board Decks Created" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "MIS Dashboards", description: "Financial reporting", link: "/services/digital/mis-dashboards" },
+      { title: "Fund Raising", description: "Capital planning", link: "/services/financial/fund-raising" },
+      { title: "Statutory Audit", description: "Compliance oversight", link: "/services/audit/statutory-audit" },
+      { title: "Tax Planning", description: "Strategic tax/planning", link: "/services/taxation/tax-planning" },
+      { title: "Business Structuring", description: "Entity planning", link: "/services/financial/business-structuring" },
+      { title: "Internal Audit", description: "Process control", link: "/services/audit/internal-audit" }
     ]
   };
 

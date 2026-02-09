@@ -56,6 +56,12 @@ We work with individuals, families, and HNIs to create legally sound estate plan
       { number: "₹5000Cr+", label: "Estate Value" },
       { number: "100%", label: "Legal Compliance" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Succession Planning", description: "Business transition", link: "/services/wealth/succession-planning" },
+      { title: "HUF & Family Office", description: "Family wealth", link: "/services/wealth/huf-family-office" },
+      { title: "Personal Tax Planning", description: "Tax efficiency", link: "/services/wealth/personal-tax-planning" },
+      { title: "Trust & NGO Compliance", description: "Family trusts", link: "/services/compliance/trust-ngo-compliance" }
     ]
   };
 

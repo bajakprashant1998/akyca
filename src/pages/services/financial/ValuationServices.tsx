@@ -57,6 +57,14 @@ Whether you need valuation for fund raising, M&A transactions, tax compliance, E
       { number: "₹5000Cr+", label: "Value Assessed" },
       { number: "IBBI", label: "Registered Valuers" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Fund Raising", description: "Investment valuation", link: "/services/financial/fund-raising" },
+      { title: "Mergers & Acquisitions", description: "Transaction valuation", link: "/services/corporate/mergers-acquisitions" },
+      { title: "Business Structuring", description: "Restructuring valuation", link: "/services/financial/business-structuring" },
+      { title: "Corporate Taxation", description: "Tax valuation", link: "/services/taxation/corporate-taxation" },
+      { title: "Due Diligence", description: "Deal support", link: "/services/corporate/due-diligence" },
+      { title: "ESOP Structuring", description: "ESOP valuation", link: "/services/startup/esop-structuring" }
     ]
   };
 

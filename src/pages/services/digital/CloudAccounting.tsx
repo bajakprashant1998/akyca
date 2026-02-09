@@ -56,6 +56,14 @@ Whether you're a startup choosing your first system or an established business m
       { number: "70%", label: "Time Savings" },
       { number: "99%", label: "Satisfaction" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Virtual Accounting", description: "Remote bookkeeping services", link: "/services/digital/virtual-accounting" },
+      { title: "GST Return Filing", description: "Seamless GST compliance", link: "/services/gst/return-filing" },
+      { title: "TDS Compliance", description: "Tax deduction management", link: "/services/taxation/tds-compliance" },
+      { title: "Finance Automation", description: "Streamlined financial processes", link: "/services/digital/finance-automation" },
+      { title: "MIS Dashboards", description: "Reports & insights", link: "/services/digital/mis-dashboards" },
+      { title: "Statutory Audit", description: "Annual audit", link: "/services/audit/statutory-audit" }
     ]
   };
 

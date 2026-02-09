@@ -56,6 +56,12 @@ We also assist institutions in navigating the evolving regulatory landscape incl
       { number: "₹500Cr+", label: "Fee Managed" },
       { number: "100%", label: "Approval Success" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Trust & NGO Compliance", description: "Regulatory filings", link: "/services/compliance/trust-ngo-compliance" },
+      { title: "Statutory Audit", description: "Institutional audit", link: "/services/audit/statutory-audit" },
+      { title: "Cloud Accounting", description: "Modern accounting", link: "/services/digital/cloud-accounting" },
+      { title: "TDS Compliance", description: "Tax deduction", link: "/services/taxation/tds-compliance" }
     ]
   };
 

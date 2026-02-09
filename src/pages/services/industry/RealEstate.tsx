@@ -56,6 +56,12 @@ With deep sector expertise, we help developers navigate the regulatory landscape
       { number: "₹5000Cr+", label: "Project Value" },
       { number: "100%", label: "RERA Compliance" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Project Finance", description: "Construction loan", link: "/services/financial/project-finance" },
+      { title: "GST Audit", description: "Real estate GST", link: "/services/gst/audit" },
+      { title: "Corporate Taxation", description: "Developer tax", link: "/services/taxation/corporate-taxation" },
+      { title: "Business Structuring", description: "JDA structuring", link: "/services/financial/business-structuring" }
     ]
   };
 

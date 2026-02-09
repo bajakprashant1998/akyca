@@ -56,6 +56,12 @@ We work with salaried executives, business owners, professionals, and HNIs to cr
       { number: "20%", label: "Avg Tax Savings" },
       { number: "₹100Cr+", label: "Tax Saved" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "HNI Advisory", description: "Wealth advisory", link: "/services/wealth/hni-advisory" },
+      { title: "Income Tax Return", description: "Tax filing", link: "/services/taxation/income-tax-return" },
+      { title: "HUF & Family Office", description: "Tax saving entity", link: "/services/wealth/huf-family-office" },
+      { title: "Estate & Will Advisory", description: "Asset planning", link: "/services/wealth/estate-will" }
     ]
   };
 

@@ -56,6 +56,14 @@ Our focus is on the finance and accounting modules - ensuring they're configured
       { number: "95%", label: "Success Rate" },
       { number: "₹50Cr+", label: "Projects Advised" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Finance Automation", description: "Workflow optimization", link: "/services/digital/finance-automation" },
+      { title: "Internal Audit", description: "Process control evaluation", link: "/services/audit/internal-audit" },
+      { title: "Cloud Accounting", description: "Modern platform setup", link: "/services/digital/cloud-accounting" },
+      { title: "MIS Dashboards", description: "Real-time reporting", link: "/services/digital/mis-dashboards" },
+      { title: "Business Structuring", description: "Process efficiency", link: "/services/financial/business-structuring" },
+      { title: "Data Migration", description: "System transition", link: "/services/digital/data-migration" }
     ]
   };
 

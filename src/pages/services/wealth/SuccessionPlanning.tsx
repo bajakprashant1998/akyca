@@ -56,6 +56,12 @@ We work with promoter families to develop customized succession plans that prote
       { number: "₹2000Cr+", label: "Assets Transitioned" },
       { number: "95%", label: "Successful Transitions" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Estate & Will Advisory", description: "Legal framework", link: "/services/wealth/estate-will" },
+      { title: "HUF & Family Office", description: "Wealth structure", link: "/services/wealth/huf-family-office" },
+      { title: "Business Structuring", description: "Corporate transition", link: "/services/financial/business-structuring" },
+      { title: "Personal Tax Planning", description: "Tax efficiency", link: "/services/wealth/personal-tax-planning" }
     ]
   };
 

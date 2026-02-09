@@ -57,6 +57,14 @@ Whether you're implementing your first ESOP or managing a mature scheme with mul
       { number: "5000+", label: "Grants Managed" },
       { number: "₹100Cr+", label: "Value Created" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Company Incorporation", description: "Entity setup", link: "/services/corporate/company-incorporation" },
+      { title: "Virtual CFO", description: "Strategy & compliance", link: "/services/financial/virtual-cfo" },
+      { title: "Valuation Services", description: "ESOP valuation", link: "/services/financial/valuation-services" },
+      { title: "Payroll Services", description: "Salary processing", link: "/services/compliance/labour-law" },
+      { title: "Secretarial Services", description: "Corporate records", link: "/services/corporate/secretarial-services" },
+      { title: "DPIIT Registration", description: "Startup benefits", link: "/services/startup/dpiit-recognition" }
     ]
   };
 

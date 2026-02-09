@@ -57,6 +57,14 @@ Whether you're setting up a manufacturing facility, developing a real estate pro
       { number: "100+", label: "Projects Funded" },
       { number: "25+", label: "Lender Relationships" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Fund Raising", description: "Equity capital", link: "/services/financial/fund-raising" },
+      { title: "Business Structuring", description: "Entity setup", link: "/services/financial/business-structuring" },
+      { title: "Due Diligence", description: "Project feasibility", link: "/services/corporate/due-diligence" },
+      { title: "Bank Audit", description: "Compliance audit", link: "/services/audit/bank-audit" },
+      { title: "Valuation Services", description: "Project valuation", link: "/services/financial/valuation-services" },
+      { title: "Business Planning", description: "Financial modeling", link: "/services/startup/business-planning" }
     ]
   };
 

@@ -56,6 +56,14 @@ Whether you're starting a new business, expanding to new states, or need to migr
     { number: "98%", label: "First-time Approval" },
     { number: "3 Days", label: "Average Processing" },
     { number: "50+", label: "Cities Covered" }
+  ],
+  relatedServices: [
+    { title: "GST Return Filing", description: "Monthly/Quarterly compliance support", link: "/services/gst/return-filing" },
+    { title: "Company Incorporation", description: "Private Limited, LLP, and OPC registration services", link: "/services/corporate/company-incorporation" },
+    { title: "GST Advisory", description: "Expert advice on rates, HSN codes, and compliance", link: "/services/gst/advisory" },
+    { title: "MSME Registration", description: "Udyam registration for small business benefits", link: "/services/startup/dpiit-registration" },
+    { title: "Tax Planning", description: "Strategic tax planning", link: "/services/taxation/tax-planning" },
+    { title: "Cloud Accounting", description: "Digital accounting setup", link: "/services/digital/cloud-accounting" }
   ]
 };
 

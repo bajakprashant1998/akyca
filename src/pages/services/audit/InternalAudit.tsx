@@ -54,6 +54,14 @@ Our internal audit services cover operational audits, IT audits, compliance audi
     { number: "100+", label: "Clients Served" },
     { number: "30%", label: "Avg. Efficiency Gains" },
     { number: "24/7", label: "Support Available" }
+  ],
+  relatedServices: [
+    { title: "Management Audit", description: "Efficiency and effectiveness review", link: "/services/audit/management-audit" },
+    { title: "Statutory Audit", description: "Financial statement audit", link: "/services/audit/statutory-audit" },
+    { title: "Process Review", description: "Internal control process optimization", link: "/services/audit/internal/process-control" },
+    { title: "Risk Assessment", description: "Enterprise risk management services", link: "/services/advanced/risk-assessment" },
+    { title: "Forensic Audit", description: "Fraud detection services", link: "/services/advanced/forensic-audit" },
+    { title: "Information System Audit", description: "IT control audit", link: "/services/digital/information-system-audit" }
   ]
 };
 

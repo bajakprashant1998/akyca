@@ -56,6 +56,14 @@ We also assist employees and vendors affected by TDS by issuing proper certifica
     { number: "100%", label: "On-time Filing" },
     { number: "1,000+", label: "Active Clients" },
     { number: "Zero", label: "Default Notices" }
+  ],
+  relatedServices: [
+    { title: "Income Tax Return", description: "ITR filing services", link: "/services/taxation/income-tax-return" },
+    { title: "Tax Audit", description: "Tax audit u/s 44AB", link: "/services/audit/tax-audit" },
+    { title: "Corporate Taxation", description: "Corporate tax compliance", link: "/services/taxation/corporate-taxation" },
+    { title: "Tax Representation", description: "Notice response support", link: "/services/taxation/tax-representation" },
+    { title: "GST Return Filing", description: "Monthly GST compliance", link: "/services/gst/return-filing" },
+    { title: "Labour Law Compliance", description: "Payroll and labour laws", link: "/services/compliance/labour-law" }
   ]
 };
 

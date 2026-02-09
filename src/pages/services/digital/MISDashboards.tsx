@@ -56,6 +56,14 @@ We focus on what matters to you - the metrics that drive your business decisions
       { number: "50%", label: "Faster Decisions" },
       { number: "Real-time", label: "Data Access" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Virtual Accounting", description: "Data for dashboards", link: "/services/digital/virtual-accounting" },
+      { title: "ERP Advisory", description: "Source system optimization", link: "/services/digital/erp-advisory" },
+      { title: "Cloud Accounting", description: "Real-time data source", link: "/services/digital/cloud-accounting" },
+      { title: "Finance Automation", description: "Automated data flow", link: "/services/digital/finance-automation" },
+      { title: "Business Planning", description: "KPI tracking", link: "/services/startup/business-planning" },
+      { title: "Project Finance", description: "Project tracking", link: "/services/financial/project-finance" }
     ]
   };
 

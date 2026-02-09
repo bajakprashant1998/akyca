@@ -56,6 +56,14 @@ This service is ideal for startups, SMEs, and businesses looking to focus on the
       { number: "50%", label: "Cost Savings" },
       { number: "99%", label: "Accuracy Rate" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Cloud Accounting", description: "Accounting platform setup", link: "/services/digital/cloud-accounting" },
+      { title: "Finance Automation", description: "Efficiency tools", link: "/services/digital/finance-automation" },
+      { title: "MIS Dashboards", description: "Performance reporting", link: "/services/digital/mis-dashboards" },
+      { title: "GST Return Filing", description: "Compliance included", link: "/services/gst/return-filing" },
+      { title: "Labour Law", description: "Payroll compliance", link: "/services/compliance/labour-law" },
+      { title: "TDS Compliance", description: "Tax deductions", link: "/services/taxation/tds-compliance" }
     ]
   };
 

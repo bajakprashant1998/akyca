@@ -56,6 +56,12 @@ We understand that governance is not just about compliance but about building tr
       { number: "100%", label: "LODR Compliance" },
       { number: "30+", label: "Board Evaluations" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Risk Assessment", description: "Internal controls", link: "/services/advanced/risk-assessment" },
+      { title: "Secretarial Audit", description: "Compliance audit", link: "/services/audit/secretarial-audit" },
+      { title: "Internal Audit", description: "Process review", link: "/services/audit/internal-audit" },
+      { title: "Forensic Audit", description: "Fraud prevention", link: "/services/advanced/forensic-audit" }
     ]
   };
 

@@ -134,7 +134,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          
+
           {/* Taxation Services */}
           <Route path="/services/taxation" element={<TaxationServices />} />
           <Route path="/services/taxation/income-tax-return" element={<IncomeTaxReturn />} />
@@ -144,7 +144,7 @@ const App = () => (
           <Route path="/services/taxation/nri-taxation" element={<NRITaxation />} />
           <Route path="/services/taxation/tds-compliance" element={<TDSCompliance />} />
           <Route path="/services/taxation/tax-representation" element={<TaxRepresentation />} />
-          
+
           {/* GST Services */}
           <Route path="/services/gst" element={<GSTServices />} />
           <Route path="/services/gst/registration" element={<GSTRegistration />} />
@@ -152,7 +152,7 @@ const App = () => (
           <Route path="/services/gst/audit" element={<GSTAudit />} />
           <Route path="/services/gst/advisory" element={<GSTAdvisory />} />
           <Route path="/services/gst/litigation" element={<GSTLitigation />} />
-          
+
           {/* Audit Services */}
           <Route path="/services/audit" element={<AuditAssurance />} />
           <Route path="/services/audit/statutory-audit" element={<StatutoryAudit />} />
@@ -163,7 +163,7 @@ const App = () => (
           <Route path="/services/audit/stock-audit" element={<StockAudit />} />
           <Route path="/services/audit/management-audit" element={<ManagementAudit />} />
           <Route path="/services/audit/cooperative-society-audit" element={<CooperativeSocietyAudit />} />
-          
+
           {/* Corporate Services */}
           <Route path="/services/corporate" element={<CompanyCorporate />} />
           <Route path="/services/corporate/company-incorporation" element={<CompanyIncorporation />} />
@@ -172,7 +172,7 @@ const App = () => (
           <Route path="/services/corporate/secretarial-services" element={<SecretarialServices />} />
           <Route path="/services/corporate/due-diligence" element={<DueDiligence />} />
           <Route path="/services/corporate/mergers-acquisitions" element={<MergersAcquisitions />} />
-          
+
           {/* Financial Advisory Services */}
           <Route path="/services/financial-advisory" element={<FinancialAdvisory />} />
           <Route path="/services/financial/business-structuring" element={<BusinessStructuring />} />
@@ -180,7 +180,7 @@ const App = () => (
           <Route path="/services/financial/fund-raising" element={<FundRaising />} />
           <Route path="/services/financial/valuation-services" element={<ValuationServices />} />
           <Route path="/services/financial/virtual-cfo" element={<VirtualCFO />} />
-          
+
           {/* Compliance Services */}
           <Route path="/services/compliance" element={<ComplianceRegulatory />} />
           <Route path="/services/compliance/annual-compliance" element={<AnnualCompliance />} />
@@ -189,7 +189,7 @@ const App = () => (
           <Route path="/services/compliance/rbi-fema-sebi" element={<RBIFEMASEBICompliance />} />
           <Route path="/services/compliance/nbfc" element={<NBFCCompliance />} />
           <Route path="/services/compliance/trust-ngo" element={<TrustNGOCompliance />} />
-          
+
           {/* Litigation Services */}
           <Route path="/services/litigation" element={<LitigationRepresentation />} />
           <Route path="/services/litigation/income-tax-appeals" element={<IncomeTaxAppeals />} />
@@ -198,7 +198,7 @@ const App = () => (
           <Route path="/services/litigation/notice-drafting" element={<NoticeDrafting />} />
           <Route path="/services/litigation/search-survey" element={<SearchSurvey />} />
           <Route path="/services/litigation/black-money-act" element={<BlackMoneyAct />} />
-          
+
           {/* Startup Services */}
           <Route path="/services/startup" element={<StartupServices />} />
           <Route path="/services/startup/dpiit-registration" element={<DPIITRegistration />} />
@@ -207,7 +207,7 @@ const App = () => (
           <Route path="/services/startup/business-planning" element={<BusinessPlanning />} />
           <Route path="/services/startup/pitch-deck-support" element={<PitchDeckSupport />} />
           <Route path="/services/startup/funding-support" element={<FundingSupport />} />
-          
+
           {/* Industry-Specific Services */}
           <Route path="/services/industry" element={<IndustrySpecific />} />
           <Route path="/services/industry/real-estate" element={<RealEstate />} />
@@ -217,7 +217,7 @@ const App = () => (
           <Route path="/services/industry/ecommerce" element={<Ecommerce />} />
           <Route path="/services/industry/education" element={<Education />} />
           <Route path="/services/industry/ngo-trust" element={<NGOTrust />} />
-          
+
           {/* Personal Wealth Services */}
           <Route path="/services/personal-wealth" element={<PersonalWealth />} />
           <Route path="/services/wealth/personal-tax-planning" element={<PersonalTaxPlanning />} />
@@ -226,7 +226,7 @@ const App = () => (
           <Route path="/services/wealth/estate-will" element={<EstateWill />} />
           <Route path="/services/wealth/hni-advisory" element={<HNIAdvisory />} />
           <Route path="/services/wealth/nri-wealth" element={<NRIWealth />} />
-          
+
           {/* Advanced Financial Services */}
           <Route path="/services/advanced-financial" element={<AdvancedFinancial />} />
           <Route path="/services/advanced/risk-assessment" element={<RiskAssessment />} />
@@ -235,7 +235,7 @@ const App = () => (
           <Route path="/services/advanced/ibc-support" element={<IBCSupport />} />
           <Route path="/services/advanced/turnaround-restructuring" element={<TurnaroundRestructuring />} />
           <Route path="/services/advanced/corporate-governance" element={<CorporateGovernance />} />
-          
+
           {/* Digital Accounting Services */}
           <Route path="/services/digital-accounting" element={<DigitalAccounting />} />
           <Route path="/services/digital/cloud-accounting" element={<CloudAccounting />} />
@@ -244,7 +244,7 @@ const App = () => (
           <Route path="/services/digital/virtual-accounting" element={<VirtualAccounting />} />
           <Route path="/services/digital/erp-advisory" element={<ERPAdvisory />} />
           <Route path="/services/digital/data-migration" element={<DataMigration />} />
-          
+
           {/* Other Pages */}
           <Route path="/history" element={<History />} />
           <Route path="/branches" element={<Branches />} />

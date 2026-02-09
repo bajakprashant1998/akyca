@@ -54,6 +54,14 @@ Beyond statutory compliance, we help societies improve their operations, strengt
     { number: "45+", label: "Years Experience" },
     { number: "All Types", label: "Co-operatives Covered" },
     { number: "A-Class", label: "Audit Expertise" }
+  ],
+  relatedServices: [
+    { title: "Statutory Audit", description: "Financial statement audit", link: "/services/audit/statutory-audit" },
+    { title: "Tax Audit", description: "Income tax audit u/s 44AB", link: "/services/audit/tax-audit" },
+    { title: "Income Tax Return", description: "Society ITR filing", link: "/services/taxation/income-tax-return" },
+    { title: "GST Audit", description: "GST compliance verification", link: "/services/gst/audit" },
+    { title: "Internal Audit", description: "Control review", link: "/services/audit/internal-audit" },
+    { title: "Virtual Accounting", description: "Outsourced accounting", link: "/services/digital/virtual-accounting" }
   ]
 };
 

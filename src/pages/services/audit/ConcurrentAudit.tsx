@@ -54,6 +54,14 @@ This contemporaneous examination allows for immediate detection and correction o
     { number: "Daily", label: "Reporting Frequency" },
     { number: "Real-time", label: "Issue Detection" },
     { number: "RBI", label: "Compliant Process" }
+  ],
+  relatedServices: [
+    { title: "Bank Audit", description: "Statutory branch audit services", link: "/services/audit/bank-audit" },
+    { title: "Stock Audit", description: "Physical stock verification", link: "/services/audit/stock-audit" },
+    { title: "Internal Audit", description: "Process and control review", link: "/services/audit/internal-audit" },
+    { title: "Process Review", description: "Operational efficiency improvement", link: "/services/audit/internal/process-control" },
+    { title: "Statutory Audit", description: "Annual financial audit", link: "/services/audit/statutory-audit" },
+    { title: "Forensic Audit", description: "Fraud investigation", link: "/services/advanced/forensic-audit" }
   ]
 };
 

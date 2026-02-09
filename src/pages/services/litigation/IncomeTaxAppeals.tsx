@@ -57,6 +57,14 @@ Whether you're challenging additions, penalties, or interpretation of law, our e
       { number: "75%", label: "Success Rate" },
       { number: "₹100Cr+", label: "Demand Relief" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Tax Representation", description: "Scrutiny assessment", link: "/services/taxation/tax-representation" },
+      { title: "Search & Survey", description: "Investigation defense", link: "/services/litigation/search-survey" },
+      { title: "Tribunal Proceedings", description: "ITAT appeals", link: "/services/litigation/tribunal-proceedings" },
+      { title: "Corporate Taxation", description: "Tax compliance", link: "/services/taxation/corporate-taxation" },
+      { title: "Tax Planning", description: "Strategic planning", link: "/services/taxation/tax-planning" },
+      { title: "Tax Audit", description: "Statutory audit", link: "/services/audit/tax-audit" }
     ]
   };
 

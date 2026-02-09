@@ -57,6 +57,14 @@ Whether you're a startup hiring your first employees or a large organization wit
       { number: "100+", label: "Establishments Served" },
       { number: "10+", label: "States Covered" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Factory Act", description: "Manufacturing unit compliance", link: "/services/compliance/factory-act" },
+      { title: "Annual Compliance", description: "Regular statutory filings", link: "/services/compliance/annual-compliance" },
+      { title: "Statutory Audit", description: "Payroll audit", link: "/services/audit/statutory-audit" },
+      { title: "TDS Compliance", description: "Salary TDS management", link: "/services/taxation/tds-compliance" },
+      { title: "Payroll Services", description: "Outsourced payroll", link: "/services/digital/virtual-accounting" },
+      { title: "Startup Registration", description: "Labour registration", link: "/services/startup/dpiit-registration" }
     ]
   };
 

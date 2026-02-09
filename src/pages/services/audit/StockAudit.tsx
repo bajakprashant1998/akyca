@@ -54,6 +54,14 @@ Beyond counting and valuation, we assess the adequacy of storage conditions, ins
     { number: "₹500Cr+", label: "Inventory Verified" },
     { number: "Pan-India", label: "Coverage" },
     { number: "48 Hrs", label: "Report Turnaround" }
+  ],
+  relatedServices: [
+    { title: "Bank Audit", description: "Statutory and revenue audit", link: "/services/audit/bank-audit" },
+    { title: "Concurrent Audit", description: "Daily transaction monitoring", link: "/services/audit/concurrent-audit" },
+    { title: "GST Audit", description: "Input-output reconciliation", link: "/services/gst/audit" },
+    { title: "Internal Audit", description: "System and process audit", link: "/services/audit/internal-audit" },
+    { title: "Tax Audit", description: "44AB audit compliance", link: "/services/audit/tax-audit" },
+    { title: "Virtual Accounting", description: "Inventory accounting", link: "/services/digital/virtual-accounting" }
   ]
 };
 

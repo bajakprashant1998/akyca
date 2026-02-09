@@ -57,6 +57,14 @@ With decades of experience handling search assessments, our team provides the ex
       { number: "24/7", label: "Emergency Response" },
       { number: "70%", label: "Addition Relief" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Income Tax Appeals", description: "Post-search appeal", link: "/services/litigation/income-tax-appeals" },
+      { title: "Notice Drafting", description: "Reply to notices", link: "/services/litigation/notice-drafting" },
+      { title: "Tax Representation", description: "Assessment support", link: "/services/taxation/tax-representation" },
+      { title: "Black Money Act", description: "Foreign asset case", link: "/services/litigation/black-money-act" },
+      { title: "Internal Audit", description: "Process review", link: "/services/audit/internal-audit" },
+      { title: "Virtual CFO", description: "Financial management", link: "/services/financial/virtual-cfo" }
     ]
   };
 

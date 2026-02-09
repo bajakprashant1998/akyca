@@ -57,6 +57,14 @@ Whether you're preparing for your first angel round or a Series B presentation, 
       { number: "₹300Cr+", label: "Funding Raised" },
       { number: "80%", label: "Meeting Conversion" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Business Planning", description: "Financial projections", link: "/services/startup/business-planning" },
+      { title: "Funding Support", description: "Investor connect", link: "/services/startup/funding-support" },
+      { title: "Valuation Services", description: "Company valuation", link: "/services/financial/valuation-services" },
+      { title: "Virtual CFO", description: "Financial expertise", link: "/services/financial/virtual-cfo" },
+      { title: "Project Finance", description: "Debt funding", link: "/services/financial/project-finance" },
+      { title: "Due Diligence", description: "Investor ready", link: "/services/corporate/due-diligence" }
     ]
   };
 

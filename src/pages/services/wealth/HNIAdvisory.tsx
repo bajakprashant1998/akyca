@@ -56,6 +56,12 @@ We understand HNIs value privacy, personalized service, and expert guidance. Our
       { number: "₹10000Cr+", label: "Wealth Advised" },
       { number: "25%", label: "Avg Tax Savings" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Personal Tax Planning", description: "Tax optimization", link: "/services/wealth/personal-tax-planning" },
+      { title: "HUF & Family Office", description: "Wealth structuring", link: "/services/wealth/huf-family-office" },
+      { title: "Succession Planning", description: "Wealth transfer", link: "/services/wealth/succession-planning" },
+      { title: "Estate & Will Advisory", description: "Asset distribution", link: "/services/wealth/estate-will" }
     ]
   };
 

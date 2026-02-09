@@ -56,6 +56,12 @@ Our valuation reports are accepted by tax authorities, courts, regulators, and t
       { number: "₹5000Cr+", label: "Valuation Value" },
       { number: "100%", label: "Acceptance Rate" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Forensic Audit", description: "Fraud investigation", link: "/services/advanced/forensic-audit" },
+      { title: "Due Diligence", description: "M&A support", link: "/services/financial/due-diligence" },
+      { title: "Corporate Governance", description: "Value enhancement", link: "/services/advanced/corporate-governance" },
+      { title: "ESOP Structuring", description: "Option valuation", link: "/services/startup/esop-structuring" }
     ]
   };
 

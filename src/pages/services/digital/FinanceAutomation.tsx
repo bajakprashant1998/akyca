@@ -56,6 +56,14 @@ We understand that automation is a journey, not a destination. We help you start
       { number: "70%", label: "Time Saved" },
       { number: "95%", label: "Error Reduction" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Cloud Accounting", description: "Modern platform setup", link: "/services/digital/cloud-accounting" },
+      { title: "ERP Advisory", description: "System implementation support", link: "/services/digital/erp-advisory" },
+      { title: "Virtual Accounting", description: "Outsourced finance team", link: "/services/digital/virtual-accounting" },
+      { title: "TDS Compliance", description: "Automated tax deduction", link: "/services/taxation/tds-compliance" },
+      { title: "GST Return Filing", description: "Automated filing", link: "/services/gst/return-filing" },
+      { title: "Internal Audit", description: "Control checks", link: "/services/audit/internal-audit" }
     ]
   };
 

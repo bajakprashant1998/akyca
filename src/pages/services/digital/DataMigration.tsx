@@ -56,6 +56,14 @@ Whether you're moving to cloud, upgrading systems, or consolidating entities, we
       { number: "100%", label: "Data Accuracy" },
       { number: "Zero", label: "Data Loss" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Cloud Accounting", description: "Modern accounting setup", link: "/services/digital/cloud-accounting" },
+      { title: "ERP Advisory", description: "System implementation support", link: "/services/digital/erp-advisory" },
+      { title: "Finance Automation", description: "Process efficiency tools", link: "/services/digital/finance-automation" },
+      { title: "Statutory Audit", description: "Post-migration data verification", link: "/services/audit/statutory-audit" },
+      { title: "Internal Audit", description: "Process checks", link: "/services/audit/internal-audit" },
+      { title: "Virtual CFO", description: "Financial oversight", link: "/services/financial/virtual-cfo" }
     ]
   };
 

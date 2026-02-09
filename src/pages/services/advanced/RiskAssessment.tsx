@@ -56,6 +56,12 @@ Our approach is practical and tailored to your organization's size, complexity, 
       { number: "500+", label: "Risks Identified" },
       { number: "90%", label: "Risks Mitigated" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Internal Audit", description: "Control testing", link: "/services/audit/internal-audit" },
+      { title: "Forensic Audit", description: "Fraud risk", link: "/services/advanced/forensic-audit" },
+      { title: "Corporate Governance", description: "Risk framework", link: "/services/advanced/corporate-governance" },
+      { title: "Statutory Audit", description: "Financial audit", link: "/services/audit/statutory-audit" }
     ]
   };
 

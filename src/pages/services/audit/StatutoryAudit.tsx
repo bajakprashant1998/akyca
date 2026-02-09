@@ -54,6 +54,15 @@ Beyond the audit opinion, we provide valuable recommendations through our manage
     { number: "45+", label: "Years Experience" },
     { number: "RBI", label: "Category-I Firm" },
     { number: "100%", label: "Compliance Record" }
+  ],
+  relatedServices: [
+    { title: "Internal Audit", description: "Risk-based internal audit services", link: "/services/audit/internal-audit" },
+    { title: "Tax Audit", description: "Income tax audit u/s 44AB", link: "/services/audit/tax-audit" },
+    { title: "Corporate Taxation", description: "Comprehensive corporate tax services", link: "/services/taxation/corporate-taxation" },
+    { title: "GST Audit", description: "GST compliance verification", link: "/services/gst/audit" },
+    { title: "Company Incorporation", description: "Business registration", link: "/services/corporate/company-incorporation" },
+    { title: "ROC Compliance", description: "Annual filing support", link: "/services/corporate/roc-compliance" },
+    { title: "Ind AS Implementation", description: "Accounting standards advisory", link: "/services/advanced/ind-as-implementation" }
   ]
 };
 

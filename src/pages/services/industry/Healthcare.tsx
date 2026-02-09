@@ -56,6 +56,12 @@ We also assist with regulatory compliance including PCPNDT Act, AERB licenses fo
       { number: "₹1000Cr+", label: "Revenue Managed" },
       { number: "100%", label: "Compliance Rate" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Tax Planning", description: "Doctor tax planning", link: "/services/taxation/tax-planning" },
+      { title: "Virtual Accounting", description: "Clinic accounting", link: "/services/digital/virtual-accounting" },
+      { title: "Internal Audit", description: "Hospital audit", link: "/services/audit/internal-audit" },
+      { title: "Trust & NGO Compliance", description: "Charitable hospital", link: "/services/compliance/trust-ngo-compliance" }
     ]
   };
 

@@ -56,6 +56,12 @@ We handle investigations with utmost discretion, understanding the sensitivity a
       { number: "₹100Cr+", label: "Fraud Uncovered" },
       { number: "85%", label: "Recovery Rate" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Risk Assessment", description: "Control gaps", link: "/services/advanced/risk-assessment" },
+      { title: "Internal Audit", description: "Regular checks", link: "/services/audit/internal-audit" },
+      { title: "Due Diligence", description: "Investigative DD", link: "/services/financial/due-diligence" },
+      { title: "Business Valuation", description: "Loss quantification", link: "/services/advanced/business-valuation" }
     ]
   };
 

@@ -57,6 +57,14 @@ Whether you're raising your first round or planning a significant financing, our
       { number: "₹200Cr+", label: "Investment Covered" },
       { number: "100%", label: "Success Rate" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "DPIIT Recognition", description: "Startup India", link: "/services/startup/dpiit-recognition" },
+      { title: "Valuation Services", description: "Share valuation", link: "/services/financial/valuation-services" },
+      { title: "Funding Support", description: "Investment advisory", link: "/services/startup/funding-support" },
+      { title: "Income Tax Appeals", description: "Tax agitation", link: "/services/litigation/income-tax-appeals" },
+      { title: "Virtual CFO", description: "Financial strategy", link: "/services/financial/virtual-cfo" },
+      { title: "Due Diligence", description: "Investor readiness", link: "/services/corporate/due-diligence" }
     ]
   };
 

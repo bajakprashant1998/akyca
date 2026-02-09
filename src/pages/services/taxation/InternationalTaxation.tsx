@@ -56,6 +56,14 @@ From Double Taxation Avoidance Agreements (DTAA) to transfer pricing, from expat
     { number: "₹500Cr+", label: "Cross-border Advisory" },
     { number: "200+", label: "MNC Clients" },
     { number: "100%", label: "Treaty Compliance" }
+  ],
+  relatedServices: [
+    { title: "NRI Taxation", description: "Tax services for non-residents", link: "/services/taxation/nri-taxation" },
+    { title: "Corporate Taxation", description: "Domestic corporate tax compliance", link: "/services/taxation/corporate-taxation" },
+    { title: "Tax Planning", description: "Strategic tax advisory", link: "/services/taxation/tax-planning" },
+    { title: "Income Tax Return", description: "ITR filing services", link: "/services/taxation/income-tax-return" },
+    { title: "Business Structuring", description: "Global business structuring", link: "/services/financial/business-structuring" },
+    { title: "FEMA Compliance", description: "RBI & FEMA compliance", link: "/services/compliance/rbi-fema-sebi" }
   ]
 };
 

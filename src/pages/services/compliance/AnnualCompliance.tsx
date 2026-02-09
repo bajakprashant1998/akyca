@@ -57,6 +57,14 @@ Whether you're a startup with basic requirements or a large enterprise with comp
       { number: "99.9%", label: "On-Time Filing Rate" },
       { number: "5000+", label: "Annual Filings" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Statutory Audit", description: "Audit of financial statements", link: "/services/audit/statutory-audit" },
+      { title: "GST Return Filing", description: "Regular GST compliance", link: "/services/gst/return-filing" },
+      { title: "ROC Compliance", description: "MCA annual filing", link: "/services/corporate/roc-compliance" },
+      { title: "TDS Compliance", description: "Tax deduction compliance", link: "/services/taxation/tds-compliance" },
+      { title: "Labour Law", description: "Workforce compliance", link: "/services/compliance/labour-law" },
+      { title: "Secretarial Services", description: "Corporate secretarial", link: "/services/corporate/secretarial-services" }
     ]
   };
 

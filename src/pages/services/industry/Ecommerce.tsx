@@ -56,6 +56,12 @@ We also assist with e-commerce specific operational challenges like inventory ac
       { number: "₹500Cr+", label: "GMV Managed" },
       { number: "99%", label: "Reconciliation Accuracy" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "GST Return Filing", description: "E-commerce GST", link: "/services/gst/return-filing" },
+      { title: "Digital Signature", description: "DSC for filings", link: "/services/digital/digital-signature" },
+      { title: "Corporate Taxation", description: "Business tax filing", link: "/services/taxation/corporate-taxation" },
+      { title: "Virtual Accounting", description: "Seller bookkeeping", link: "/services/digital/virtual-accounting" }
     ]
   };
 

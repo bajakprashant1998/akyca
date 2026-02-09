@@ -57,6 +57,14 @@ With the increasing focus on overseas assets and money laundering, expert guidan
       { number: "Specialized", label: "Practice Area" },
       { number: "100%", label: "Confidentiality" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Income Tax Appeals", description: "Tax litigation", link: "/services/litigation/income-tax-appeals" },
+      { title: "International Taxation", description: "Foreign asset tax", link: "/services/taxation/international-taxation" },
+      { title: "Business Structuring", description: "Asset holding", link: "/services/financial/business-structuring" },
+      { title: "Tax Representation", description: "Department liaison", link: "/services/taxation/tax-representation" },
+      { title: "FEMA Compliance", description: "Regulatory compliance", link: "/services/compliance/rbi-fema-sebi-compliance" },
+      { title: "Notice Drafting", description: "Reply to notices", link: "/services/litigation/notice-drafting" }
     ]
   };
 

@@ -57,6 +57,14 @@ Whether you're setting up a new manufacturing facility or need to regularize com
       { number: "99%", label: "Renewal Rate" },
       { number: "Zero", label: "Closure Orders" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Labour Law", description: "Workforce regulation compliance", link: "/services/compliance/labour-law" },
+      { title: "Annual Compliance", description: "Yearly statutory filings", link: "/services/compliance/annual-compliance" },
+      { title: "Statutory Audit", description: "Manufacturing audit", link: "/services/audit/statutory-audit" },
+      { title: "GST Registration", description: "Factory tax registration", link: "/services/gst/registration" },
+      { title: "Industrial License", description: "DPIIT Registration", link: "/services/startup/dpiit-registration" },
+      { title: "Virtual Accounting", description: "Payroll services", link: "/services/digital/virtual-accounting" }
     ]
   };
 

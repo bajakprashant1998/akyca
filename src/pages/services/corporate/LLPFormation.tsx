@@ -57,6 +57,14 @@ LLPs are particularly popular among professionals like chartered accountants, la
       { number: "7-10", label: "Days Processing" },
       { number: "100%", label: "Compliance Rate" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Company Incorporation", description: "Private Limited Company registration", link: "/services/corporate/company-incorporation" },
+      { title: "GST Registration", description: "Tax registration for LLP", link: "/services/gst/registration" },
+      { title: "ROC Compliance", description: "Annual filing requirements", link: "/services/corporate/roc-compliance" },
+      { title: "Statutory Audit", description: "LLP audit services", link: "/services/audit/statutory-audit" },
+      { title: "Tax Planning", description: "Strategic tax planning", link: "/services/taxation/tax-planning" },
+      { title: "Virtual Accounting", description: "Outsourced accounting", link: "/services/digital/virtual-accounting" }
     ]
   };
 

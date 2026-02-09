@@ -56,6 +56,14 @@ From choosing the right tax regime to structuring your salary components, from i
     { number: "25%", label: "Average Tax Savings" },
     { number: "5,000+", label: "Clients Advised" },
     { number: "99%", label: "Client Satisfaction" }
+  ],
+  relatedServices: [
+    { title: "Income Tax Return", description: "ITR filing with planning", link: "/services/taxation/income-tax-return" },
+    { title: "Wealth Management", description: "Holistic wealth services", link: "/services/wealth/personal-wealth" },
+    { title: "Corporate Taxation", description: "Business tax planning", link: "/services/taxation/corporate-taxation" },
+    { title: "Investment Advisory", description: "Tax-efficient investments", link: "/services/financial/financial-advisory" },
+    { title: "HNI Advisory", description: "High Net Worth consulting", link: "/services/wealth/hni-advisory" },
+    { title: "Succession Planning", description: "Wealth transfer planning", link: "/services/wealth/succession-planning" }
   ]
 };
 

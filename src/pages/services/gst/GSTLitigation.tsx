@@ -56,6 +56,14 @@ We combine technical GST knowledge with practical litigation experience to provi
     { number: "70%+", label: "Success Rate" },
     { number: "₹100Cr+", label: "Demands Defended" },
     { number: "100%", label: "Timely Responses" }
+  ],
+  relatedServices: [
+    { title: "GST Advisory", description: "Proactive compliance advice", link: "/services/gst/advisory" },
+    { title: "Income Tax Appeals", description: "CIT(A) and tribunal representation", link: "/services/litigation/income-tax-appeals" },
+    { title: "Notice Drafting", description: "Professional replies to notices", link: "/services/litigation/notice-drafting" },
+    { title: "GST Audit", description: "Compliance verification and certification", link: "/services/gst/audit" },
+    { title: "Tax Representation", description: "Direct tax litigation", link: "/services/taxation/tax-representation" },
+    { title: "Tribunal Proceedings", description: "ITAT and GSTAT support", link: "/services/litigation/tribunal-proceedings" }
   ]
 };
 

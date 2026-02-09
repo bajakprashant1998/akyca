@@ -75,8 +75,8 @@ const About = () => {
               Building Trust Through Excellence
             </h1>
             <p className="text-white/80 text-lg leading-relaxed">
-              For over 45 years, Ashvin K Yagnik & Co. has been at the forefront of 
-              chartered accountancy services in India, helping businesses navigate 
+              For over 45 years, Ashvin K Yagnik & Co. has been at the forefront of
+              chartered accountancy services in India, helping businesses navigate
               the complex world of taxation and finance.
             </p>
           </div>
@@ -91,25 +91,25 @@ const About = () => {
             <div>
               <h2 className="section-heading mb-6">Our Story</h2>
               <p className="text-grey leading-relaxed mb-6">
-                Ashvin K Yagnik & Co. has a vintage of more than 45 years in providing 
-                quality and sustainable professional services to clients. We have been 
+                Ashvin K Yagnik & Co. has a vintage of more than 45 years in providing
+                quality and sustainable professional services to clients. We have been
                 consistent as well as up to date in the dynamic taxation and finance world.
               </p>
               <p className="text-grey leading-relaxed mb-6">
-                Founded in 1978 by visionary Chartered Accountant Ashvin K Yagnik, 
-                our firm has grown from a single-partner practice to a robust team 
+                Founded in 1978 by visionary Chartered Accountant Ashvin K Yagnik,
+                our firm has grown from a single-partner practice to a robust team
                 of 9+ partners and numerous professionals serving clients across India.
               </p>
               <p className="text-grey leading-relaxed mb-6">
-                In 2011, we achieved a significant milestone by becoming an RBI Category-I 
-                firm, recognizing our expertise and credibility in the financial sector. 
-                This government recognition positions us among the elite chartered 
+                In 2011, we achieved a significant milestone by becoming an RBI Category-I
+                firm, recognizing our expertise and credibility in the financial sector.
+                This government recognition positions us among the elite chartered
                 accountancy firms in India.
               </p>
               <p className="text-grey leading-relaxed">
-                Today, with branches in Ahmedabad and Mehsana, we continue our mission 
-                of delivering exceptional professional services while maintaining the 
-                core values of integrity, excellence, and client satisfaction that 
+                Today, with branches in Ahmedabad and Mehsana, we continue our mission
+                of delivering exceptional professional services while maintaining the
+                core values of integrity, excellence, and client satisfaction that
                 have defined our practice since inception.
               </p>
             </div>
@@ -151,8 +151,8 @@ const About = () => {
                   </div>
                 </div>
                 <p className="text-white/80 text-sm leading-relaxed">
-                  Our RBI Category-I status recognizes our expertise in handling 
-                  complex financial matters and positions us as a trusted partner 
+                  Our RBI Category-I status recognizes our expertise in handling
+                  complex financial matters and positions us as a trusted partner
                   for government and regulatory compliance work.
                 </p>
               </div>
@@ -176,29 +176,29 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {boardOfDirectors.map((member, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group bg-background rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
               >
                 {/* Image Container */}
                 <div className="relative overflow-hidden aspect-square">
-                  <img 
-                    src={member.image} 
+                  <img
+                    src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
+
                   {/* Social Icons on Hover */}
                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-navy hover:bg-cream transition-colors"
                     >
                       <Linkedin className="w-5 h-5" />
                     </a>
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-navy hover:bg-cream transition-colors"
                     >
                       <Mail className="w-5 h-5" />

@@ -57,6 +57,14 @@ Whether you're developing your first business plan for seed funding or refining 
       { number: "₹500Cr+", label: "Funding Enabled" },
       { number: "85%", label: "Funding Success" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Pitch Deck Support", description: "Investor materials", link: "/services/startup/pitch-deck-support" },
+      { title: "Funding Support", description: "Fund raising", link: "/services/startup/funding-support" },
+      { title: "Virtual CFO", description: "Financial strategy", link: "/services/financial/virtual-cfo" },
+      { title: "Valuation Services", description: "Business valuation", link: "/services/financial/valuation-services" },
+      { title: "Project Finance", description: "Growth capital", link: "/services/financial/project-finance" },
+      { title: "Corporate Taxation", description: "Tax planning", link: "/services/taxation/corporate-taxation" }
     ]
   };
 

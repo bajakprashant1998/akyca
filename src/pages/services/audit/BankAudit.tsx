@@ -54,6 +54,14 @@ Our team has audited branches across public sector banks, private banks, regiona
     { number: "RBI", label: "Category-I Since 2011" },
     { number: "15+", label: "Years Bank Audit Experience" },
     { number: "All Types", label: "Banks Covered" }
+  ],
+  relatedServices: [
+    { title: "Concurrent Audit", description: "Real-time transaction monitoring", link: "/services/audit/concurrent-audit" },
+    { title: "Stock Audit", description: "Inventory verification for banks", link: "/services/audit/stock-audit" },
+    { title: "Statutory Audit", description: "Companies Act compliance", link: "/services/audit/statutory-audit" },
+    { title: "RBI Compliance", description: "FEMA and RBI regulatory compliance", link: "/services/compliance/rbi-fema-sebi" },
+    { title: "Internal Audit", description: "Risk-based audit", link: "/services/audit/internal-audit" },
+    { title: "Information System Audit", description: "IT and security audit", link: "/services/digital/information-system-audit" }
   ]
 };
 

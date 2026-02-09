@@ -56,6 +56,12 @@ We also assist with governance frameworks, impact measurement, and transparency 
       { number: "₹200Cr+", label: "CSR Managed" },
       { number: "100%", label: "FCRA Compliance" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Trust & NGO Compliance", description: "filings & 12A/80G", link: "/services/compliance/trust-ngo-compliance" },
+      { title: "Statutory Audit", description: "Trust audit", link: "/services/audit/statutory-audit" },
+      { title: "FCRA Compliance", description: "Foreign contribution", link: "/services/compliance/rbi-fema-sebi-compliance" },
+      { title: "Tax Representation", description: "Scrutiny cases", link: "/services/taxation/tax-representation" }
     ]
   };
 

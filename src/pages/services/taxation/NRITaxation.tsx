@@ -56,6 +56,14 @@ From determining residential status to filing NRI tax returns, from property sal
     { number: "₹100Cr+", label: "Repatriation Assisted" },
     { number: "30+", label: "Countries Served" },
     { number: "100%", label: "FEMA Compliance" }
+  ],
+  relatedServices: [
+    { title: "International Taxation", description: "Cross-border tax issues", link: "/services/taxation/international-taxation" },
+    { title: "Income Tax Return", description: "NRI ITR filing", link: "/services/taxation/income-tax-return" },
+    { title: "Tax Planning", description: "Investment tax planning", link: "/services/taxation/tax-planning" },
+    { title: "Tax Representation", description: "Assessment and scrutiny support", link: "/services/taxation/tax-representation" },
+    { title: "Real Estate Advisory", description: "Property transaction support", link: "/services/industry/real-estate" },
+    { title: "HNI Advisory", description: "Wealth management for HNIs", link: "/services/wealth/hni-advisory" }
   ]
 };
 

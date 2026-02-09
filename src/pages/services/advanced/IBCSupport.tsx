@@ -56,6 +56,12 @@ With deep understanding of IBC provisions and NCLT procedures, we help stakehold
       { number: "₹500Cr+", label: "Claims Filed" },
       { number: "45%", label: "Avg Recovery" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Turnaround & Restructuring", description: "Business revival", link: "/services/advanced/turnaround-restructuring" },
+      { title: "Business Valuation", description: "Asset valuation", link: "/services/advanced/business-valuation" },
+      { title: "Forensic Audit", description: "Avoidance transactions", link: "/services/advanced/forensic-audit" },
+      { title: "Due Diligence", description: "Resolution plan", link: "/services/financial/due-diligence" }
     ]
   };
 

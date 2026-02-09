@@ -57,6 +57,14 @@ With our experienced team handling your ROC compliances, you can focus on growin
       { number: "99%", label: "On-Time Filing Rate" },
       { number: "Zero", label: "Penalty Cases" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "Secretarial Services", description: "Board meeting and resolution support", link: "/services/corporate/secretarial-services" },
+      { title: "Statutory Audit", description: "Annual financial audit", link: "/services/audit/statutory-audit" },
+      { title: "Company Incorporation", description: "New company registration", link: "/services/corporate/company-incorporation" },
+      { title: "LLP Formation", description: "LLP registration and compliance", link: "/services/corporate/llp-formation" },
+      { title: "Corporate Governance", description: "Board compliance", link: "/services/advanced/corporate-governance" },
+      { title: "Due Diligence", description: "Compliance health check", link: "/services/corporate/due-diligence" }
     ]
   };
 

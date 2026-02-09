@@ -57,6 +57,14 @@ Whether you need ongoing secretarial support or assistance with specific transac
       { number: "500+", label: "Meetings Managed" },
       { number: "100%", label: "Compliance Rate" },
       { number: "45+", label: "Years Experience" }
+    ],
+    relatedServices: [
+      { title: "ROC Compliance", description: "Annual filing and forms", link: "/services/corporate/roc-compliance" },
+      { title: "Corporate Governance", description: "Board evaluation and policy advisory", link: "/services/advanced/corporate-governance" },
+      { title: "Statutory Audit", description: "Compliance verification", link: "/services/audit/statutory-audit" },
+      { title: "Company Incorporation", description: "Setting up new entities", link: "/services/corporate/company-incorporation" },
+      { title: "LLP Formation", description: "LLP secretarial services", link: "/services/corporate/llp-formation" },
+      { title: "FEMA Compliance", description: "FDI reporting and records", link: "/services/compliance/rbi-fema-sebi" }
     ]
   };
 

@@ -56,6 +56,14 @@ We use advanced reconciliation tools to match your data with GSTR-2A/2B, identif
     { number: "100%", label: "On-time Filing" },
     { number: "₹50Cr+", label: "ITC Optimized" },
     { number: "500+", label: "Active Clients" }
+  ],
+  relatedServices: [
+    { title: "GST Registration", description: "New registration and amendment services", link: "/services/gst/registration" },
+    { title: "Income Tax Return", description: "Personal and business income tax filing", link: "/services/taxation/income-tax-return" },
+    { title: "GST Audit", description: "Reconciliation and audit certification (GSTR-9C)", link: "/services/gst/audit" },
+    { title: "TDS Compliance", description: "TDS return filing and payment support", link: "/services/taxation/tds-compliance" },
+    { title: "GST Advisory", description: "Compliance optimization", link: "/services/gst/advisory" },
+    { title: "Virtual Accounting", description: "Outsourced accounting services", link: "/services/digital/virtual-accounting" }
   ]
 };
 
