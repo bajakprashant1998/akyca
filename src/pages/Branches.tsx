@@ -7,7 +7,7 @@ const branches = [
     address: "502, 5th Floor, 3rd Eye Vision, I.I.M./A.M.A. Road, Nr. Panjrapol Circle, Ahmedabad – 380015",
     phone: "079 – 26304598",
     hours: "Mon - Sat: 10:00 AM - 7:00 PM",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.9684!2d72.5253!3d23.0333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAyJzAwLjAiTiA3MsKwMzEnMzEuMCJF!5e0!3m2!1sen!2sin!4v1234567890",
+    mapUrl: "https://maps.google.com/maps?q=Ashvin%20K.%20Yagnik%20%26%20Co.%20Ahmedabad%203rd%20Eye%20Vision&t=&z=15&ie=UTF8&iwloc=&output=embed",
   },
   {
     name: "Mehsana Branch",
@@ -32,7 +32,7 @@ const Branches = () => {
               Branch Offices
             </h1>
             <p className="text-white/80 text-lg leading-relaxed">
-              Visit us at our conveniently located offices in Ahmedabad and Mehsana, 
+              Visit us at our conveniently located offices in Ahmedabad and Mehsana,
               Gujarat. Our doors are always open to serve you.
             </p>
           </div>
@@ -48,14 +48,18 @@ const Branches = () => {
                 key={index}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg border border-border hover:border-cream transition-colors"
               >
-                {/* Map Placeholder */}
+                {/* Map */}
                 <div className="h-64 bg-cream/30 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="w-12 h-12 text-navy mx-auto mb-2" />
-                      <p className="text-grey text-sm">View on Google Maps</p>
-                    </div>
-                  </div>
+                  <iframe
+                    src={branch.mapUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`${branch.name} Map`}
+                  ></iframe>
                 </div>
 
                 {/* Details */}
