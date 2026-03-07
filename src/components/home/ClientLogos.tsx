@@ -1,76 +1,70 @@
- import { Shield, Award, Building2, FileCheck } from "lucide-react";
- 
- const certifications = [
-   {
-     icon: Shield,
-     title: "RBI Category-I",
-     description: "Authorized Bank Auditors",
-   },
-   {
-     icon: Award,
-     title: "ICAI Member",
-     description: "Institute of Chartered Accountants",
-   },
-   {
-     icon: Building2,
-     title: "GST Practitioner",
-     description: "Registered GST Consultants",
-   },
-   {
-     icon: FileCheck,
-     title: "Insolvency Professional",
-     description: "IBBI Registered IPs",
-   },
- ];
- 
- const industries = [
-   "Manufacturing",
-   "IT & Software",
-   "Healthcare",
-   "Real Estate",
-   "Education",
-   "Retail",
-   "Export-Import",
-   "Hospitality",
-   "E-commerce",
-   "Banking & NBFC",
- ];
- 
- export const ClientLogos = () => {
-   return (
-     <section className="py-16 bg-navy">
-       <div className="container mx-auto px-4">
-         {/* Certifications */}
-         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-           {certifications.map((cert, index) => (
-             <div
-               key={index}
-               className="flex flex-col items-center text-center p-6 bg-white/5 rounded-xl border border-white/10 hover:border-gold/30 transition-colors"
-             >
-               <cert.icon className="w-10 h-10 text-gold mb-3" />
-               <h4 className="text-cream font-semibold mb-1">{cert.title}</h4>
-               <p className="text-white/60 text-sm">{cert.description}</p>
-             </div>
-           ))}
-         </div>
- 
-         {/* Industries Served */}
-         <div className="text-center">
-           <p className="text-white/60 text-sm mb-6 uppercase tracking-wider">
-             Trusted by businesses across industries
-           </p>
-           <div className="flex flex-wrap justify-center gap-3">
-             {industries.map((industry, index) => (
-               <span
-                 key={index}
-                 className="px-4 py-2 bg-white/5 text-cream text-sm rounded-full border border-white/10 hover:border-gold/30 hover:bg-white/10 transition-colors cursor-default"
-               >
-                 {industry}
-               </span>
-             ))}
-           </div>
-         </div>
-       </div>
-     </section>
-   );
- };
+import { useState, useEffect, useRef } from "react";
+import { Shield, Award, Building2, FileCheck } from "lucide-react";
+
+const certifications = [
+  { icon: Shield, title: "RBI Category-I", description: "Authorized Bank Auditors" },
+  { icon: Award, title: "ICAI Member", description: "Institute of Chartered Accountants" },
+  { icon: Building2, title: "GST Practitioner", description: "Registered GST Consultants" },
+  { icon: FileCheck, title: "Insolvency Professional", description: "IBBI Registered IPs" },
+];
+
+const industries = [
+  "Manufacturing", "IT & Software", "Healthcare", "Real Estate", "Education",
+  "Retail", "Export-Import", "Hospitality", "E-commerce", "Banking & NBFC",
+];
+
+export const ClientLogos = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section ref={ref} className="py-16 bg-navy relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-gold/5 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          {certifications.map((cert, index) => (
+            <div
+              key={index}
+              className={`flex flex-col items-center text-center p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-gold/30 hover:bg-white/10 transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <div className="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <cert.icon className="w-7 h-7 text-gold" />
+              </div>
+              <h4 className="text-cream font-semibold mb-1">{cert.title}</h4>
+              <p className="text-white/50 text-sm">{cert.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className={`text-center transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <p className="text-white/50 text-sm mb-6 uppercase tracking-wider font-medium">
+            Trusted by businesses across industries
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {industries.map((industry, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 bg-white/5 text-cream text-sm rounded-full border border-white/10 hover:border-gold/30 hover:bg-white/10 transition-all duration-300 cursor-default hover:scale-105"
+              >
+                {industry}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
