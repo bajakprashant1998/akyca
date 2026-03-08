@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { TrendingUp, Sparkles } from "lucide-react";
+import { TrendingUp, Sparkles, Shield, Award } from "lucide-react";
 
 const useCountUp = (end: number, duration: number = 2000, startCounting: boolean = false) => {
   const [count, setCount] = useState(0);
@@ -37,31 +37,62 @@ export const TrustBar = () => {
   const revenueCount = useCountUp(850, 2500, isVisible);
 
   return (
-    <div ref={ref} className="bg-white border-b border-border py-2.5 relative overflow-hidden">
-      {/* Subtle animated gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/3 to-transparent animate-[shimmer_3s_infinite]" style={{ backgroundSize: '200% 100%' }} />
+    <div ref={ref} className="bg-gradient-to-r from-white via-cream/20 to-white border-b border-border py-3 relative overflow-hidden">
+      {/* Shimmer effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/5 to-transparent animate-[shimmer_3s_infinite]" style={{ backgroundSize: '200% 100%' }} />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 px-2 py-1 bg-gold/10 rounded-full">
-              <Sparkles className="w-3.5 h-3.5 text-gold" />
-              <span className="text-[10px] font-bold text-gold uppercase tracking-wider">Live</span>
+          {/* Left - Live Counter */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-gold/10 to-gold/20 rounded-full border border-gold/20">
+              <div className="relative">
+                <Sparkles className="w-4 h-4 text-gold" />
+                <div className="absolute inset-0 animate-ping">
+                  <Sparkles className="w-4 h-4 text-gold/50" />
+                </div>
+              </div>
+              <span className="text-[11px] font-bold text-gold uppercase tracking-wider">Live</span>
             </div>
-            <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider hidden sm:inline">
-              Tax Savings Delivered
-            </span>
-            <div className="flex items-center gap-1.5">
-              <TrendingUp className="w-4 h-4 text-gold" />
-              <span className="text-lg font-display font-bold text-navy">
-                ₹{formatNumber(revenueCount)} Cr+
+            
+            <div className="hidden sm:flex items-center gap-2">
+              <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                Tax Savings Delivered
               </span>
+              <div className="flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-gold" />
+                <span className="text-xl font-display font-bold text-navy">
+                  ₹{formatNumber(revenueCount)} Cr+
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-6 text-sm">
-            <a href="tel:+919825046598" className="text-muted-foreground hover:text-navy transition-colors font-medium">
+          {/* Center - Trust Badges (desktop) */}
+          <div className="hidden lg:flex items-center gap-4">
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-navy/5 rounded-full">
+              <Shield className="w-4 h-4 text-navy" />
+              <span className="text-xs font-semibold text-navy">RBI Category-I</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-navy/5 rounded-full">
+              <Award className="w-4 h-4 text-navy" />
+              <span className="text-xs font-semibold text-navy">45+ Years</span>
+            </div>
+          </div>
+
+          {/* Right - Contact */}
+          <div className="flex items-center gap-4">
+            <a href="tel:+919825046598" className="text-sm text-muted-foreground hover:text-navy transition-colors font-semibold hidden md:block">
               +91 98250 46598
+            </a>
+            <a 
+              href="https://wa.me/919825046598" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-green-600 text-white text-xs font-semibold rounded-full hover:bg-green-500 transition-colors"
+            >
+              <span className="hidden sm:inline">WhatsApp</span>
+              <span className="sm:hidden">Chat</span>
             </a>
           </div>
         </div>
