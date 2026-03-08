@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import { 
   FileText, Calculator, ClipboardCheck, Building2, TrendingUp, Shield,
-  ArrowRight, Rocket, Laptop
+  ArrowRight, Rocket, Laptop, Sparkles
 } from "lucide-react";
 
 const services = [
@@ -12,12 +12,13 @@ const services = [
   { icon: Building2, title: "Company Services", description: "Company incorporation, LLP formation, ROC compliance, and secretarial services.", link: "/services/corporate", color: "from-amber-500 to-amber-600" },
   { icon: TrendingUp, title: "Financial Advisory", description: "Business structuring, project finance, fund raising, and virtual CFO services.", link: "/services/financial-advisory", color: "from-rose-500 to-rose-600" },
   { icon: Shield, title: "Compliance Services", description: "RBI, FEMA, SEBI, NBFC compliance and regulatory advisory services.", link: "/services/compliance", color: "from-cyan-500 to-cyan-600" },
-  { icon: Rocket, title: "Startup Services", description: "DPIIT registration, angel tax, ESOP structuring, and funding support.", link: "/services/startup", color: "from-pink-500 to-pink-600" },
+  { icon: Rocket, title: "Startup Services", description: "DPIIT registration, angel tax, ESOP structuring, and funding support.", link: "/services/startup", color: "from-pink-500 to-pink-600", badge: "Trending" },
   { icon: Laptop, title: "Digital Accounting", description: "Cloud accounting, MIS dashboards, ERP advisory, and finance automation.", link: "/services/digital-accounting", color: "from-indigo-500 to-indigo-600" },
 ];
 
 export const ServicesPreview = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -30,12 +31,16 @@ export const ServicesPreview = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-20 bg-muted/30 relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-navy/3 to-transparent rounded-full blur-3xl" />
+    <section ref={ref} className="py-24 bg-gradient-to-b from-muted/20 via-background to-muted/30 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute top-1/2 -translate-y-1/2 -left-40 w-80 h-80 bg-gradient-to-r from-gold/5 to-transparent rounded-full blur-3xl" />
+      <div className="absolute top-1/4 -right-40 w-96 h-96 bg-gradient-to-l from-navy/5 to-transparent rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-navy/5 rounded-full text-navy font-semibold text-sm tracking-wider uppercase mb-6">
+            <Sparkles className="w-4 h-4 text-gold" />
             What We Offer
           </span>
           <h2 className="section-heading mb-4">
@@ -48,47 +53,71 @@ export const ServicesPreview = () => {
           </p>
         </div>
 
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <Link
               to={service.link}
               key={index}
-              className={`group bg-card rounded-2xl p-6 border border-border hover:border-gold/40 transition-all duration-500 hover:shadow-2xl hover-lift relative overflow-hidden ${
+              className={`group relative bg-card rounded-2xl p-6 border border-border hover:border-gold/40 transition-all duration-500 overflow-hidden ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${index * 80}ms` }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
+              {/* Hover gradient background */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500`} />
+              
               {/* Badge */}
               {"badge" in service && service.badge && (
-                <span className="absolute top-4 right-4 bg-gold/10 text-gold text-[10px] font-bold px-2 py-1 rounded-full">
+                <span className={`absolute top-4 right-4 text-[10px] font-bold px-2.5 py-1 rounded-full ${
+                  service.badge === "Most Popular" ? "bg-gold/15 text-gold" :
+                  service.badge === "Trending" ? "bg-pink-500/15 text-pink-600" :
+                  "bg-emerald-500/15 text-emerald-600"
+                }`}>
                   {service.badge}
                 </span>
               )}
               
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-md`}>
-                <service.icon className="w-6 h-6 text-white" />
+              {/* Icon */}
+              <div className={`relative w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg`}>
+                <service.icon className="w-7 h-7 text-white" />
+                {/* Glow */}
+                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${service.color} blur-lg opacity-0 group-hover:opacity-30 transition-opacity`} />
               </div>
-              <h3 className="text-lg font-display font-semibold text-foreground mb-2 group-hover:text-navy transition-colors">
+
+              {/* Content */}
+              <h3 className="text-lg font-display font-bold text-foreground mb-2 group-hover:text-navy transition-colors">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                 {service.description}
               </p>
-              <span className="inline-flex items-center gap-1 text-sm font-medium text-gold group-hover:gap-2 transition-all">
-                Learn More <ArrowRight className="w-4 h-4" />
+
+              {/* CTA */}
+              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:gap-2.5 transition-all">
+                Explore <ArrowRight className="w-4 h-4" />
               </span>
+
+              {/* Bottom accent line */}
+              <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${service.color} scale-x-0 group-hover:scale-x-100 transition-transform origin-left`} />
             </Link>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* CTA Button */}
+        <div className={`text-center mt-14 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 bg-navy text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-navy-dark transition-all group shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-navy to-navy-dark text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all group shadow-lg hover:-translate-y-0.5"
           >
-            View All Services
+            View All 100+ Services
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
+          <p className="text-muted-foreground text-sm mt-4">
+            Comprehensive CA services for every business need
+          </p>
         </div>
       </div>
     </section>
