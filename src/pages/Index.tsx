@@ -4,6 +4,7 @@ import { TrustBar } from "@/components/home/TrustBar";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ValuePillars } from "@/components/home/ValuePillars";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
+import { PopularServicesGrid } from "@/components/home/PopularServicesGrid";
 import { ResultsShowcase } from "@/components/home/ResultsShowcase";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { ClientLogos } from "@/components/home/ClientLogos";
