@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { CheckCircle, ChevronRight, ArrowRight, Target, Award, BadgeCheck, TrendingUp, HelpCircle, ChevronDown, Phone, MessageCircle, Calendar, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { LucideIcon } from "lucide-react";
