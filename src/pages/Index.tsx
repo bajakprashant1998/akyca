@@ -25,6 +25,7 @@ const Index = () => {
       <HeroSection />
       <ValuePillars />
       <ServicesPreview />
+      <PopularServicesGrid />
       <ResultsShowcase />
       <WhyChooseUs />
       <ClientLogos />
