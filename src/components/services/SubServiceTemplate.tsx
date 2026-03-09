@@ -159,8 +159,26 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+  const slugTitle = data.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  const faqJsonLd = data.faqs?.length ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": data.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+    }))
+  } : undefined;
+
   return (
     <Layout>
+      <SEO
+        title={`${data.title} – ${data.parentService}`}
+        description={data.description}
+        keywords={`${data.title}, ${data.parentService}, CA services Ahmedabad, chartered accountant Gujarat, ${slugTitle}`}
+        canonicalUrl={`/services/${slugTitle}`}
+        jsonLd={faqJsonLd}
+      />
       {/* Hero Section with Enhanced Banner */}
       <section className="relative bg-gradient-to-br from-navy via-navy to-navy/90 py-24 overflow-hidden">
         {/* Animated background elements */}
