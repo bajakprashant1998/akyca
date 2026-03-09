@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { SEO } from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Sparkles, ArrowRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -106,6 +107,12 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contact Us – CA Firm in Ahmedabad & Mehsana"
+        description="Get in touch with Ashvin K Yagnik & Co. for expert CA services. Visit our offices in Ahmedabad & Mehsana or call +91 98250 46598. Free consultation available."
+        keywords="contact CA Ahmedabad, chartered accountant phone number, CA firm Mehsana, book CA consultation Gujarat"
+        canonicalUrl="/contact"
+      />
       {/* Hero Section - Enhanced */}
       <section className="relative bg-gradient-to-br from-navy via-navy to-navy/90 py-24 overflow-hidden">
         <div className="absolute inset-0">
