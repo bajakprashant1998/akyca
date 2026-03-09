@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { SEO } from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Sparkles, ArrowRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
