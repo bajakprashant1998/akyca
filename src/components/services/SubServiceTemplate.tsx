@@ -507,6 +507,45 @@ export const SubServiceTemplate = ({ data }: SubServiceTemplateProps) => {
         </section>
       )}
 
+      {/* Browse Other Service Categories */}
+      <section className="py-16 bg-muted/30 border-t border-border">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-display font-bold text-navy mb-2">Explore More Services</h2>
+            <p className="text-muted-foreground">Browse our full range of chartered accountant services</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { name: "Taxation", path: "/services/taxation" },
+              { name: "GST", path: "/services/gst" },
+              { name: "Audit", path: "/services/audit" },
+              { name: "Corporate", path: "/services/corporate" },
+              { name: "Financial Advisory", path: "/services/financial-advisory" },
+              { name: "Compliance", path: "/services/compliance" },
+              { name: "Litigation", path: "/services/litigation" },
+              { name: "Startup", path: "/services/startup" },
+              { name: "Industry-Specific", path: "/services/industry" },
+              { name: "Digital Accounting", path: "/services/digital-accounting" },
+              { name: "Personal & Wealth", path: "/services/personal-wealth" },
+              { name: "Advanced Financial", path: "/services/advanced-financial" },
+            ].filter(cat => cat.path !== data.parentServicePath).map((cat) => (
+              <Link
+                key={cat.path}
+                to={cat.path}
+                className="px-5 py-2.5 bg-card border border-border rounded-full text-sm font-medium text-foreground hover:bg-navy hover:text-white hover:border-navy transition-all"
+              >
+                {cat.name}
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <Link to="/services" className="text-gold font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">
+              View All Services <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA - Enhanced */}
       <section className="py-20 bg-gradient-to-br from-navy via-navy to-navy/90 relative overflow-hidden">
         <div className="absolute inset-0">
