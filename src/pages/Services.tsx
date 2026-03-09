@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import {
   FileText, Calculator, ClipboardCheck, Building2, TrendingUp, Shield,
   Gavel, Rocket, Factory, Laptop, UserCheck, ChevronRight, ArrowRight, Sparkles, Phone
