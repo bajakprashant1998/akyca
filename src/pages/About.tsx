@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { CheckCircle, Users, Target, Award, Briefcase, Shield, Linkedin, Mail } from "lucide-react";
 import ashwinYagnik from "@/assets/team/ashwin-yagnik.png";
 import japanYagnik from "@/assets/team/japan-yagnik.png";
