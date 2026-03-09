@@ -74,6 +74,12 @@ const stats = [
 const Services = () => {
   return (
     <Layout>
+      <SEO
+        title="CA Services – Tax, GST, Audit & Advisory"
+        description="Comprehensive chartered accountant services: Income Tax, GST, Audit & Assurance, Company Law, Financial Advisory, Compliance, Startup Services & more. Trusted by 1200+ clients across India."
+        keywords="CA services Ahmedabad, income tax services, GST consultant, audit services Gujarat, company incorporation, financial advisory, startup CA services India"
+        canonicalUrl="/services"
+      />
       {/* Hero Section - Enhanced */}
       <section className="relative bg-gradient-to-br from-navy via-navy to-navy/90 py-24 overflow-hidden">
         <div className="absolute inset-0">
