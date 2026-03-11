@@ -1,104 +1,40 @@
-import { Layout } from "@/components/layout/Layout";
-import { Gavel, CheckCircle, ChevronRight, ArrowRight, Target, Award, BadgeCheck, TrendingUp, Shield, Scale, FileText, Users } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ServiceCategoryTemplate, ServiceCategoryData } from "@/components/services/ServiceCategoryTemplate";
+import { Gavel, Shield, Scale, Users } from "lucide-react";
 
-const services = [
-  { title: "Income Tax Appeals & Assessments", description: "Professional representation in income tax assessments and appeals at all levels.", features: ["Assessment proceedings", "CIT(A) appeals", "ITAT representation", "High Court matters"], process: ["Case analysis", "Strategy development", "Documentation", "Representation"], benefits: ["Expert advocacy", "Higher success rate", "Reduced liability", "Peace of mind"], link: "/services/litigation/income-tax-appeals" },
-  { title: "GST Litigation", description: "Expert handling of GST disputes and litigation matters.", features: ["Notice response", "Assessment challenges", "Appellate proceedings", "Advance rulings"], process: ["Notice analysis", "Response drafting", "Filing", "Representation"], benefits: ["Timely resolution", "Expert handling", "Cost effective", "Professional support"], link: "/services/litigation/gst-litigation" },
-  { title: "Tribunal & Commissioner Proceedings", description: "Skilled representation before tribunals and commissioners.", features: ["Case preparation", "Written submissions", "Oral arguments", "Cross-examination"], process: ["Research", "Submission drafting", "Hearing preparation", "Representation"], benefits: ["Strong advocacy", "Legal expertise", "Successful outcomes", "Full support"], link: "/services/litigation/tribunal-proceedings" },
-  { title: "Notice Drafting & Reply", description: "Expert drafting of responses to tax authority notices.", features: ["Notice analysis", "Reply preparation", "Document compilation", "Submission"], process: ["Notice review", "Strategy", "Drafting", "Filing"], benefits: ["Comprehensive response", "Legal compliance", "Timely submission", "Expert review"], link: "/services/litigation/notice-drafting" },
-  { title: "Search & Survey Case Handling", description: "Specialized support during and after search operations.", features: ["On-ground support", "Post-search handling", "Settlement matters", "Block assessment"], process: ["Immediate support", "Documentation", "Assessment handling", "Resolution"], benefits: ["Expert guidance", "Rights protection", "Liability minimization", "Full support"], link: "/services/litigation/search-survey" },
-  { title: "Black Money & Benami Act Advisory", description: "Expert advisory on Black Money and Benami Act matters.", features: ["Compliance advisory", "Disclosure assistance", "Notice handling", "Penalty mitigation"], process: ["Situation analysis", "Strategy", "Implementation", "Resolution"], benefits: ["Legal protection", "Penalty reduction", "Expert guidance", "Confidentiality"], link: "/services/litigation/black-money-act" }
-];
-
-const stats = [{ number: "500+", label: "Cases Handled" }, { number: "85%", label: "Success Rate" }, { number: "45+", label: "Years Experience" }, { number: "All Levels", label: "AO to Supreme Court" }];
-
-const LitigationRepresentation = () => {
-  return (
-    <Layout>
-      <section className="bg-navy py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-cream rounded-2xl flex items-center justify-center"><Gavel className="w-8 h-8 text-navy" /></div>
-              <span className="text-cream font-medium text-sm tracking-wider uppercase">Legal Support</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">Litigation & Representation</h1>
-            <p className="text-white/80 text-lg leading-relaxed max-w-3xl">Strong advocacy and expert representation before tax authorities and tribunals.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-cream/30 py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-2 text-sm">
-            <Link to="/" className="text-grey hover:text-navy">Home</Link><ChevronRight className="w-4 h-4 text-grey" />
-            <Link to="/services" className="text-grey hover:text-navy">Services</Link><ChevronRight className="w-4 h-4 text-grey" />
-            <span className="text-navy font-medium">Litigation & Representation</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-navy">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            {stats.map((stat, i) => <div key={i} className="text-center"><div className="text-4xl md:text-5xl font-display font-bold text-gold mb-2">{stat.number}</div><div className="text-white/80">{stat.label}</div></div>)}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-cream/20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-display font-bold text-navy mb-4">Our Litigation Services</h2></div>
-          <div className="space-y-16">
-            {services.map((service, index) => (
-              <Link
-                to={service.link}
-                key={index}
-                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all block group"
-              >
-                <div className="bg-gradient-to-r from-navy to-navy/90 p-6 md:p-8">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white">{service.title}</h3>
-                    <ArrowRight className="w-8 h-8 text-cream/50 group-hover:text-cream group-hover:translate-x-2 transition-all" />
-                  </div>
-                </div>
-                <div className="p-6 md:p-8">
-                  <p className="text-grey leading-relaxed mb-8 text-lg">{service.description}</p>
-                  <div className="grid md:grid-cols-3 gap-8">
-                    <div className="bg-cream/30 rounded-xl p-6">
-                      <h4 className="text-sm font-semibold text-navy uppercase tracking-wider mb-4 flex items-center gap-2"><BadgeCheck className="w-5 h-5 text-gold" />Key Features</h4>
-                      <ul className="space-y-3">{service.features.map((f, i) => <li key={i} className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" /><span className="text-grey">{f}</span></li>)}</ul>
-                    </div>
-                    <div className="bg-navy/5 rounded-xl p-6">
-                      <h4 className="text-sm font-semibold text-navy uppercase tracking-wider mb-4 flex items-center gap-2"><Target className="w-5 h-5 text-navy" />Our Process</h4>
-                      <ul className="space-y-3">{service.process.map((s, i) => <li key={i} className="flex items-start gap-3"><span className="w-6 h-6 bg-navy text-white rounded-full flex items-center justify-center text-xs font-bold">{i+1}</span><span className="text-grey">{s}</span></li>)}</ul>
-                    </div>
-                    <div className="bg-gold/5 rounded-xl p-6">
-                      <h4 className="text-sm font-semibold text-navy uppercase tracking-wider mb-4 flex items-center gap-2"><Award className="w-5 h-5 text-gold" />Benefits</h4>
-                      <ul className="space-y-3">{service.benefits.map((b, i) => <li key={i} className="flex items-start gap-3"><TrendingUp className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" /><span className="text-grey">{b}</span></li>)}</ul>
-                    </div>
-                  </div>
-                  <div className="mt-6 flex justify-end">
-                    <span className="text-navy font-medium group-hover:text-gold transition-colors flex items-center gap-2">
-                      Get Started <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-gradient-to-r from-navy to-navy/90">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-white mb-4">Facing Tax Notice or Assessment?</h2>
-          <Link to="/contact" className="cta-secondary inline-flex items-center justify-center gap-2">Get Legal Consultation<ArrowRight className="w-5 h-5" /></Link>
-        </div>
-      </section>
-    </Layout>
-  );
+const data: ServiceCategoryData = {
+  icon: Gavel,
+  badge: "Legal Support",
+  titleLine1: "Litigation &",
+  titleLine2: "Representation",
+  description: "Strong advocacy and expert representation before tax authorities and tribunals at all levels — from Assessing Officer to Supreme Court.",
+  ctaLabel: "Get Legal Consultation",
+  highlights: [
+    { icon: Gavel, title: "500+ Cases", description: "Successfully handled across all levels", color: "from-orange-500/20 to-orange-600/10" },
+    { icon: Shield, title: "85% Success Rate", description: "Strong track record in appeals", color: "from-emerald-500/20 to-emerald-600/10" },
+    { icon: Scale, title: "All Levels", description: "AO to Supreme Court representation", color: "from-blue-500/20 to-blue-600/10" },
+    { icon: Users, title: "Expert Team", description: "45+ years of litigation experience", color: "from-purple-500/20 to-purple-600/10" }
+  ],
+  services: [
+    { title: "Income Tax Appeals & Assessments", description: "Professional representation in income tax assessments and appeals at all levels.", features: ["Assessment proceedings", "CIT(A) appeals", "ITAT representation", "High Court matters"], link: "/services/litigation/income-tax-appeals", highlight: "Most Common" },
+    { title: "GST Litigation", description: "Expert handling of GST disputes and litigation matters.", features: ["Notice response", "Assessment challenges", "Appellate proceedings", "Advance rulings"], link: "/services/litigation/gst-litigation" },
+    { title: "Tribunal & Commissioner Proceedings", description: "Skilled representation before tribunals and commissioners.", features: ["Case preparation", "Written submissions", "Oral arguments", "Cross-examination"], link: "/services/litigation/tribunal-proceedings" },
+    { title: "Notice Drafting & Reply", description: "Expert drafting of responses to tax authority notices.", features: ["Notice analysis", "Reply preparation", "Document compilation", "Timely submission"], link: "/services/litigation/notice-drafting" },
+    { title: "Search & Survey Case Handling", description: "Specialized support during and after search operations.", features: ["On-ground support", "Post-search handling", "Settlement matters", "Block assessment"], link: "/services/litigation/search-survey", highlight: "Specialized" },
+    { title: "Black Money & Benami Act Advisory", description: "Expert advisory on Black Money and Benami Act matters.", features: ["Compliance advisory", "Disclosure assistance", "Notice handling", "Penalty mitigation"], link: "/services/litigation/black-money-act" }
+  ],
+  stats: [
+    { number: "500+", label: "Cases Handled" },
+    { number: "85%", label: "Success Rate" },
+    { number: "45+", label: "Years Experience" },
+    { number: "All", label: "AO to Supreme Court" }
+  ],
+  seo: {
+    title: "Litigation & Representation – Tax Appeals, GST & Tribunal",
+    description: "Expert litigation services: Income Tax Appeals, GST Litigation, Tribunal Proceedings, Notice Handling, Search Cases. 85% success rate.",
+    keywords: "tax litigation, income tax appeal, GST litigation, tribunal representation, tax notice reply, CA Ahmedabad",
+    canonicalUrl: "/services/litigation"
+  }
 };
 
+const LitigationRepresentation = () => <ServiceCategoryTemplate data={data} />;
 export default LitigationRepresentation;
