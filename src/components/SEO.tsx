@@ -21,9 +21,11 @@ export const SEO = ({
 }: SEOProps) => {
   const siteName = "Ashvin K Yagnik & Co.";
   const baseUrl = "https://akyca.com";
+  
+  // Include primary targeted keywords in title suffix
   const fullTitle = title.includes(siteName)
     ? title
-    : `${title} | ${siteName} | Chartered Accountants Ahmedabad`;
+    : `${title} | ${siteName} | Best CA Firm in Ahmedabad, Gujarat`;
   const fullCanonical = `${baseUrl}${canonicalUrl}`;
   const fullOgImage = ogImage.startsWith("http") ? ogImage : `${baseUrl}${ogImage}`;
 
@@ -37,11 +39,12 @@ export const SEO = ({
 
       {/* Open Graph */}
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content={siteName} />
+      <meta property="og:site_name" content={`${siteName} - Best CA Firm in Ahmedabad`} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:image" content={fullOgImage} />
+      <meta property="og:locale" content="en_IN" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

@@ -108,9 +108,9 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        title="Contact Us – CA Firm in Ahmedabad & Mehsana"
-        description="Get in touch with Ashvin K Yagnik & Co. for expert CA services. Visit our offices in Ahmedabad & Mehsana or call +91 98250 46598. Free consultation available."
-        keywords="contact CA Ahmedabad, chartered accountant phone number, CA firm Mehsana, book CA consultation Gujarat"
+        title="Contact Best CA Firm in Ahmedabad & Mehsana"
+        description="Contact Ashvin K Yagnik & Co. – Best chartered accountants in Ahmedabad & Mehsana. Call +91 98250 46598 for free consultation. Visit our offices in Ahmedabad (Panjrapol) & Mehsana, Gujarat. Income tax, GST, audit & advisory services."
+        keywords="contact best CA Ahmedabad, chartered accountant phone number Ahmedabad, CA firm Mehsana contact, book CA consultation Gujarat, best CA near me Ahmedabad, chartered accountant office Ahmedabad, CA firm contact Gujarat"
         canonicalUrl="/contact"
       />
       {/* Hero Section - Enhanced */}

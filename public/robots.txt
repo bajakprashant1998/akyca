@@ -16,4 +16,10 @@ User-agent: *
 Allow: /
 Crawl-delay: 3
 
+Disallow: /404
+
 Sitemap: https://akyca.com/sitemap.xml
+
+# Best CA Firm in Ahmedabad - Ashvin K Yagnik & Co.
+# Best Chartered Accountants in Gujarat
+# RBI Category-I CA Firm Since 1978
