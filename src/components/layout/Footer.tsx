@@ -170,6 +170,18 @@ export const Footer = () => {
         </div>
       </div>
 
+      {/* SEO Location Content */}
+      <div className="border-t border-white/10">
+        <div className="container mx-auto px-4 py-8">
+          <p className="text-white/40 text-xs leading-relaxed text-center max-w-4xl mx-auto">
+            Ashvin K Yagnik & Co. (AKYCO) is recognized as one of the <strong className="text-white/60">best CA firms in Ahmedabad</strong> and <strong className="text-white/60">best chartered accountants in Gujarat</strong>. 
+            With offices in Ahmedabad and Mehsana, we provide expert income tax filing, GST registration & returns, statutory audit, company incorporation, financial advisory, NRI taxation, and startup services. 
+            Founded by <strong className="text-white/60">CA Ashwin Yagnik</strong> in 1978, our RBI Category-I firm serves 1000+ clients across Gujarat and India. 
+            Looking for the <strong className="text-white/60">best CA in Mehsana</strong> or <strong className="text-white/60">top chartered accountants in Ahmedabad</strong>? Contact us for a free consultation.
+          </p>
+        </div>
+      </div>
+
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
