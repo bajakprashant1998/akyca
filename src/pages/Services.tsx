@@ -75,9 +75,9 @@ const Services = () => {
   return (
     <Layout>
       <SEO
-        title="CA Services – Tax, GST, Audit & Advisory"
-        description="Comprehensive chartered accountant services: Income Tax, GST, Audit & Assurance, Company Law, Financial Advisory, Compliance, Startup Services & more. Trusted by 1200+ clients across India."
-        keywords="CA services Ahmedabad, income tax services, GST consultant, audit services Gujarat, company incorporation, financial advisory, startup CA services India"
+        title="CA Services in Ahmedabad – Tax, GST, Audit & Advisory"
+        description="70+ professional CA services by best chartered accountants in Ahmedabad & Gujarat. Income tax filing, GST registration, statutory audit, company incorporation, financial advisory, NRI taxation & startup services. RBI Category-I firm."
+        keywords="best CA services Ahmedabad, chartered accountant services Gujarat, income tax filing Ahmedabad, GST registration Gujarat, audit services Ahmedabad, company incorporation Gujarat, financial advisory Ahmedabad, NRI taxation services, startup CA services Gujarat, best chartered accountants in Ahmedabad, tax consultant Mehsana, CA firm services India"
         canonicalUrl="/services"
       />
       {/* Hero Section - Enhanced */}
