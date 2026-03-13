@@ -10,9 +10,9 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        title="About Us – 45+ Years of CA Excellence"
-        description="Learn about Ashvin K Yagnik & Co., an RBI Category-I CA firm founded in 1978. Meet our 9+ partners with expertise in taxation, audit, GST, and financial advisory in Ahmedabad."
-        keywords="about AKYCO, CA firm history Ahmedabad, chartered accountant partners Gujarat, RBI Category-I CA firm India"
+        title="About Us – Best CA Firm in Ahmedabad Since 1978"
+        description="About Ashvin K Yagnik & Co. – Best chartered accountants in Ahmedabad & Gujarat. RBI Category-I CA firm founded in 1978 by CA Ashwin Yagnik. 9+ expert partners serving 1000+ clients in Ahmedabad, Mehsana & across India."
+        keywords="best CA firm in Ahmedabad, Ashwin Yagnik chartered accountants, best chartered accountants in Gujarat, CA firm history Ahmedabad, RBI Category-I CA firm India, top chartered accountants Mehsana, about AKYCO, best CA in Gujarat, chartered accountant partners Ahmedabad"
         canonicalUrl="/about"
       />
       <AboutHero />

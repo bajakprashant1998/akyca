@@ -16,9 +16,9 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="Best Chartered Accountants in Ahmedabad | Ashvin K Yagnik & Co."
-        description="Ashvin K Yagnik & Co. – RBI Category-I CA firm with 45+ years of excellence. Expert income tax, GST, audit, company law & financial advisory services in Ahmedabad, Mehsana & across India."
-        keywords="best CA firm Ahmedabad, chartered accountant Ahmedabad, income tax consultant, GST services Gujarat, audit firm Ahmedabad, tax planning India, RBI Category-I CA firm"
+        title="Best CA Firm in Ahmedabad | Top Chartered Accountants in Gujarat"
+        description="Ashvin K Yagnik & Co. – Best CA firm in Ahmedabad & Mehsana. RBI Category-I chartered accountants with 45+ years. Expert income tax, GST, audit, company registration & financial advisory services in Gujarat, India. Trusted by 1000+ businesses."
+        keywords="best CA firm in Ahmedabad, best chartered accountants in Ahmedabad, best CA in Mehsana, best chartered accountants in Mehsana, Ashwin Yagnik chartered accountants, best CA firm in Gujarat, best chartered accountants in Gujarat, top CA firm Ahmedabad, chartered accountant near me, income tax consultant Ahmedabad, GST consultant Gujarat, tax audit Ahmedabad, company registration Ahmedabad, RBI Category-I CA firm, financial advisory Gujarat, NRI taxation India, startup CA Ahmedabad, virtual CFO Gujarat, ITR filing Ahmedabad, best tax consultant Ahmedabad"
         canonicalUrl="/"
       />
       <TrustBar />
