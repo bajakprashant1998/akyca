@@ -111,16 +111,26 @@ export const Footer = () => {
               ))}
             </ul>
 
-            <h4 className="font-display text-lg font-semibold mb-4 mt-8">Locations</h4>
+            <h4 className="font-display text-lg font-semibold mb-4 mt-8">Locations We Serve</h4>
             <ul className="space-y-2.5">
               <li>
                 <Link to="/branches" className="text-white/70 hover:text-cream transition-colors text-sm">
-                  CA in Ahmedabad
+                  Best CA in Ahmedabad
                 </Link>
               </li>
               <li>
                 <Link to="/branches" className="text-white/70 hover:text-cream transition-colors text-sm">
-                  CA in Mehsana
+                  Best CA in Mehsana
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-white/70 hover:text-cream transition-colors text-sm">
+                  Chartered Accountants Gujarat
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/taxation/nri-taxation" className="text-white/70 hover:text-cream transition-colors text-sm">
+                  NRI Tax Services India
                 </Link>
               </li>
             </ul>
