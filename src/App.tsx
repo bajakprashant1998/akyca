@@ -256,6 +256,7 @@ const App = () => (
 
           {/* Admin Panel */}
           <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/setup" element={<AdminSetup />} />
           <Route path="/admin" element={<AdminDashboard />} />
 
           <Route path="*" element={<NotFound />} />
