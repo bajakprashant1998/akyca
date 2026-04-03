@@ -252,6 +252,11 @@ const App = () => (
           <Route path="/branches" element={<Branches />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/tax-tools" element={<TaxTools />} />
+
+          {/* Admin Panel */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
