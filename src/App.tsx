@@ -13,6 +13,7 @@ import TaxTools from "./pages/TaxTools";
 import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminSetup from "./pages/AdminSetup";
 import TaxationServices from "./pages/services/TaxationServices";
 import GSTServices from "./pages/services/GSTServices";
 import AuditAssurance from "./pages/services/AuditAssurance";
