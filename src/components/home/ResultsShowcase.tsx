@@ -121,7 +121,7 @@ export const ResultsShowcase = () => {
 
             <div className="relative z-10">
               <div className="flex gap-1 mb-5">
-                {[...Array(5)].map((_, i) => (
+                {[...Array(testimonials[activeTestimonial]?.rating || 5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-gold text-gold" />
                 ))}
               </div>
