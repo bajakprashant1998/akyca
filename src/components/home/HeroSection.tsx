@@ -1,33 +1,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Shield, Award, ArrowRight, FileText, Calculator, ClipboardCheck, Building2, Phone, MessageCircle, ChevronRight, Sparkles, CheckCircle2 } from "lucide-react";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
-const segments = [
-  { label: "Taxation", color: "from-blue-500 to-blue-600", icon: FileText, desc: "Save up to 30% on taxes" },
-  { label: "GST", color: "from-emerald-500 to-emerald-600", icon: Calculator, desc: "100% compliant filing" },
-  { label: "Audit", color: "from-purple-500 to-purple-600", icon: ClipboardCheck, desc: "RBI Category-I firm" },
-  { label: "Advisory", color: "from-amber-500 to-amber-600", icon: Building2, desc: "Strategic growth plans" },
-];
-
-const quickBenefits = [
-  "Free 30-min consultation",
-  "Same-day response",
-  "No hidden charges",
-];
-
-const stats = [
-  { number: "15%", label: "Higher Tax Savings", sublabel: "For connected clients" },
-  { number: "1000+", label: "Clients Served", sublabel: "Across industries" },
-  { number: "#1", label: "Rated CA Firm", sublabel: "In Gujarat region" },
-  { number: "45+", label: "Years of Results", sublabel: "Driving measurable ROI" },
-];
+const segmentIcons = [FileText, Calculator, ClipboardCheck, Building2];
+const segmentColors = ["from-blue-500 to-blue-600", "from-emerald-500 to-emerald-600", "from-purple-500 to-purple-600", "from-amber-500 to-amber-600"];
 
 export const HeroSection = () => {
+  const { get, getList } = useSiteContent("home");
   const [businessType, setBusinessType] = useState("");
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLElement>(null);
   const [activeSegment, setActiveSegment] = useState(0);
+
+  const heading1 = get("hero", "heading_line1", "Your Financial Growth");
+  const heading2 = get("hero", "heading_line2", "Partner in India");
+  const subheading = get("hero", "subheading", 'For businesses who need <strong class="text-foreground">tax savings</strong>, not just compliance. Our expert framework connects CA expertise, technology, and strategy to drive measurable financial growth.');
+  const ctaText = get("hero", "cta_text", "Get Free Consultation");
+  const phone = get("hero", "phone", "+91 98250 46598");
+  const whatsapp = get("hero", "whatsapp", "919825046598");
+  const badge1 = get("hero", "badge1", "RBI Category-I Firm");
+  const badge2 = get("hero", "badge2", "45+ Years of Excellence");
+  const badge3 = get("hero", "badge3", "1000+ Happy Clients");
+  const quickBenefits = getList("hero", "quick_benefits", ["Free 30-min consultation", "Same-day response", "No hidden charges"]);
+  const socialProof = get("hero", "social_proof", "1000+ businesses");
+
+  const segmentLabels = getList("hero", "segment_labels", ["Taxation", "GST", "Audit", "Advisory"]);
+  const segmentDescs = getList("hero", "segment_descs", ["Save up to 30% on taxes", "100% compliant filing", "RBI Category-I firm", "Strategic growth plans"]);
+
+  const segments = segmentLabels.map((label, i) => ({
+    label,
+    color: segmentColors[i % segmentColors.length],
+    icon: segmentIcons[i % segmentIcons.length],
+    desc: segmentDescs[i] || "",
+  }));
+
+  const statNumbers = getList("hero", "stat_numbers", ["15%", "1000+", "#1", "45+"]);
+  const statLabels = getList("hero", "stat_labels", ["Higher Tax Savings", "Clients Served", "Rated CA Firm", "Years of Results"]);
+  const statSublabels = getList("hero", "stat_sublabels", ["For connected clients", "Across industries", "In Gujarat region", "Driving measurable ROI"]);
+
+  const stats = statNumbers.map((number, i) => ({
+    number,
+    label: statLabels[i] || "",
+    sublabel: statSublabels[i] || "",
+  }));
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,10 +57,10 @@ export const HeroSection = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveSegment((prev) => (prev + 1) % 4);
+      setActiveSegment((prev) => (prev + 1) % segments.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [segments.length]);
 
   const handleGetConsultation = () => {
     navigate("/contact", { state: { businessType } });
@@ -51,7 +68,6 @@ export const HeroSection = () => {
 
   return (
     <section ref={ref} className="relative bg-gradient-to-br from-slate-50 via-white to-cream/30 overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-gradient-to-br from-gold/8 to-cream/15 rounded-full blur-3xl animate-float" />
         <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-gradient-to-tr from-navy/8 to-blue-500/8 rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
@@ -65,43 +81,34 @@ export const HeroSection = () => {
 
       <div className="container mx-auto px-4 pt-12 pb-8 md:pt-16 md:pb-12 lg:pt-20 lg:pb-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Left Content */}
           <div className="max-w-xl">
-            {/* Trust Badges */}
             <div className={`flex flex-wrap gap-2 mb-5 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-navy/5 to-navy/10 text-navy text-xs font-medium rounded-full border border-navy/10 backdrop-blur-sm">
                 <Shield className="w-3.5 h-3.5" />
-                RBI Category-I Firm
+                {badge1}
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-gold/10 to-gold/20 text-navy text-xs font-medium rounded-full border border-gold/20">
                 <Award className="w-3.5 h-3.5 text-gold" />
-                45+ Years of Excellence
+                {badge2}
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-emerald-500/10 to-emerald-500/20 text-emerald-700 text-xs font-medium rounded-full border border-emerald-500/20">
                 <Sparkles className="w-3.5 h-3.5" />
-                1000+ Happy Clients
+                {badge3}
               </span>
             </div>
 
-            {/* Main Heading */}
             <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-display font-bold text-navy leading-[1.1] mb-5 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-              Your Financial Growth
+              {heading1}
               <span className="block text-gold relative mt-1">
-                Partner in India
+                {heading2}
                 <svg className="absolute -bottom-2 left-0 w-48 md:w-64 h-3 text-gold/30" viewBox="0 0 200 12" fill="none">
                   <path d="M2 8C30 3 60 2 100 5C140 8 170 4 198 2" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
                 </svg>
               </span>
             </h1>
 
-            {/* Subheading */}
-            <p className={`text-base md:text-lg text-muted-foreground max-w-lg mb-6 leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-              For businesses who need <strong className="text-foreground">tax savings</strong>, not just compliance.
-              Our expert framework connects CA expertise, technology, and strategy to
-              drive measurable financial growth.
-            </p>
+            <p className={`text-base md:text-lg text-muted-foreground max-w-lg mb-6 leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} dangerouslySetInnerHTML={{ __html: subheading }} />
 
-            {/* Input CTA */}
             <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <div className="relative flex-1">
@@ -119,13 +126,12 @@ export const HeroSection = () => {
                   className="px-5 md:px-6 py-3.5 md:py-4 bg-gradient-to-r from-navy to-navy-dark text-white font-semibold rounded-xl hover:shadow-xl transition-all whitespace-nowrap shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:shadow-md group text-sm md:text-base"
                 >
                   <span className="flex items-center justify-center gap-2">
-                    Get Free Consultation
+                    {ctaText}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </button>
               </div>
 
-              {/* Quick Benefits */}
               <div className="flex flex-wrap gap-3 md:gap-4 mb-5">
                 {quickBenefits.map((benefit, i) => (
                   <span key={i} className="inline-flex items-center gap-1.5 text-xs md:text-sm text-muted-foreground">
@@ -135,20 +141,18 @@ export const HeroSection = () => {
                 ))}
               </div>
 
-              {/* Quick Action Links */}
               <div className="flex flex-wrap gap-3 md:gap-4 mb-5">
                 <Link to="/services" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-navy transition-colors group font-medium">
                   <ChevronRight className="w-4 h-4 text-gold" /> View All Services
                 </Link>
-                <a href="tel:+919825046598" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-navy transition-colors group font-medium">
-                  <Phone className="w-4 h-4 text-gold" /> +91 98250 46598
+                <a href={`tel:${phone.replace(/\s/g, '')}`} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-navy transition-colors group font-medium">
+                  <Phone className="w-4 h-4 text-gold" /> {phone}
                 </a>
-                <a href="https://wa.me/919825046598" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm text-green-600 hover:text-green-700 transition-colors font-medium">
+                <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm text-green-600 hover:text-green-700 transition-colors font-medium">
                   <MessageCircle className="w-4 h-4" /> WhatsApp Us
                 </a>
               </div>
 
-              {/* Social Proof Bar */}
               <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-gradient-to-r from-navy/5 to-transparent rounded-2xl border border-navy/5">
                 <div className="flex -space-x-2.5">
                   {["R", "P", "A", "S", "M"].map((letter, i) => (
@@ -158,7 +162,7 @@ export const HeroSection = () => {
                   ))}
                 </div>
                 <div className="text-xs md:text-sm">
-                  <span className="font-bold text-navy">1000+ businesses</span>
+                  <span className="font-bold text-navy">{socialProof}</span>
                   <span className="text-muted-foreground"> trust us with their finances</span>
                 </div>
               </div>
@@ -200,17 +204,15 @@ export const HeroSection = () => {
                 );
               })}
 
-              {/* Center Hub */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-48 h-48 rounded-full bg-white shadow-2xl border border-border flex flex-col items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-navy/0 via-transparent to-gold/10" />
                   <span className="text-[10px] text-muted-foreground uppercase tracking-[0.25em] mb-1 relative z-10">AKYCO</span>
-                  <span className="text-xl font-display font-bold text-navy relative z-10">Growth Engine</span>
-                  <span className="text-sm text-gold font-bold mt-1 relative z-10">15% Tax Savings</span>
+                  <span className="text-xl font-display font-bold text-navy relative z-10">{get("hero", "flywheel_center", "Growth Engine")}</span>
+                  <span className="text-sm text-gold font-bold mt-1 relative z-10">{get("hero", "flywheel_stat", "15% Tax Savings")}</span>
                 </div>
               </div>
 
-              {/* Connecting dots */}
               {[0, 90, 180, 270].map((angle, i) => (
                 <div
                   key={i}
@@ -227,7 +229,7 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Mobile Service Cards (replaces hidden flywheel) */}
+          {/* Mobile Service Cards */}
           <div className="lg:hidden">
             <div className={`grid grid-cols-2 gap-3 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               {segments.map((segment, index) => {
@@ -256,7 +258,6 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* Stats Bar - now in flow, not absolute */}
         <div className="mt-10 md:mt-14 pt-8 border-t border-border">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {stats.map((stat, index) => (

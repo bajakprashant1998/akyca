@@ -1,19 +1,26 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle, ArrowRight } from "lucide-react";
-
-const highlights = [
-  "Ethical Practice & Integrity",
-  "Client-First Approach",
-  "Deep Regulatory Knowledge",
-  "Multi-Partner Expertise",
-  "Long-term Client Relationships",
-  "Pan-India Service Capability",
-];
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 export const AboutPreview = () => {
+  const { get, getList } = useSiteContent("home");
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLElement>(null);
+
+  const sectionLabel = get("about_preview", "label", "About Our Firm");
+  const heading = get("about_preview", "heading", "A Legacy of Trust & Excellence");
+  const para1 = get("about_preview", "para1", "Ashvin K Yagnik & Co. has a vintage of more than 45 years in providing quality and sustainable professional services to clients. We have been consistent as well as up to date in the dynamic taxation and finance world.");
+  const para2 = get("about_preview", "para2", "As an RBI Category-I firm, we bring unparalleled expertise in taxation, audit, compliance, and financial advisory services. Our team of 9+ partners ensures comprehensive coverage across all domains of chartered accountancy.");
+  const highlights = getList("about_preview", "highlights", [
+    "Ethical Practice & Integrity", "Client-First Approach", "Deep Regulatory Knowledge",
+    "Multi-Partner Expertise", "Long-term Client Relationships", "Pan-India Service Capability",
+  ]);
+  const ctaText = get("about_preview", "cta_text", "Learn More About Us");
+  const yearFounded = get("about_preview", "year_founded", "1978");
+  const founderText = get("about_preview", "founder_text", "Ashvin K Yagnik");
+  const partnersCount = get("about_preview", "partners_count", "9+");
+  const rbiYear = get("about_preview", "rbi_year", "2011");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,18 +38,10 @@ export const AboutPreview = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-            <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">About Our Firm</span>
-            <h2 className="section-heading mb-5">A Legacy of Trust & Excellence</h2>
-            <p className="text-grey leading-relaxed mb-5 text-sm md:text-base">
-              Ashvin K Yagnik & Co. has a vintage of more than 45 years in providing
-              quality and sustainable professional services to clients. We have been
-              consistent as well as up to date in the dynamic taxation and finance world.
-            </p>
-            <p className="text-grey leading-relaxed mb-6 text-sm md:text-base">
-              As an RBI Category-I firm, we bring unparalleled expertise in taxation,
-              audit, compliance, and financial advisory services. Our team of 9+ partners
-              ensures comprehensive coverage across all domains of chartered accountancy.
-            </p>
+            <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">{sectionLabel}</span>
+            <h2 className="section-heading mb-5">{heading}</h2>
+            <p className="text-grey leading-relaxed mb-5 text-sm md:text-base">{para1}</p>
+            <p className="text-grey leading-relaxed mb-6 text-sm md:text-base">{para2}</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-7">
               {highlights.map((item, index) => (
@@ -56,7 +55,7 @@ export const AboutPreview = () => {
             </div>
 
             <Link to="/about" className="inline-flex items-center gap-2 cta-primary group">
-              Learn More About Us
+              {ctaText}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -69,19 +68,19 @@ export const AboutPreview = () => {
               </div>
 
               <div className="relative z-10">
-                <div className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-cream mb-3">1978</div>
+                <div className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-cream mb-3">{yearFounded}</div>
                 <p className="text-white/80 text-base md:text-lg mb-6 md:mb-8">
                   Year of establishment by founder <br />
-                  <span className="text-cream font-semibold">Ashvin K Yagnik</span>
+                  <span className="text-cream font-semibold">{founderText}</span>
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 md:gap-6">
                   <div className="p-3 md:p-4 bg-white/5 rounded-xl md:rounded-2xl">
-                    <div className="text-2xl md:text-3xl font-display font-bold text-cream mb-1">9+</div>
+                    <div className="text-2xl md:text-3xl font-display font-bold text-cream mb-1">{partnersCount}</div>
                     <div className="text-white/60 text-xs md:text-sm">Expert Partners</div>
                   </div>
                   <div className="p-3 md:p-4 bg-white/5 rounded-xl md:rounded-2xl">
-                    <div className="text-2xl md:text-3xl font-display font-bold text-cream mb-1">2011</div>
+                    <div className="text-2xl md:text-3xl font-display font-bold text-cream mb-1">{rbiYear}</div>
                     <div className="text-white/60 text-xs md:text-sm">RBI Category-I Status</div>
                   </div>
                 </div>
@@ -95,7 +94,7 @@ export const AboutPreview = () => {
                 </div>
                 <div>
                   <div className="font-bold text-navy text-sm md:text-base">Trusted by</div>
-                  <div className="text-grey text-xs md:text-sm">1000+ Clients</div>
+                  <div className="text-grey text-xs md:text-sm">{get("about_preview", "trusted_count", "1000+ Clients")}</div>
                 </div>
               </div>
             </div>
