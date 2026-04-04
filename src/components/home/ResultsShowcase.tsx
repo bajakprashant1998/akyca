@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowRight, TrendingUp, Shield, Clock, IndianRupee, Quote, Star, ChevronLeft, ChevronRight as ChevRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const caseStudies = [
   { icon: TrendingUp, industry: "Manufacturing", title: "Tax Savings for Textile Manufacturer", metric: "₹45 Lakhs", metricLabel: "Annual Tax Savings", description: "Implemented strategic tax planning and GST optimization for a mid-sized textile manufacturer." },
@@ -9,10 +10,17 @@ const caseStudies = [
   { icon: IndianRupee, industry: "Real Estate", title: "Fund Raising Support", metric: "₹10 Cr", metricLabel: "Funds Raised", description: "Provided financial advisory and due diligence support for successful funding round." },
 ];
 
-const testimonials = [
-  { quote: "AKYCO has been our trusted CA partner for over 15 years. Their expertise in taxation has saved us lakhs every year.", author: "Rajesh Patel", role: "MD, Gujarat Textiles" },
-  { quote: "From incorporation to funding, they handled everything. Truly a one-stop solution for startups.", author: "Priya Sharma", role: "Founder, TechStart Solutions" },
-  { quote: "Professional, prompt, and always up-to-date with the latest regulations. Highly recommended!", author: "Dr. Mehta", role: "Director, City Hospital" },
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  rating: number;
+}
+
+const fallbackTestimonials: Testimonial[] = [
+  { quote: "AKYCO has been our trusted CA partner for over 15 years. Their expertise in taxation has saved us lakhs every year.", author: "Rajesh Patel", role: "MD, Gujarat Textiles", rating: 5 },
+  { quote: "From incorporation to funding, they handled everything. Truly a one-stop solution for startups.", author: "Priya Sharma", role: "Founder, TechStart Solutions", rating: 5 },
+  { quote: "Professional, prompt, and always up-to-date with the latest regulations. Highly recommended!", author: "Dr. Mehta", role: "Director, City Hospital", rating: 5 },
 ];
 
 export const ResultsShowcase = () => {

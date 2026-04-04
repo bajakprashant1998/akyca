@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const useScrollAnimation = () => {
   const [isVisible, setIsVisible] = useState(false);
