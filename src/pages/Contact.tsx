@@ -100,10 +100,22 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    toast.success("Thank you for your inquiry! We will get back to you within 24 hours.", { duration: 5000 });
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-    setIsSubmitting(false);
+    try {
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || null,
+        subject: formData.service || null,
+        message: formData.message,
+      });
+      if (error) throw error;
+      toast.success("Thank you for your inquiry! We will get back to you within 24 hours.", { duration: 5000 });
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    } catch {
+      toast.error("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

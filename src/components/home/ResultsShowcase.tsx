@@ -26,7 +26,32 @@ const fallbackTestimonials: Testimonial[] = [
 export const ResultsShowcase = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(fallbackTestimonials);
   const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      const { data, error } = await supabase
+        .from("testimonials")
+        .select("*")
+        .eq("is_published", true)
+        .eq("is_featured", true)
+        .order("created_at", { ascending: false })
+        .limit(6);
+
+      if (!error && data && data.length > 0) {
+        setTestimonials(
+          data.map((t) => ({
+            quote: t.content,
+            author: t.client_name,
+            role: [t.designation, t.company].filter(Boolean).join(", ") || "",
+            rating: t.rating || 5,
+          }))
+        );
+      }
+    };
+    fetchTestimonials();
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,7 +68,7 @@ export const ResultsShowcase = () => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   return (
     <section ref={ref} className="py-16 md:py-20 bg-background relative overflow-hidden">
