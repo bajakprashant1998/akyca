@@ -1,21 +1,26 @@
 import { useState, useEffect, useRef } from "react";
 import { Shield, Award, Building2, FileCheck } from "lucide-react";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
-const certifications = [
-  { icon: Shield, title: "RBI Category-I", description: "Authorized Bank Auditors" },
-  { icon: Award, title: "ICAI Member", description: "Institute of Chartered Accountants" },
-  { icon: Building2, title: "GST Practitioner", description: "Registered GST Consultants" },
-  { icon: FileCheck, title: "Insolvency Professional", description: "IBBI Registered IPs" },
-];
-
-const industries = [
-  "Manufacturing", "IT & Software", "Healthcare", "Real Estate", "Education",
-  "Retail", "Export-Import", "Hospitality", "E-commerce", "Banking & NBFC",
-];
+const certIcons = [Shield, Award, Building2, FileCheck];
 
 export const ClientLogos = () => {
+  const { getList } = useSiteContent("home");
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLElement>(null);
+
+  const certTitles = getList("client_logos", "cert_titles", ["RBI Category-I", "ICAI Member", "GST Practitioner", "Insolvency Professional"]);
+  const certDescs = getList("client_logos", "cert_descs", ["Authorized Bank Auditors", "Institute of Chartered Accountants", "Registered GST Consultants", "IBBI Registered IPs"]);
+  const industries = getList("client_logos", "industries", [
+    "Manufacturing", "IT & Software", "Healthcare", "Real Estate", "Education",
+    "Retail", "Export-Import", "Hospitality", "E-commerce", "Banking & NBFC",
+  ]);
+
+  const certifications = certTitles.map((title, i) => ({
+    icon: certIcons[i % certIcons.length],
+    title,
+    description: certDescs[i] || "",
+  }));
 
   useEffect(() => {
     const observer = new IntersectionObserver(

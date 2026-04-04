@@ -1,27 +1,32 @@
 import { useState, useEffect, useRef } from "react";
 import { Check, X } from "lucide-react";
-
-const comparisons = [
-  { feature: "Response Time", traditional: "Days to weeks", akyco: "Same day response" },
-  { feature: "Technology", traditional: "Paper-based records", akyco: "Cloud-based systems" },
-  { feature: "Accessibility", traditional: "Office hours only", akyco: "24/7 portal access" },
-  { feature: "Reporting", traditional: "Annual reports", akyco: "Real-time dashboards" },
-  { feature: "Communication", traditional: "Formal meetings", akyco: "WhatsApp & video calls" },
-  { feature: "Pricing", traditional: "Hidden charges", akyco: "Transparent pricing" },
-];
-
-const features = [
-  "Dedicated relationship manager",
-  "Multi-branch presence",
-  "Industry specialization",
-  "Proactive tax planning",
-  "Compliance reminders",
-  "Digital document management",
-];
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 export const WhyChooseUs = () => {
+  const { get, getList } = useSiteContent("home");
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLElement>(null);
+
+  const sectionLabel = get("why_choose_us", "label", "The AKYCO Difference");
+  const heading = get("why_choose_us", "heading", "Traditional CA vs Modern Approach");
+  const subheading = get("why_choose_us", "subheading", "Experience the difference with our client-centric methodology");
+  const rightHeading = get("why_choose_us", "right_heading", "What Sets Us Apart");
+  const rightDescription = get("why_choose_us", "right_description", "With over four decades of experience, we've evolved our practice to meet the demands of modern businesses while maintaining the highest standards of professional excellence.");
+
+  const compFeatures = getList("why_choose_us", "comp_features", ["Response Time", "Technology", "Accessibility", "Reporting", "Communication", "Pricing"]);
+  const compTraditional = getList("why_choose_us", "comp_traditional", ["Days to weeks", "Paper-based records", "Office hours only", "Annual reports", "Formal meetings", "Hidden charges"]);
+  const compAkyco = getList("why_choose_us", "comp_akyco", ["Same day response", "Cloud-based systems", "24/7 portal access", "Real-time dashboards", "WhatsApp & video calls", "Transparent pricing"]);
+
+  const comparisons = compFeatures.map((feature, i) => ({
+    feature,
+    traditional: compTraditional[i] || "",
+    akyco: compAkyco[i] || "",
+  }));
+
+  const features = getList("why_choose_us", "features", [
+    "Dedicated relationship manager", "Multi-branch presence", "Industry specialization",
+    "Proactive tax planning", "Compliance reminders", "Digital document management",
+  ]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,13 +43,12 @@ export const WhyChooseUs = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className={`text-center mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">The AKYCO Difference</span>
-          <h2 className="section-heading mb-4">Traditional CA vs Modern Approach</h2>
-          <p className="section-subheading mx-auto">Experience the difference with our client-centric methodology</p>
+          <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">{sectionLabel}</span>
+          <h2 className="section-heading mb-4">{heading}</h2>
+          <p className="section-subheading mx-auto">{subheading}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Comparison Table */}
           <div className="flex flex-col gap-3">
             <div className="hidden md:grid grid-cols-3 gap-4 px-6 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               <div>Feature</div>
@@ -73,16 +77,9 @@ export const WhyChooseUs = () => {
             ))}
           </div>
 
-          {/* Features */}
           <div className={`flex flex-col justify-center transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-6'}`}>
-            <h3 className="text-xl md:text-2xl font-display font-bold text-foreground mb-5">
-              What Sets Us Apart
-            </h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed text-sm md:text-base">
-              With over four decades of experience, we've evolved our practice to meet
-              the demands of modern businesses while maintaining the highest standards
-              of professional excellence.
-            </p>
+            <h3 className="text-xl md:text-2xl font-display font-bold text-foreground mb-5">{rightHeading}</h3>
+            <p className="text-muted-foreground mb-6 leading-relaxed text-sm md:text-base">{rightDescription}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gold/5 transition-colors">
