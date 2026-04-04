@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminSetup from "./pages/AdminSetup";
+import Blog from "./pages/Blog";
 import TaxationServices from "./pages/services/TaxationServices";
 import GSTServices from "./pages/services/GSTServices";
 import AuditAssurance from "./pages/services/AuditAssurance";
@@ -253,6 +254,7 @@ const App = () => (
           <Route path="/branches" element={<Branches />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/tax-tools" element={<TaxTools />} />
+          <Route path="/blog" element={<Blog />} />
 
           {/* Admin Panel */}
           <Route path="/admin/login" element={<AdminLogin />} />

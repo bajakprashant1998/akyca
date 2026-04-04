@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowRight, TrendingUp, Shield, Clock, IndianRupee, Quote, Star, ChevronLeft, ChevronRight as ChevRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const caseStudies = [
   { icon: TrendingUp, industry: "Manufacturing", title: "Tax Savings for Textile Manufacturer", metric: "₹45 Lakhs", metricLabel: "Annual Tax Savings", description: "Implemented strategic tax planning and GST optimization for a mid-sized textile manufacturer." },
@@ -9,16 +10,48 @@ const caseStudies = [
   { icon: IndianRupee, industry: "Real Estate", title: "Fund Raising Support", metric: "₹10 Cr", metricLabel: "Funds Raised", description: "Provided financial advisory and due diligence support for successful funding round." },
 ];
 
-const testimonials = [
-  { quote: "AKYCO has been our trusted CA partner for over 15 years. Their expertise in taxation has saved us lakhs every year.", author: "Rajesh Patel", role: "MD, Gujarat Textiles" },
-  { quote: "From incorporation to funding, they handled everything. Truly a one-stop solution for startups.", author: "Priya Sharma", role: "Founder, TechStart Solutions" },
-  { quote: "Professional, prompt, and always up-to-date with the latest regulations. Highly recommended!", author: "Dr. Mehta", role: "Director, City Hospital" },
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  rating: number;
+}
+
+const fallbackTestimonials: Testimonial[] = [
+  { quote: "AKYCO has been our trusted CA partner for over 15 years. Their expertise in taxation has saved us lakhs every year.", author: "Rajesh Patel", role: "MD, Gujarat Textiles", rating: 5 },
+  { quote: "From incorporation to funding, they handled everything. Truly a one-stop solution for startups.", author: "Priya Sharma", role: "Founder, TechStart Solutions", rating: 5 },
+  { quote: "Professional, prompt, and always up-to-date with the latest regulations. Highly recommended!", author: "Dr. Mehta", role: "Director, City Hospital", rating: 5 },
 ];
 
 export const ResultsShowcase = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(fallbackTestimonials);
   const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      const { data, error } = await supabase
+        .from("testimonials")
+        .select("*")
+        .eq("is_published", true)
+        .eq("is_featured", true)
+        .order("created_at", { ascending: false })
+        .limit(6);
+
+      if (!error && data && data.length > 0) {
+        setTestimonials(
+          data.map((t) => ({
+            quote: t.content,
+            author: t.client_name,
+            role: [t.designation, t.company].filter(Boolean).join(", ") || "",
+            rating: t.rating || 5,
+          }))
+        );
+      }
+    };
+    fetchTestimonials();
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,7 +68,7 @@ export const ResultsShowcase = () => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   return (
     <section ref={ref} className="py-16 md:py-20 bg-background relative overflow-hidden">
@@ -88,7 +121,7 @@ export const ResultsShowcase = () => {
 
             <div className="relative z-10">
               <div className="flex gap-1 mb-5">
-                {[...Array(5)].map((_, i) => (
+                {[...Array(testimonials[activeTestimonial]?.rating || 5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-gold text-gold" />
                 ))}
               </div>
