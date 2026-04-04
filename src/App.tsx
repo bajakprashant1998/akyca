@@ -254,6 +254,7 @@ const App = () => (
           <Route path="/branches" element={<Branches />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/tax-tools" element={<TaxTools />} />
+          <Route path="/blog" element={<Blog />} />
 
           {/* Admin Panel */}
           <Route path="/admin/login" element={<AdminLogin />} />
