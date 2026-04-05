@@ -5,12 +5,13 @@ import { useQuery } from "@tanstack/react-query";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { LogOut, LayoutDashboard, FileText, MessageSquare, BookOpen, Star } from "lucide-react";
+import { LogOut, LayoutDashboard, FileText, MessageSquare, BookOpen, Star, Image } from "lucide-react";
 import AdminGuard from "@/components/admin/AdminGuard";
 import ContentManager from "@/components/admin/ContentManager";
 import ContactManager from "@/components/admin/ContactManager";
 import BlogManager from "@/components/admin/BlogManager";
 import TestimonialManager from "@/components/admin/TestimonialManager";
+import ImageManager from "@/components/admin/ImageManager";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -44,7 +45,6 @@ const AdminDashboard = () => {
   return (
     <AdminGuard>
       <div className="min-h-screen bg-muted/30">
-        {/* Header */}
         <header className="bg-primary text-primary-foreground px-4 md:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <LayoutDashboard className="w-6 h-6" />
@@ -65,6 +65,7 @@ const AdminDashboard = () => {
             <TabsList className="mb-6 flex-wrap h-auto gap-1">
               <TabsTrigger value="overview" className="gap-1"><LayoutDashboard className="w-4 h-4" /> Overview</TabsTrigger>
               <TabsTrigger value="content" className="gap-1"><FileText className="w-4 h-4" /> Content</TabsTrigger>
+              <TabsTrigger value="images" className="gap-1"><Image className="w-4 h-4" /> Images</TabsTrigger>
               <TabsTrigger value="contacts" className="gap-1"><MessageSquare className="w-4 h-4" /> Contacts {stats?.unread ? `(${stats.unread})` : ""}</TabsTrigger>
               <TabsTrigger value="blog" className="gap-1"><BookOpen className="w-4 h-4" /> Blog</TabsTrigger>
               <TabsTrigger value="testimonials" className="gap-1"><Star className="w-4 h-4" /> Testimonials</TabsTrigger>
@@ -95,6 +96,7 @@ const AdminDashboard = () => {
             </TabsContent>
 
             <TabsContent value="content"><ContentManager /></TabsContent>
+            <TabsContent value="images"><ImageManager /></TabsContent>
             <TabsContent value="contacts"><ContactManager /></TabsContent>
             <TabsContent value="blog"><BlogManager /></TabsContent>
             <TabsContent value="testimonials"><TestimonialManager /></TabsContent>

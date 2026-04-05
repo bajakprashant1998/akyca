@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Award, CheckCircle } from "lucide-react";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
-const milestones = [
+const defaultMilestones = [
   { year: "1978", title: "Foundation", desc: "Firm established by visionary CA Ashvin K Yagnik" },
   { year: "2000s", title: "Growth", desc: "Expanded to 9+ partners with diverse expertise" },
   { year: "2011", title: "RBI Category-I", desc: "Achieved prestigious government recognition" },
@@ -11,6 +12,7 @@ const milestones = [
 export const OurStory = () => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLElement>(null);
+  const { get } = useSiteContent("about");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,37 +23,38 @@ export const OurStory = () => {
     return () => observer.disconnect();
   }, []);
 
+  const badge = get("story", "badge", "Our Journey");
+  const heading = get("story", "heading", "The AKYCO Story");
+  const subheading = get("story", "subheading", "A legacy of trust, expertise, and unwavering commitment to professional excellence.");
+  const p1 = get("story", "paragraph_1", "Ashvin K Yagnik & Co. has a vintage of more than 45 years in providing quality and sustainable professional services to clients. We have been consistent as well as up to date in the dynamic taxation and finance world.");
+  const p2 = get("story", "paragraph_2", "Founded in 1978 by visionary Chartered Accountant Ashvin K Yagnik, our firm has grown from a single-partner practice to a robust team of 9+ partners and numerous professionals serving clients across India.");
+  const p3 = get("story", "paragraph_3", "In 2011, we achieved a significant milestone by becoming an RBI Category-I firm, recognizing our expertise and credibility in the financial sector.");
+
+  let milestones = defaultMilestones;
+  try {
+    const raw = get("story", "milestones", "");
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) milestones = parsed;
+    }
+  } catch {}
+
   return (
     <section ref={ref} id="story" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="text-center mb-16">
-            <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">Our Journey</span>
-            <h2 className="section-heading mb-4">The AKYCO Story</h2>
-            <p className="section-subheading mx-auto">
-              A legacy of trust, expertise, and unwavering commitment to professional excellence.
-            </p>
+            <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">{badge}</span>
+            <h2 className="section-heading mb-4">{heading}</h2>
+            <p className="section-subheading mx-auto">{subheading}</p>
           </div>
 
           <div className="grid lg:grid-cols-5 gap-12 items-start">
-            {/* Story Content */}
             <div className="lg:col-span-3 space-y-6">
-              <p className="text-foreground leading-relaxed text-base">
-                Ashvin K Yagnik & Co. has a vintage of more than 45 years in providing
-                quality and sustainable professional services to clients. We have been
-                consistent as well as up to date in the dynamic taxation and finance world.
-              </p>
-              <p className="text-foreground leading-relaxed text-base">
-                Founded in 1978 by visionary Chartered Accountant Ashvin K Yagnik,
-                our firm has grown from a single-partner practice to a robust team
-                of 9+ partners and numerous professionals serving clients across India.
-              </p>
-              <p className="text-foreground leading-relaxed text-base">
-                In 2011, we achieved a significant milestone by becoming an RBI Category-I
-                firm, recognizing our expertise and credibility in the financial sector.
-              </p>
+              <p className="text-foreground leading-relaxed text-base">{p1}</p>
+              <p className="text-foreground leading-relaxed text-base">{p2}</p>
+              <p className="text-foreground leading-relaxed text-base">{p3}</p>
 
-              {/* RBI Badge */}
               <div className="bg-primary rounded-2xl p-6 text-primary-foreground mt-8">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 bg-cream rounded-xl flex items-center justify-center flex-shrink-0">
@@ -63,14 +66,11 @@ export const OurStory = () => {
                   </div>
                 </div>
                 <p className="text-primary-foreground/80 text-sm leading-relaxed mt-4">
-                  Our RBI Category-I status recognizes our expertise in handling
-                  complex financial matters and positions us as a trusted partner
-                  for government and regulatory compliance work.
+                  Our RBI Category-I status recognizes our expertise in handling complex financial matters and positions us as a trusted partner for government and regulatory compliance work.
                 </p>
               </div>
             </div>
 
-            {/* Timeline */}
             <div className="lg:col-span-2">
               <div className="relative">
                 <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border" />
