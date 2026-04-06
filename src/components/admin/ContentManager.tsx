@@ -5,12 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Pencil, Search, FileText, Layout, ChevronDown, ChevronRight, Plus, Trash2, Copy, Download } from "lucide-react";
+import { Pencil, Search, FileText, Layout, ChevronDown, ChevronRight, Plus, Trash2, Copy, Download, Upload } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import ContentEditDialog from "@/components/admin/content/ContentEditDialog";
 import ContentAddDialog from "@/components/admin/content/ContentAddDialog";
+import ContentBulkImport from "@/components/admin/content/ContentBulkImport";
 
 interface ContentItem {
   id: string;
@@ -42,6 +43,7 @@ const ContentManager = () => {
   const queryClient = useQueryClient();
   const [editOpen, setEditOpen] = useState(false);
   const [addOpen, setAddOpen] = useState(false);
+  const [importOpen, setImportOpen] = useState(false);
   const [editing, setEditing] = useState<ContentItem | null>(null);
   const [search, setSearch] = useState("");
   const [expandedPages, setExpandedPages] = useState<Record<string, boolean>>({});
@@ -149,6 +151,9 @@ const ContentManager = () => {
             </div>
             <Button size="icon" variant="outline" onClick={exportContent} title="Export backup">
               <Download className="w-4 h-4" />
+            </Button>
+            <Button variant="outline" onClick={() => setImportOpen(true)} className="gap-1.5 whitespace-nowrap">
+              <Upload className="w-4 h-4" /> Import
             </Button>
             <Button onClick={() => setAddOpen(true)} className="gap-1.5 whitespace-nowrap">
               <Plus className="w-4 h-4" /> Add
@@ -271,6 +276,7 @@ const ContentManager = () => {
 
         <ContentEditDialog open={editOpen} onOpenChange={setEditOpen} item={editing} />
         <ContentAddDialog open={addOpen} onOpenChange={setAddOpen} existingPages={existingPages} existingSections={existingSections} />
+        <ContentBulkImport open={importOpen} onOpenChange={setImportOpen} />
       </CardContent>
     </Card>
   );
