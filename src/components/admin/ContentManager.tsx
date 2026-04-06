@@ -276,6 +276,7 @@ const ContentManager = () => {
 
         <ContentEditDialog open={editOpen} onOpenChange={setEditOpen} item={editing} />
         <ContentAddDialog open={addOpen} onOpenChange={setAddOpen} existingPages={existingPages} existingSections={existingSections} />
+        <ContentBulkImport open={importOpen} onOpenChange={setImportOpen} />
       </CardContent>
     </Card>
   );
