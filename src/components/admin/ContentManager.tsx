@@ -152,6 +152,9 @@ const ContentManager = () => {
             <Button size="icon" variant="outline" onClick={exportContent} title="Export backup">
               <Download className="w-4 h-4" />
             </Button>
+            <Button variant="outline" onClick={() => setImportOpen(true)} className="gap-1.5 whitespace-nowrap">
+              <Upload className="w-4 h-4" /> Import
+            </Button>
             <Button onClick={() => setAddOpen(true)} className="gap-1.5 whitespace-nowrap">
               <Plus className="w-4 h-4" /> Add
             </Button>
