@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import ContentEditDialog from "@/components/admin/content/ContentEditDialog";
 import ContentAddDialog from "@/components/admin/content/ContentAddDialog";
+import ContentBulkImport from "@/components/admin/content/ContentBulkImport";
 
 interface ContentItem {
   id: string;
