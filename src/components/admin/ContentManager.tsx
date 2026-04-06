@@ -43,6 +43,7 @@ const ContentManager = () => {
   const queryClient = useQueryClient();
   const [editOpen, setEditOpen] = useState(false);
   const [addOpen, setAddOpen] = useState(false);
+  const [importOpen, setImportOpen] = useState(false);
   const [editing, setEditing] = useState<ContentItem | null>(null);
   const [search, setSearch] = useState("");
   const [expandedPages, setExpandedPages] = useState<Record<string, boolean>>({});
