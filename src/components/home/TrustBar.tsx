@@ -44,26 +44,25 @@ export const TrustBar = () => {
   const revenueCount = useCountUp(parseInt(taxSavingsAmount) || 850, 2500, isVisible);
 
   return (
-    <div ref={ref} className="bg-gradient-to-r from-white via-cream/20 to-white border-b border-border py-3 relative overflow-hidden">
+    <div ref={ref} className="bg-gradient-to-r from-white via-cream/20 to-white border-b border-border py-2.5 md:py-3 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/5 to-transparent animate-[shimmer_3s_infinite]" style={{ backgroundSize: '200% 100%' }} />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-gold/10 to-gold/20 rounded-full border border-gold/20">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <div className="flex items-center gap-1.5 px-2 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-gold/10 to-gold/20 rounded-full border border-gold/20">
               <div className="relative">
-                <Sparkles className="w-4 h-4 text-gold" />
-                <div className="absolute inset-0 animate-ping"><Sparkles className="w-4 h-4 text-gold/50" /></div>
+                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-gold" />
+                <div className="absolute inset-0 animate-ping"><Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-gold/50" /></div>
               </div>
-              <span className="text-[11px] font-bold text-gold uppercase tracking-wider">Live</span>
+              <span className="text-[10px] sm:text-[11px] font-bold text-gold uppercase tracking-wider">Live</span>
             </div>
             
-            <div className="hidden sm:flex items-center gap-2">
-              <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{taxSavingsLabel}</span>
-              <div className="flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-gold" />
-                <span className="text-xl font-display font-bold text-navy">₹{formatNumber(revenueCount)} Cr+</span>
-              </div>
+            {/* Show on all screens now */}
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <TrendingUp className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-gold" />
+              <span className="text-sm sm:text-xl font-display font-bold text-navy">₹{formatNumber(revenueCount)} Cr+</span>
+              <span className="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wider hidden sm:inline">{taxSavingsLabel}</span>
             </div>
           </div>
 
@@ -78,7 +77,7 @@ export const TrustBar = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <a href={`tel:${phone.replace(/\s/g, '')}`} className="text-sm text-muted-foreground hover:text-navy transition-colors font-semibold hidden md:block">
               {phone}
             </a>
@@ -86,7 +85,7 @@ export const TrustBar = () => {
               href={`https://wa.me/${whatsapp}`}
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-green-600 text-white text-xs font-semibold rounded-full hover:bg-green-500 transition-colors"
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-green-600 text-white text-[10px] sm:text-xs font-semibold rounded-full hover:bg-green-500 transition-colors"
             >
               <span className="hidden sm:inline">WhatsApp</span>
               <span className="sm:hidden">Chat</span>

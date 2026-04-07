@@ -62,7 +62,6 @@ export const ResultsShowcase = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Auto-rotate testimonials
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -71,98 +70,100 @@ export const ResultsShowcase = () => {
   }, [testimonials.length]);
 
   return (
-    <section ref={ref} className="py-16 md:py-20 bg-background relative overflow-hidden">
+    <section ref={ref} className="py-12 sm:py-16 md:py-20 bg-background relative overflow-hidden">
       <div className="absolute top-20 right-0 w-80 h-80 bg-gradient-to-bl from-gold/5 to-transparent rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className={`text-center mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <span className="text-gold font-medium text-sm tracking-wider uppercase mb-4 block">Our Impact</span>
-          <h2 className="section-heading mb-4">Real Results for Real Businesses</h2>
+        <div className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <span className="text-gold font-medium text-xs sm:text-sm tracking-wider uppercase mb-3 sm:mb-4 block">Our Impact</span>
+          <h2 className="section-heading mb-3 sm:mb-4">Real Results for Real Businesses</h2>
           <p className="section-subheading mx-auto">Success stories from clients across industries</p>
         </div>
 
-        {/* Case Studies */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16 md:mb-20">
-          {caseStudies.map((study, index) => (
-            <div
-              key={index}
-              className={`bg-card rounded-2xl p-5 md:p-6 border border-border hover:border-gold/30 hover:shadow-xl transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <span className="inline-block px-3 py-1 bg-cream text-navy text-xs font-bold rounded-full mb-4">
-                {study.industry}
-              </span>
-              <div className="flex items-start justify-between mb-4">
-                <div className="w-11 h-11 md:w-12 md:h-12 bg-gradient-to-br from-gold/20 to-gold/5 rounded-xl flex items-center justify-center">
-                  <study.icon className="w-5 h-5 md:w-6 md:h-6 text-gold" />
+        {/* Case Studies - horizontal scroll on mobile */}
+        <div className="-mx-4 px-4 sm:mx-0 sm:px-0 mb-10 sm:mb-16 md:mb-20">
+          <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 overflow-x-auto sm:overflow-visible no-scrollbar snap-x snap-mandatory pb-2 sm:pb-0">
+            {caseStudies.map((study, index) => (
+              <div
+                key={index}
+                className={`bg-card rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-border hover:border-gold/30 hover:shadow-xl transition-all duration-500 group min-w-[260px] sm:min-w-0 snap-start flex-shrink-0 sm:flex-shrink ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <span className="inline-block px-2.5 py-0.5 bg-cream text-navy text-[10px] sm:text-xs font-bold rounded-full mb-3 sm:mb-4">
+                  {study.industry}
+                </span>
+                <div className="flex items-start justify-between mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gold/20 to-gold/5 rounded-xl flex items-center justify-center">
+                    <study.icon className="w-5 h-5 sm:w-6 sm:h-6 text-gold" />
+                  </div>
+                  <div className="text-right">
+                    <div className="text-lg sm:text-2xl font-display font-bold text-navy">{study.metric}</div>
+                    <div className="text-[10px] sm:text-xs text-muted-foreground">{study.metricLabel}</div>
+                  </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-xl md:text-2xl font-display font-bold text-navy">{study.metric}</div>
-                  <div className="text-[11px] md:text-xs text-muted-foreground">{study.metricLabel}</div>
-                </div>
+                <h3 className="text-sm sm:text-lg font-semibold text-foreground mb-1.5 sm:mb-2 group-hover:text-navy transition-colors leading-tight">{study.title}</h3>
+                <p className="text-[11px] sm:text-sm text-muted-foreground leading-relaxed">{study.description}</p>
               </div>
-              <h3 className="text-base md:text-lg font-semibold text-foreground mb-2 group-hover:text-navy transition-colors">{study.title}</h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{study.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        {/* Testimonials - Single featured card with navigation */}
+        {/* Testimonials */}
         <div className={`max-w-3xl mx-auto transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <div className="text-center mb-8">
-            <span className="text-gold font-medium text-sm tracking-wider uppercase">Testimonials</span>
+          <div className="text-center mb-5 sm:mb-8">
+            <span className="text-gold font-medium text-xs sm:text-sm tracking-wider uppercase">Testimonials</span>
           </div>
 
-          <div className="relative bg-navy rounded-3xl p-8 md:p-12 shadow-xl overflow-hidden">
-            <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-gold/10 to-transparent rounded-full blur-2xl" />
-            <div className="absolute top-6 right-8 text-gold/10">
-              <Quote className="w-16 h-16" />
+          <div className="relative bg-navy rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 shadow-xl overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-gradient-to-bl from-gold/10 to-transparent rounded-full blur-2xl" />
+            <div className="absolute top-4 right-5 sm:top-6 sm:right-8 text-gold/10">
+              <Quote className="w-10 h-10 sm:w-16 sm:h-16" />
             </div>
 
             <div className="relative z-10">
-              <div className="flex gap-1 mb-5">
+              <div className="flex gap-0.5 mb-3 sm:mb-5">
                 {[...Array(testimonials[activeTestimonial]?.rating || 5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                  <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-gold text-gold" />
                 ))}
               </div>
 
-              <p className="text-white/90 text-lg md:text-xl italic mb-8 leading-relaxed min-h-[80px]">
+              <p className="text-white/90 text-base sm:text-lg md:text-xl italic mb-5 sm:mb-8 leading-relaxed min-h-[60px] sm:min-h-[80px]">
                 "{testimonials[activeTestimonial].quote}"
               </p>
 
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cream to-gold text-navy flex items-center justify-center font-bold text-lg shadow-md">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-cream to-gold text-navy flex items-center justify-center font-bold text-base sm:text-lg shadow-md flex-shrink-0">
                     {testimonials[activeTestimonial].author[0]}
                   </div>
-                  <div>
-                    <div className="font-semibold text-cream">{testimonials[activeTestimonial].author}</div>
-                    <div className="text-sm text-white/60">{testimonials[activeTestimonial].role}</div>
+                  <div className="min-w-0">
+                    <div className="font-semibold text-cream text-sm sm:text-base truncate">{testimonials[activeTestimonial].author}</div>
+                    <div className="text-xs sm:text-sm text-white/60 truncate">{testimonials[activeTestimonial].role}</div>
                   </div>
                 </div>
 
                 {/* Navigation */}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
                   <button
                     onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-                    className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                     aria-label="Previous testimonial"
                   >
                     <ChevronLeft className="w-4 h-4 text-white" />
                   </button>
-                  <div className="flex gap-1.5 mx-2">
+                  <div className="flex gap-1 mx-1 sm:mx-2">
                     {testimonials.map((_, i) => (
                       <button
                         key={i}
                         onClick={() => setActiveTestimonial(i)}
-                        className={`w-2 h-2 rounded-full transition-all ${i === activeTestimonial ? 'bg-gold w-5' : 'bg-white/30 hover:bg-white/50'}`}
+                        className={`h-1.5 sm:h-2 rounded-full transition-all ${i === activeTestimonial ? 'bg-gold w-4 sm:w-5' : 'bg-white/30 hover:bg-white/50 w-1.5 sm:w-2'}`}
                         aria-label={`Go to testimonial ${i + 1}`}
                       />
                     ))}
                   </div>
                   <button
                     onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)}
-                    className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                     aria-label="Next testimonial"
                   >
                     <ChevRight className="w-4 h-4 text-white" />
@@ -173,10 +174,10 @@ export const ResultsShowcase = () => {
           </div>
         </div>
 
-        <div className="text-center mt-10">
-          <Link to="/contact" className="inline-flex items-center gap-2 text-navy font-semibold hover:text-gold transition-colors group text-base md:text-lg">
+        <div className="text-center mt-8 sm:mt-10">
+          <Link to="/contact" className="inline-flex items-center gap-2 text-navy font-semibold hover:text-gold transition-colors group text-sm sm:text-base md:text-lg">
             Discuss Your Requirements
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>

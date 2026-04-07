@@ -30,16 +30,16 @@ export const ServicesPreview = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-gradient-to-b from-muted/20 via-background to-muted/30 relative overflow-hidden">
+    <section ref={ref} className="py-10 sm:py-16 md:py-24 bg-gradient-to-b from-muted/20 via-background to-muted/30 relative overflow-hidden">
       <div className="absolute top-1/2 -translate-y-1/2 -left-40 w-80 h-80 bg-gradient-to-r from-gold/5 to-transparent rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className={`text-center mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-navy/5 rounded-full text-navy font-semibold text-sm tracking-wider uppercase mb-5">
-            <Sparkles className="w-4 h-4 text-gold" />
+        <div className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-navy/5 rounded-full text-navy font-semibold text-xs sm:text-sm tracking-wider uppercase mb-4 sm:mb-5">
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold" />
             What We Offer
           </span>
-          <h2 className="section-heading mb-4">
+          <h2 className="section-heading mb-3 sm:mb-4">
             Move From Compliance to
             <span className="text-gold block">Strategic Financial Growth</span>
           </h2>
@@ -49,12 +49,12 @@ export const ServicesPreview = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {services.map((service, index) => (
             <Link
               to={service.link}
               key={index}
-              className={`group relative bg-card rounded-xl md:rounded-2xl p-5 md:p-6 border border-border hover:border-gold/40 transition-all duration-500 overflow-hidden ${
+              className={`group relative bg-card rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 border border-border hover:border-gold/40 transition-all duration-500 overflow-hidden ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${index * 80}ms` }}
@@ -62,7 +62,7 @@ export const ServicesPreview = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500`} />
               
               {"badge" in service && service.badge && (
-                <span className={`absolute top-4 right-4 text-[10px] font-bold px-2.5 py-1 rounded-full ${
+                <span className={`absolute top-2.5 right-2.5 sm:top-4 sm:right-4 text-[8px] sm:text-[10px] font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full ${
                   service.badge === "Most Popular" ? "bg-gold/15 text-gold" :
                   service.badge === "Trending" ? "bg-pink-500/15 text-pink-600" :
                   "bg-emerald-500/15 text-emerald-600"
@@ -71,20 +71,20 @@ export const ServicesPreview = () => {
                 </span>
               )}
               
-              <div className={`relative w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 md:mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg`}>
-                <service.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
-                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${service.color} blur-lg opacity-0 group-hover:opacity-30 transition-opacity`} />
+              <div className={`relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-3 sm:mb-4 md:mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg`}>
+                <service.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
+                <div className={`absolute inset-0 rounded-lg sm:rounded-xl bg-gradient-to-br ${service.color} blur-lg opacity-0 group-hover:opacity-30 transition-opacity`} />
               </div>
 
-              <h3 className="text-base md:text-lg font-display font-bold text-foreground mb-1.5 md:mb-2 group-hover:text-navy transition-colors">
+              <h3 className="text-sm sm:text-base md:text-lg font-display font-bold text-foreground mb-1 sm:mb-2 group-hover:text-navy transition-colors leading-tight">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground text-xs md:text-sm leading-relaxed mb-4 md:mb-5">
+              <p className="text-muted-foreground text-[11px] sm:text-xs md:text-sm leading-relaxed mb-3 sm:mb-5 line-clamp-2 sm:line-clamp-none">
                 {service.description}
               </p>
 
-              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:gap-2.5 transition-all">
-                Explore <ArrowRight className="w-4 h-4" />
+              <span className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-gold group-hover:gap-2 transition-all">
+                Explore <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </span>
 
               <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${service.color} scale-x-0 group-hover:scale-x-100 transition-transform origin-left`} />
@@ -92,15 +92,15 @@ export const ServicesPreview = () => {
           ))}
         </div>
 
-        <div className={`text-center mt-10 md:mt-14 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div className={`text-center mt-8 sm:mt-10 md:mt-14 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <Link
             to="/services"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-navy to-navy-dark text-white px-8 md:px-10 py-3.5 md:py-4 rounded-xl font-bold text-base md:text-lg hover:shadow-xl transition-all group shadow-lg hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-navy to-navy-dark text-white px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-lg hover:shadow-xl transition-all group shadow-lg hover:-translate-y-0.5"
           >
             View All 100+ Services
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <p className="text-muted-foreground text-sm mt-4">
+          <p className="text-muted-foreground text-xs sm:text-sm mt-3 sm:mt-4">
             Comprehensive CA services for every business need
           </p>
         </div>
