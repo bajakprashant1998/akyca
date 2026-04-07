@@ -5,13 +5,14 @@ import { useQuery } from "@tanstack/react-query";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { LogOut, LayoutDashboard, FileText, MessageSquare, BookOpen, Star, Image } from "lucide-react";
+import { LogOut, LayoutDashboard, FileText, MessageSquare, BookOpen, Star, Image, Search } from "lucide-react";
 import AdminGuard from "@/components/admin/AdminGuard";
 import ContentManager from "@/components/admin/ContentManager";
 import ContactManager from "@/components/admin/ContactManager";
 import BlogManager from "@/components/admin/BlogManager";
 import TestimonialManager from "@/components/admin/TestimonialManager";
 import ImageManager from "@/components/admin/ImageManager";
+import SEOManager from "@/components/admin/SEOManager";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -69,6 +70,7 @@ const AdminDashboard = () => {
               <TabsTrigger value="contacts" className="gap-1"><MessageSquare className="w-4 h-4" /> Contacts {stats?.unread ? `(${stats.unread})` : ""}</TabsTrigger>
               <TabsTrigger value="blog" className="gap-1"><BookOpen className="w-4 h-4" /> Blog</TabsTrigger>
               <TabsTrigger value="testimonials" className="gap-1"><Star className="w-4 h-4" /> Testimonials</TabsTrigger>
+              <TabsTrigger value="seo" className="gap-1"><Search className="w-4 h-4" /> SEO</TabsTrigger>
             </TabsList>
 
             <TabsContent value="overview">
@@ -100,6 +102,7 @@ const AdminDashboard = () => {
             <TabsContent value="contacts"><ContactManager /></TabsContent>
             <TabsContent value="blog"><BlogManager /></TabsContent>
             <TabsContent value="testimonials"><TestimonialManager /></TabsContent>
+            <TabsContent value="seo"><SEOManager /></TabsContent>
           </Tabs>
         </div>
       </div>
