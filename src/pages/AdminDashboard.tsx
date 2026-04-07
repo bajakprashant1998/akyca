@@ -5,13 +5,14 @@ import { useQuery } from "@tanstack/react-query";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { LogOut, LayoutDashboard, FileText, MessageSquare, BookOpen, Star, Image } from "lucide-react";
+import { LogOut, LayoutDashboard, FileText, MessageSquare, BookOpen, Star, Image, Search } from "lucide-react";
 import AdminGuard from "@/components/admin/AdminGuard";
 import ContentManager from "@/components/admin/ContentManager";
 import ContactManager from "@/components/admin/ContactManager";
 import BlogManager from "@/components/admin/BlogManager";
 import TestimonialManager from "@/components/admin/TestimonialManager";
 import ImageManager from "@/components/admin/ImageManager";
+import SEOManager from "@/components/admin/SEOManager";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
