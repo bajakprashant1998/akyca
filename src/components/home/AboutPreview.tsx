@@ -32,7 +32,7 @@ export const AboutPreview = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-16 md:py-20 bg-cream/30 relative overflow-hidden">
+    <section ref={ref} className="py-10 sm:py-16 md:py-20 bg-cream/30 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-gold/5 to-transparent rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 relative z-10">
