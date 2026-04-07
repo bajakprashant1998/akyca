@@ -79,38 +79,39 @@ export const HeroSection = () => {
         }} />
       </div>
 
-      <div className="container mx-auto px-4 pt-12 pb-8 md:pt-16 md:pb-12 lg:pt-20 lg:pb-16 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div className="container mx-auto px-4 pt-8 pb-6 md:pt-16 md:pb-12 lg:pt-20 lg:pb-16 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div className="max-w-xl">
-            <div className={`flex flex-wrap gap-2 mb-5 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-navy/5 to-navy/10 text-navy text-xs font-medium rounded-full border border-navy/10 backdrop-blur-sm">
-                <Shield className="w-3.5 h-3.5" />
+            {/* Badges - horizontal scroll on mobile */}
+            <div className={`flex gap-2 mb-4 overflow-x-auto no-scrollbar transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-navy/5 to-navy/10 text-navy text-[11px] font-medium rounded-full border border-navy/10 whitespace-nowrap flex-shrink-0">
+                <Shield className="w-3 h-3" />
                 {badge1}
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-gold/10 to-gold/20 text-navy text-xs font-medium rounded-full border border-gold/20">
-                <Award className="w-3.5 h-3.5 text-gold" />
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-gold/10 to-gold/20 text-navy text-[11px] font-medium rounded-full border border-gold/20 whitespace-nowrap flex-shrink-0">
+                <Award className="w-3 h-3 text-gold" />
                 {badge2}
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-emerald-500/10 to-emerald-500/20 text-emerald-700 text-xs font-medium rounded-full border border-emerald-500/20">
-                <Sparkles className="w-3.5 h-3.5" />
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-emerald-500/10 to-emerald-500/20 text-emerald-700 text-[11px] font-medium rounded-full border border-emerald-500/20 whitespace-nowrap flex-shrink-0">
+                <Sparkles className="w-3 h-3" />
                 {badge3}
               </span>
             </div>
 
-            <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-display font-bold text-navy leading-[1.1] mb-5 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+            <h1 className={`text-[1.75rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-display font-bold text-navy mb-3 sm:mb-5 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               {heading1}
-              <span className="block text-gold relative mt-1">
+              <span className="block text-gold relative mt-0.5 sm:mt-1">
                 {heading2}
-                <svg className="absolute -bottom-2 left-0 w-48 md:w-64 h-3 text-gold/30" viewBox="0 0 200 12" fill="none">
+                <svg className="absolute -bottom-1 sm:-bottom-2 left-0 w-40 sm:w-48 md:w-64 h-2 sm:h-3 text-gold/30" viewBox="0 0 200 12" fill="none">
                   <path d="M2 8C30 3 60 2 100 5C140 8 170 4 198 2" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
                 </svg>
               </span>
             </h1>
 
-            <p className={`text-base md:text-lg text-muted-foreground max-w-lg mb-6 leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} dangerouslySetInnerHTML={{ __html: subheading }} />
+            <p className={`text-sm sm:text-base md:text-lg text-muted-foreground max-w-lg mb-4 sm:mb-6 leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} dangerouslySetInnerHTML={{ __html: subheading }} />
 
             <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-              <div className="flex flex-col sm:flex-row gap-3 mb-4">
+              <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 mb-3 sm:mb-4">
                 <div className="relative flex-1">
                   <input
                     type="text"
@@ -118,12 +119,12 @@ export const HeroSection = () => {
                     value={businessType}
                     onChange={(e) => setBusinessType(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && handleGetConsultation()}
-                    className="w-full px-4 py-3.5 md:py-4 rounded-xl border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-navy/20 focus:border-navy shadow-sm transition-all text-sm md:text-base"
+                    className="w-full px-4 py-3 sm:py-3.5 md:py-4 rounded-xl border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-navy/20 focus:border-navy shadow-sm transition-all text-sm"
                   />
                 </div>
                 <button
                   onClick={handleGetConsultation}
-                  className="px-5 md:px-6 py-3.5 md:py-4 bg-gradient-to-r from-navy to-navy-dark text-white font-semibold rounded-xl hover:shadow-xl transition-all whitespace-nowrap shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:shadow-md group text-sm md:text-base"
+                  className="px-5 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-navy to-navy-dark text-white font-semibold rounded-xl hover:shadow-xl transition-all whitespace-nowrap shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:shadow-md group text-sm"
                 >
                   <span className="flex items-center justify-center gap-2">
                     {ctaText}
@@ -132,38 +133,41 @@ export const HeroSection = () => {
                 </button>
               </div>
 
-              <div className="flex flex-wrap gap-3 md:gap-4 mb-5">
+              {/* Quick benefits - compact on mobile */}
+              <div className="flex flex-wrap gap-x-3 gap-y-1.5 sm:gap-4 mb-3 sm:mb-5">
                 {quickBenefits.map((benefit, i) => (
-                  <span key={i} className="inline-flex items-center gap-1.5 text-xs md:text-sm text-muted-foreground">
-                    <CheckCircle2 className="w-3.5 md:w-4 h-3.5 md:h-4 text-emerald-500 flex-shrink-0" />
+                  <span key={i} className="inline-flex items-center gap-1 text-[11px] sm:text-sm text-muted-foreground">
+                    <CheckCircle2 className="w-3 sm:w-4 h-3 sm:h-4 text-emerald-500 flex-shrink-0" />
                     {benefit}
                   </span>
                 ))}
               </div>
 
-              <div className="flex flex-wrap gap-3 md:gap-4 mb-5">
-                <Link to="/services" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-navy transition-colors group font-medium">
-                  <ChevronRight className="w-4 h-4 text-gold" /> View All Services
+              {/* Quick links - inline on mobile */}
+              <div className="flex flex-wrap gap-x-3 gap-y-1 sm:gap-4 mb-4 sm:mb-5">
+                <Link to="/services" className="inline-flex items-center gap-1 text-xs sm:text-sm text-muted-foreground hover:text-navy transition-colors font-medium">
+                  <ChevronRight className="w-3.5 h-3.5 text-gold" /> All Services
                 </Link>
-                <a href={`tel:${phone.replace(/\s/g, '')}`} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-navy transition-colors group font-medium">
-                  <Phone className="w-4 h-4 text-gold" /> {phone}
+                <a href={`tel:${phone.replace(/\s/g, '')}`} className="inline-flex items-center gap-1 text-xs sm:text-sm text-muted-foreground hover:text-navy transition-colors font-medium">
+                  <Phone className="w-3.5 h-3.5 text-gold" /> {phone}
                 </a>
-                <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm text-green-600 hover:text-green-700 transition-colors font-medium">
-                  <MessageCircle className="w-4 h-4" /> WhatsApp Us
+                <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs sm:text-sm text-green-600 hover:text-green-700 transition-colors font-medium">
+                  <MessageCircle className="w-3.5 h-3.5" /> WhatsApp
                 </a>
               </div>
 
-              <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-gradient-to-r from-navy/5 to-transparent rounded-2xl border border-navy/5">
-                <div className="flex -space-x-2.5">
+              {/* Social proof - compact on mobile */}
+              <div className="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-4 bg-gradient-to-r from-navy/5 to-transparent rounded-xl sm:rounded-2xl border border-navy/5">
+                <div className="flex -space-x-2">
                   {["R", "P", "A", "S", "M"].map((letter, i) => (
-                    <div key={i} className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-navy to-navy-dark text-white flex items-center justify-center text-[10px] md:text-xs font-bold border-2 border-white shadow-md">
+                    <div key={i} className="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-navy to-navy-dark text-white flex items-center justify-center text-[9px] sm:text-xs font-bold border-2 border-white shadow-md">
                       {letter}
                     </div>
                   ))}
                 </div>
-                <div className="text-xs md:text-sm">
+                <div className="text-[11px] sm:text-sm">
                   <span className="font-bold text-navy">{socialProof}</span>
-                  <span className="text-muted-foreground"> trust us with their finances</span>
+                  <span className="text-muted-foreground"> trust us</span>
                 </div>
               </div>
             </div>
@@ -229,28 +233,29 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Mobile Service Cards */}
-          <div className="lg:hidden">
-            <div className={`grid grid-cols-2 gap-3 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          {/* Mobile Service Cards - horizontal scroll */}
+          <div className="lg:hidden -mx-4 px-4">
+            <div className={`flex gap-2.5 overflow-x-auto no-scrollbar pb-2 snap-x snap-mandatory transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               {segments.map((segment, index) => {
                 const isActive = activeSegment === index;
                 return (
                   <button
                     key={segment.label}
                     onClick={() => setActiveSegment(index)}
-                    className={`relative flex items-center gap-3 p-4 rounded-xl border transition-all duration-300 text-left ${
+                    className={`relative flex items-center gap-2.5 p-3 rounded-xl border transition-all duration-300 text-left min-w-[160px] snap-start flex-shrink-0 ${
                       isActive
                         ? 'border-gold/40 bg-white shadow-lg scale-[1.02]'
                         : 'border-border bg-card hover:border-gold/20'
                     }`}
                   >
-                    <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${segment.color} flex items-center justify-center shadow-md flex-shrink-0`}>
+                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${segment.color} flex items-center justify-center shadow-md flex-shrink-0`}>
                       <segment.icon className="w-5 h-5 text-white" />
                     </div>
                     <div className="min-w-0">
                       <div className="text-sm font-bold text-navy">{segment.label}</div>
-                      <div className="text-[11px] text-muted-foreground leading-tight truncate">{segment.desc}</div>
+                      <div className="text-[10px] text-muted-foreground leading-tight truncate">{segment.desc}</div>
                     </div>
+                    {isActive && <div className="absolute bottom-0 left-3 right-3 h-0.5 bg-gold rounded-full" />}
                   </button>
                 );
               })}
@@ -258,14 +263,15 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        <div className="mt-10 md:mt-14 pt-8 border-t border-border">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+        {/* Stats bar - enhanced mobile */}
+        <div className="mt-6 sm:mt-10 md:mt-14 pt-5 sm:pt-8 border-t border-border">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className={`text-center md:text-left group cursor-default transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: `${500 + index * 100}ms` }}>
-                <div className="text-lg md:text-xl lg:text-2xl font-display font-bold text-navy uppercase tracking-wide group-hover:text-gold transition-colors">
-                  {stat.number} {stat.label}
+              <div key={index} className={`text-center group cursor-default transition-all duration-500 p-2.5 sm:p-0 rounded-xl sm:rounded-none bg-navy/[0.02] sm:bg-transparent ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: `${500 + index * 100}ms` }}>
+                <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-display font-bold text-navy uppercase tracking-wide group-hover:text-gold transition-colors leading-tight">
+                  {stat.number} <span className="block sm:inline text-xs sm:text-base">{stat.label}</span>
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground">{stat.sublabel}</div>
+                <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-0.5">{stat.sublabel}</div>
               </div>
             ))}
           </div>
