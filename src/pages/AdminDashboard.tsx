@@ -70,6 +70,7 @@ const AdminDashboard = () => {
               <TabsTrigger value="contacts" className="gap-1"><MessageSquare className="w-4 h-4" /> Contacts {stats?.unread ? `(${stats.unread})` : ""}</TabsTrigger>
               <TabsTrigger value="blog" className="gap-1"><BookOpen className="w-4 h-4" /> Blog</TabsTrigger>
               <TabsTrigger value="testimonials" className="gap-1"><Star className="w-4 h-4" /> Testimonials</TabsTrigger>
+              <TabsTrigger value="seo" className="gap-1"><Search className="w-4 h-4" /> SEO</TabsTrigger>
             </TabsList>
 
             <TabsContent value="overview">
