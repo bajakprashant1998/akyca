@@ -102,6 +102,7 @@ const AdminDashboard = () => {
             <TabsContent value="contacts"><ContactManager /></TabsContent>
             <TabsContent value="blog"><BlogManager /></TabsContent>
             <TabsContent value="testimonials"><TestimonialManager /></TabsContent>
+            <TabsContent value="seo"><SEOManager /></TabsContent>
           </Tabs>
         </div>
       </div>
